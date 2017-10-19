@@ -8,6 +8,7 @@ A home food management app that allows you to keep track of your grocery invento
 and to install the dependencies:
 * yarn
 * bundle install
+* gem install foreman
 
 to start the server:
 * foreman start -f Procfile.dev -p 3000
