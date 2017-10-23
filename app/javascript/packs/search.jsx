@@ -82,7 +82,7 @@ class Results extends Component {
     
     render(){
         var resultItems = this.props.searchResults.map(function(result) {
-        return <ResultItem link={result.id} name={result.recipeName} rating={result.rating} />
+        return <ResultItem key={result.id} link={result.id} name={result.recipeName} rating={result.rating} />
         });
         return(
             <ul>
@@ -93,9 +93,29 @@ class Results extends Component {
 };
 
 class ResultItem extends Component {
+
+      recipeSearch = (event) => {
+      var URL = 'http://api.yummly.com/v1/api/recipe/' + this.props.link + '?_app_id=1187f4c6&_app_key=7dbff064930ce67f94b7ded79f8958f7'
+        $.ajax({
+            type: "GET",
+            dataType: 'jsonp',
+            url: URL,
+            success: function(response){
+              window.location.href = response.attribution.url;
+            },
+            failure: function(data) {
+              console.log('failed')
+            }
+        });
+    };
     
     render(){
-        return <li>{this.props.name}, {this.props.rating} / 5, <a href={"http://api.yummly.com/v1/api/recipe/" + this.props.link + "?_app_id=1187f4c6&_app_key=7dbff064930ce67f94b7ded79f8958f7"}>click here to see the recipe</a></li>;
+        return (
+          <li>
+          {this.props.name}, {this.props.rating} / 5 
+          <input type="submit" value="click here to see the recipe" onClick={this.recipeSearch}/>
+          </li>
+        );
     }
 };
 
