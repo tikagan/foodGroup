@@ -31,8 +31,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Use dotenv-rails for key config
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Use Omniauth for login
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
