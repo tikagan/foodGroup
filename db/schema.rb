@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021142507) do
+ActiveRecord::Schema.define(version: 20171023212444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "grocery_lists", force: :cascade do |t|
+    t.bigint "ingredient_id"
+    t.bigint "user_id"
+    t.float "quantity"
+    t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_grocery_lists_on_ingredient_id"
+    t.index ["user_id"], name: "index_grocery_lists_on_user_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pantries", force: :cascade do |t|
+    t.bigint "ingredient_id"
+    t.bigint "user_id"
+    t.float "quantity"
+    t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_pantries_on_ingredient_id"
+    t.index ["user_id"], name: "index_pantries_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
@@ -26,4 +54,8 @@ ActiveRecord::Schema.define(version: 20171021142507) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "grocery_lists", "ingredients"
+  add_foreign_key "grocery_lists", "users"
+  add_foreign_key "pantries", "ingredients"
+  add_foreign_key "pantries", "users"
 end
