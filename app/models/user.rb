@@ -1,6 +1,8 @@
 class User < ApplicationRecord
+	has_many :grocery_list
+	has_one :pantry
+
 	def self.find_or_create_from_auth_hash(auth)
-		puts auth
 		where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
 			user.provider = auth.provider
 			user.uid = auth.uid
