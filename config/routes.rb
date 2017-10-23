@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get 'home', to: 'home#show'
   get 'profile', to: 'profile#show', as: 'profile'
 
+  get 'api_test', to: 'search#show', as: 'search'
+
 end
