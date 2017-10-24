@@ -10,7 +10,7 @@ class Ingredient < ApplicationRecord
 
   private
   def ingredient_params
-  params.require(:ingredient)
-end
+    params.require(:ingredent)
+  end
 
 end
