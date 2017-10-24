@@ -13,3 +13,158 @@
  *= require_tree .
  *= require_self
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
+
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css");
+
+
+html { 
+	height: 100%;
+/*	box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;*/
+}
+
+body {
+	height: 100%;
+
+}
+
+#root{
+	 height: 100%;
+/*	height:100%;
+	width:100%;
+	display:block;
+overflow:auto;*/
+}
+
+.splashbackground { 
+  background: url(https://media.giphy.com/media/HO8vkgFtXj7G/giphy.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display:block;
+overflow:auto;
+  font-family: 'Open Sans', sans-serif;
+   z-index: 99999;
+  height: 100%;
+  color:white;
+
+}
+.cutbackground { 
+  background: url(https://theultralinx.com/.image/t_share/MTM3OTE1NzAxMDE2MDc4MTg4/tumblr_inline_nvl90uiuwl1qlgi1f_540gif.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display:block;
+overflow:auto;
+  font-family: 'Open Sans', sans-serif;
+   z-index: 99999;
+  height: 100%;
+  color:white;
+
+}
+
+
+
+.logo {
+	display: block;
+	height: 92px;
+	width:400px;
+	/*margin-left:390px;
+	margin-top: 50px;*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:60px;
+
+}
+
+.frank {
+	text-align: center;
+	vertical-align: middle;
+	position:absolute;
+	background-color: white;
+	top:50%;
+	left:44%;
+
+}
+.potluckButton {
+	float: right;
+
+
+}
+
+.inventory{
+	margin-right:auto;
+	margin-top:60px;
+
+}
+
+.menu{
+	margin-top: 100px;
+	margin-right:100px;
+	margin-left:100px;
+}
+
+.grocerylistButton {
+	padding:.5rem 1rem;
+	font-size:1.25rem;
+	line-height: 1.5;
+	display: inline-block;
+	font-weight:400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	
+	border:1px solid transparent;
+	background-color:#1bea7d;
+	border-radius: 8px;
+	box-sizing: border-box;
+
+
+	
+	float: right;
+}
+
+form {
+	margin:4em;
+}
+.formed {
+	width: 600px;
+	height: 30px;
+	border-radius: 4px;
+
+}
+
+
+.invy{
+	width:422px;
+	background-color: #e8a16b;
+}
+
+
+
+
+.intheway{
+	height:100%;
+}
+
+.navbar-default{
+	margin-top:0px;
+	background-color:rgba(53,53,54,0.7);
+	width:100%;
+	height:80px;
+}
+
+.Brand{
+	width:200px;
+	height:46px;
+	margin-top:5px;
+}
+
+
