@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get 'api_test', to: 'search#show', as: 'search'
 
+  resource :grocery_list 
+
 end
