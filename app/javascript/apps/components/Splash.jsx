@@ -17,6 +17,9 @@ class  Splash extends Component {
 render() {
 		return (
 			<div className= "splashbackground">
+			<a href="/auth/google_oauth2">Sign in with Google</a>
+			<a href="/auth/facebook">Sign in with Facebook</a>
+			<a href="/api_test">Search</a>
 			  <img className="logo" src={myImage} />
 			   <button type="button" className="btn btn-default frank"> What's for dinner?</button>
 		    </div>

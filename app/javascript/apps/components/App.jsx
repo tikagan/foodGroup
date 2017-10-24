@@ -6,6 +6,7 @@ import Splash from './splash.jsx'
 import Overview from './Overview.jsx'
 import Grocerylist from './Grocerylist.jsx'
 import Potluck from './Potluck.jsx'
+import Pantry from './Pantry.jsx'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/grocery-list" component={Grocerylist}/>
 			  	<Route path="/potluck" component={Potluck}/>
+			  	<Route path="/pantry" component={Pantry}/>
 			  </div>
 			</Router>
 		)
