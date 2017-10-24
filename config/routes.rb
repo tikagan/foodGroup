@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   get 'api_test', to: 'search#show', as: 'search'
 
-  resource :grocery_list 
+  resource :grocery_list, only: [:edit, :update, :show, :destroy]
+
+  resource :pantry, only: [:edit, :update, :show, :destroy]
+
+  resource :potluck, only: [:edit, :update, :show, :destroy]
+
 
 end
