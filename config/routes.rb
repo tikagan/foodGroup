@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'home', to: 'home#show'
   get 'profile', to: 'profile#show', as: 'profile'
 
-  resource :grocery_list 
+  get 'api_test', to: 'search#show', as: 'search'
 
+  resource :grocery_list 
 
 end
