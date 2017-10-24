@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :pantries
+  resources :potlucks
+  resources :groceries
   root to: "home#show"
 
   # get 'login', to: redirect('/auth/google_oauth2'), as: 'login'
@@ -10,6 +13,5 @@ Rails.application.routes.draw do
 
   get 'api_test', to: 'search#show', as: 'search'
 
-  resource :grocery_list 
 
 end

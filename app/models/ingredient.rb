@@ -13,7 +13,11 @@ class Ingredient < ApplicationRecord
 
   private
   def ingredient_params
+<<<<<<< HEAD
     params.require(:name)
+=======
+    params.require(:ingredent)
+>>>>>>> master
   end
 
 end

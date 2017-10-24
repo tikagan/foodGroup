@@ -1,0 +1,22 @@
+<%= form_with(model: potluck, local: true) do |form| %>
+  <% if potluck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(potluck.errors.count, "error") %> prohibited this potluck from being saved:</h2>
+
+      <ul>
+      <% potluck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :potluck_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Potluck < ApplicationRecord
+end

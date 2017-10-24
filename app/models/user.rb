@@ -11,6 +11,7 @@ class User < ApplicationRecord
 			user.email = auth[:info][:email]
 			user.picture = auth[:info][:image]
 			user.save!
+			
 		end
 	end
 end

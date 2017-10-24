@@ -1,3 +1,4 @@
+
 class HomeController < ApplicationController
 
   def show
@@ -5,3 +6,4 @@ class HomeController < ApplicationController
   end
   
 end
+

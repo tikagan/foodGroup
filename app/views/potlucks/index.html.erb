@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Potlucks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @potlucks.each do |potluck| %>
+      <tr>
+        <td><%= potluck.name %></td>
+        <td><%= link_to 'Show', potluck %></td>
+        <td><%= link_to 'Edit', edit_potluck_path(potluck) %></td>
+        <td><%= link_to 'Destroy', potluck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Potluck', new_potluck_path %>

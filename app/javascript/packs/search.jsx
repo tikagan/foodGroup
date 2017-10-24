@@ -23,7 +23,7 @@ class App extends Component {
 
     };
     
-    search(query, diet, allergy){
+    search(query, diet, allergy, course){
       if (diet === "Pescetarian") {
         var URL = 'http://api.yummly.com/v1/api/recipes?_app_id=1187f4c6&_app_key=7dbff064930ce67f94b7ded79f8958f7&q=' + query + '&maxResult=30&allowedDiet[]=390^Pescetarian'
       } else if (diet === "Vegan") {
@@ -41,6 +41,26 @@ class App extends Component {
         var URL = URL + "&allowedAllergy[]=394^Peanut-Free"
       } else if (allergy === "Seafood") {
         var URL = URL + "&allowedAllergy[]=398^Seafood-Free"
+      } else {
+        var URL = URL
+      }
+
+      if (course === "Breakfast and Brunch") {
+        var URL = URL + "&course^course-Breakfast and Brunch"
+      } else if (course === "Lunch") {
+        var URL = URL + "&course^course-Lunch"
+      } else if (course === "Appetizers") {
+        var URL = URL + "&course^course-Appetizers"
+      } else if (course === "Salads") {
+        var URL = URL + "&course^course-Salads"
+      } else if (course === "Main Dishes") {
+        var URL = URL + "&course^course-Main Dishes"
+      } else if (course === "Desserts") {
+        var URL = URL + "&course^course-Desserts"
+      } else if (course === "Snacks") {
+        var URL = URL + "&course^course-Snacks"
+      } else if (course === "Soups") {
+        var URL = URL + "&course^course-Soups"
       } else {
         var URL = URL
       }
@@ -73,7 +93,8 @@ class SearchBox extends Component {
     this.state = {
       query: '',
       diet: '',
-      allergy: ''
+      allergy: '',
+      course: ''
     }
   }
     
@@ -87,6 +108,10 @@ class SearchBox extends Component {
 
     handleAllergy = (event) => {
       this.setState({allergy: event.target.value});
+    }
+
+    handleCourse = (event) => {
+      this.setState({course: event.target.value});
     }
 
     render(){
@@ -106,6 +131,17 @@ class SearchBox extends Component {
                     <option value="Peanut">Peanut</option>
                     <option value="Seafood">Seafood</option>
                 </select>
+                <select onChange={this.handleCourse}>
+                    <option value="">All Courses</option>
+                    <option value="Breakfast and Brunch">Breakfast and Brunch</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Appetizers">Appetizers</option>
+                    <option value="Salads">Salads</option>
+                    <option value="Main Dishes">Main Dishes</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Soups">Soups</option>
+                </select>
                 <div>
                 {this.state.query}
                 </div>
@@ -115,9 +151,7 @@ class SearchBox extends Component {
     }
 
     createAjax = () => {
-        var query    = this.state.value
-        
-        this.props.search(this.state.query, this.state.diet, this.state.allergy)
+      this.props.search(this.state.query, this.state.diet, this.state.allergy, this.state.course)
     }
 
 };
@@ -145,7 +179,7 @@ class ResultItem extends Component {
             dataType: 'jsonp',
             url: URL,
             success: function(response){
-              window.location.href = response.attribution.url;
+              window.open(response.attribution.url)
             },
             failure: function(data) {
               console.log('failed')
