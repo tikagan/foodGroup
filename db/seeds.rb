@@ -5,4 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#this is where the seeds go
+
+kritika = User.find_or_create_from_auth_hash({
+  provider: 'google_oath2',
+  uid: 111274006798249701955,
+  info: {
+    first_name: 'Kritika',
+    last_name: 'Ganapathy',
+    email: 'ganapathy.kritika@gmail.com',
+    image: 'https://lh6.googleusercontent.com/-3LSfa7C5w98/AAAAAAAAAAI/AAAAAAAAACk/K1AptDvLJuY/photo.jpg'
+    }
+  })
+
+luke = User.find_or_create_from_auth_hash({
+  provider: 'google_oath2',
+  uid: 116865386940649809883,
+  info: {
+    first_name: 'Luke',
+    last_name: 'Siemens',
+    email: 'lukesiemens@gmail.com',
+    image: 'https://lh3.googleusercontent.com/-DLv42uF5w2M/AAAAAAAAAAI/AAAAAAAAMsA/xq5t-UW4Ioo/photo.jpg'
+    }
+  })
+
+ali = User.find_or_create_from_auth_hash({
+  provider: 'google_oath2',
+  uid: 117545400665404803991,
+  info: {
+    first_name: 'Ali',
+    last_name: 'Abji',
+    email: 'aliabji@gmail.com',
+    image: 'https://lh6.googleusercontent.com/-u03snmpyC0w/AAAAAAAAAAI/AAAAAAAAEVw/7FpKAnSkqeg/photo.jpg'
+    }
+  })
