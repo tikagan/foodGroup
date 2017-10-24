@@ -151,9 +151,7 @@ class SearchBox extends Component {
     }
 
     createAjax = () => {
-        var query    = this.state.value
-        
-        this.props.search(this.state.query, this.state.diet, this.state.allergy, this.state.course)
+      this.props.search(this.state.query, this.state.diet, this.state.allergy, this.state.course)
     }
 
 };

@@ -15,9 +15,10 @@ class  Menu extends Component {
 	render() {
 		return (
 			<div >
-			  
-			  <Link to="/potluck"  className="grocerylistButton" >Create Potluck</Link>
-			  <Link to="/grocery-list" className="grocerylistButton">Create Grocery List</Link>
+			
+			   <Link to="/potlucks"  className="btn btn-primary btn-lg" >Create Potluck</Link>
+			  <Link to="/groceries" className="grocerylistButton">Create Grocery List</Link>
+			 
 
 			  <form>
 			    <textarea rows="2" cols="50" defaultValue="Input your food items here" />
