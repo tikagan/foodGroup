@@ -4,4 +4,13 @@ class Ingredient < ApplicationRecord
 
   validate_uniqueness_of :name
 
+  def create
+    ing = Ingredient.new
+  end
+
+  private
+  def ingredient_params
+  params.require(:ingredient)
+end
+
 end
