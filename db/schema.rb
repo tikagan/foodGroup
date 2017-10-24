@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024195258) do
+ActiveRecord::Schema.define(version: 20171024213222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20171024195258) do
     t.index ["user_id"], name: "index_pantries_on_user_id"
   end
 
+  create_table "potluck_guests", force: :cascade do |t|
+    t.bigint "potluck_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["potluck_id"], name: "index_potluck_guests_on_potluck_id"
+    t.index ["user_id"], name: "index_potluck_guests_on_user_id"
+  end
+
   create_table "potlucks", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
@@ -70,4 +79,6 @@ ActiveRecord::Schema.define(version: 20171024195258) do
   add_foreign_key "grocery_lists", "users"
   add_foreign_key "pantries", "ingredients"
   add_foreign_key "pantries", "users"
+  add_foreign_key "potluck_guests", "potlucks"
+  add_foreign_key "potluck_guests", "users"
 end
