@@ -26,8 +26,9 @@ class App extends Component {
 						<li><Link to="/overview">Overview</Link></li>
 						<li><Link to="/grocery-list">Grocery List</Link></li>
 						<li><Link to="/potluck">Potluck</Link></li>
+						<li><Link to="/pantry">Pantry</Link></li>
 					</ul>
-				  <Route path="/" exact component={Splash}/>
+				  <Route path="/" exact component={Overview}/>
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/grocery-list" component={Grocerylist}/>
 			  	<Route path="/potluck" component={Potluck}/>
