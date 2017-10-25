@@ -40,6 +40,92 @@ body {
 overflow:auto;*/
 }
 
+.book3 {
+	margin-top:1rem;
+	margin-left:.5rem;
+	margin-right:2rem;
+	padding:.5rem 1rem;
+	min-width:142px; 
+	font-size:1rem;
+	line-height: 1.5;
+	display: inline-block;
+	font-weight:400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	color:black;
+	border:1px solid transparent;
+	background-color:#ffffff;
+	border-radius: 8px;
+	box-sizing: border-box;
+
+}
+.book2 {
+	margin-top:2.5rem;
+	margin-left:.5rem;
+	padding:.5rem 1rem;
+	min-width:142px; 
+	font-size:1rem;
+	line-height: 1.5;
+	display: inline-block;
+	font-weight:400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	color:black;
+	border:1px solid transparent;
+	background-color:#ffffff;
+	border-radius: 8px;
+	box-sizing: border-box;
+}
+
+.book1{
+	margin-top:1rem;
+	margin-left:.5rem;
+	padding:.5rem 1rem;
+	min-width:142px; 
+	font-size:1rem;
+	line-height: 1.5;
+	display: inline-block;
+	font-weight:400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	color:black;
+	border:1px solid transparent;
+	background-color:#ffffff;
+	border-radius: 8px;
+	box-sizing: border-box;
+
+
+}
+.luckbutton {
+	display:inline-block;
+	background-color: white;
+	border-color:white;
+	width:142.1px;
+	height:42px;
+	margin-left:8rem;
+	margin-right:.5rem;
+	padding:.5rem 1rem;
+	font-size:1rem;
+}
+
+.grocbutton {
+	background-color: white;
+	display:inline-block;
+	border-color:white;
+	margin-top:1rem;
+	margin-left:8rem;
+	margin-right:.5rem;
+	padding:.5rem 1rem;
+	font-size:1rem;
+}
+
+
 .splashbackground { 
   background: url(https://media.giphy.com/media/HO8vkgFtXj7G/giphy.gif) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -155,12 +241,28 @@ overflow:auto;
 
 
 }
-.potluckButton {
-	float: right;
-	margin-top:-100px;
 
 
-}
+/*	margin-top:-100px;
+	margin-left:-60px;
+	padding:.5rem 1rem;
+	font-size:1.25rem;
+	line-height: 1.5;
+	display: inline-block;
+	font-weight:400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	
+	border:1px solid transparent;
+	background-color:#1bea7d;
+	border-radius: 8px;
+	box-sizing: border-box;*/
+
+
+
+
 
 .inventory{
 	margin-right:auto;
@@ -174,7 +276,8 @@ overflow:auto;
 	margin-left:100px;
 }
 
-.grocerylistButton {
+/*.grocerylistButton {
+	margin:.5rem;
 	padding:.5rem 1rem;
 	font-size:1.25rem;
 	line-height: 1.5;
@@ -193,10 +296,42 @@ overflow:auto;
 
 	
 	float: right;
+}*/
+
+#container {
+	
+	margin-right:6em;
+	margin-left:6em;
+	margin-top: 4em;
+
+}
+.groupedforms {
+	margin-top:2em;
+	margin-left:4em;
+	margin-right:4em;
+	padding-left:100px;
+	margin-bottom:auto;
+	padding:10px;
+
 }
 
-form {
-	margin:4em;
+.fig{
+	max-width:100%;
+}
+
+.form1 {
+	margin-top:.5rem;
+}
+
+
+.form2{
+	margin-top:.5rem;
+
+}
+
+.form3 {
+	margin-top:.5rem;
+
 }
 .formed {
 	width: 600px;
@@ -208,9 +343,18 @@ form {
 
 .invy{
 	width:422px;
-	background-color: #e8a16b;
+	background-color: black;
+	opacity:0.5;
+	float:left;
+	margin-right:6em;
 }
 
+.listed{
+	width: 600px;
+	margin-top: 4em;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 
 
@@ -222,7 +366,7 @@ form {
 	margin-top:0px;
 	background-color:rgba(53,53,54,0.7);
 	width:100%;
-	height:80px;
+	height:50%;
 }
 
 .Brand{

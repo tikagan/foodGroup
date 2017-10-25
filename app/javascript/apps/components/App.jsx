@@ -7,6 +7,7 @@ import Overview from './Overview.jsx'
 import Grocerylist from './Grocerylist.jsx'
 import Potluck from './Potluck.jsx'
 import Pantry from './Pantry.jsx'
+import grocerylistcreated from './GrocerylistCreated.jsx'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 
 class App extends Component {
@@ -22,17 +23,13 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="intheway">
-					<ul>
-						<li><Link to="/overview">Overview</Link></li>
-						<li><Link to="/groceries">groceries</Link></li>
-						<li><Link to="/potlucks">Potluck</Link></li>
-						<li><Link to="/pantries">Pantry</Link></li>
-					</ul>
+					
 				  <Route path="/" exact component={Overview}/>
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/groceries" component={Grocerylist}/>
 			  	<Route path="/potlucks" component={Potluck}/>
 			  	<Route path="/pantries" component={Pantry}/>
+			  	<Route path="/GrocerylistCreated" component={grocerylistcreated}/>
 
 			  </div>
 			</Router>

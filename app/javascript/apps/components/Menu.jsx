@@ -15,10 +15,13 @@ class  Menu extends Component {
 	render() {
 		return (
 			<div >
+			  
 			
-			   <Link to="/potlucks"  className="btn btn-primary btn-lg" >Create Potluck</Link>
-			  <Link to="/groceries" className="grocerylistButton">Create Grocery List</Link>
+			  <Link to="/potlucks"  className="book2" >Create Potluck</Link> <br/>
+			  <Link to="/groceries" className="book1">Create List</Link>
+			  <Link to="/pantries" className="book3">Pantry</Link>
 			 
+			
 
 			  <form>
 			    <textarea rows="2" cols="50" defaultValue="Input your food items here" />
@@ -26,7 +29,7 @@ class  Menu extends Component {
 
 		     </div>
 		)
-	} 
+	}
 }
 
 
