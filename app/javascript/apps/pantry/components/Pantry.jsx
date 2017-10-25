@@ -10,15 +10,30 @@ class  Pantry extends Component {
 	    super(props)
 	    
 	    this.state = {
-	    	
+	    	test: ''
 	    };
-	   
 	}
+
+  componentDidMount() {
+    const serverURL = 'http://localhost:3000/'
+    axios.get('api/pantries/1')
+     .then( (response) => {
+       console.log(response)
+       this.setState({
+         test: response.data.ingredient_id
+       });
+      console.log(response);
+     })
+     .catch(function (error) {
+    console.log(error);
+     })
+  }
 
 		render() {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
+        <h1>  {this.state.test}</h1>
 		    </div>
 		)
 	} 

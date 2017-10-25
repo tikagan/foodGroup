@@ -10,6 +10,8 @@ class Api::PantriesController < Api::ApplicationController
     # GET /pantries/1
     # GET /pantries/1.json
     def show
+      @pantry = Pantry.find(params[:id])
+      render json: @pantry
     end
   
     # POST /pantries
