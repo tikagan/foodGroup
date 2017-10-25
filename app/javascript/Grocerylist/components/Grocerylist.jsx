@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Navbar from './Navbar.jsx'
+// import Navbar from '../apps/components/Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -21,7 +21,7 @@ class  Grocerylist extends Component {
 	
 		return (
 			<div className="cutbackground">
-				<Navbar />
+
 				  <form>
 				    <input type="text" className="formed" name="list name" /><br />
 				    <input type="submit" value="Submit" />
