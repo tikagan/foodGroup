@@ -21,7 +21,7 @@ render() {
 			<a href="/auth/facebook" className="book">Sign in with Facebook</a>
 			<a href="/api_test" className="api">Search</a>
 			  <img className="logo" src={myImage} />
-			   <button type="button" className="btn btn-default frank"> What's for dinner?</button>
+			   <button type="button" className="btn btn-default frank"> "What's for dinner?"</button>
 		    </div>
 		)
 	} 

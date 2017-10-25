@@ -38,3 +38,22 @@ ali = User.find_or_create_from_auth_hash({
     image: 'https://lh6.googleusercontent.com/-u03snmpyC0w/AAAAAAAAAAI/AAAAAAAAEVw/7FpKAnSkqeg/photo.jpg'
     }
   })
+
+potato = Ingredient.create!({ name: 'potato' })
+tomato = Ingredient.create!({ name: 'tomato' })
+onion = Ingredient.create!({ name: 'onion' })
+leek = Ingredient.create!({ name: 'leek' })
+cucumber = Ingredient.create!({ name: 'cucumber' })
+rice = Ingredient.create!({ name: 'rice' })
+chicken = Ingredient.create!({ name: 'chicken' })
+artichoke = Ingredient.create!({ name: 'artichoke' })
+fennel = Ingredient.create!({ name: 'fennel' })
+parsley = Ingredient.create!({ name: 'parsley' })
+thyme = Ingredient.create!({ name: 'thyme' })
+rosemary = Ingredient.create!({ name: 'rosemary' })
+olive_oil = Ingredient.create!({ name: 'olive oil' })
+butter = Ingredient.create!({ name: 'butter' })
+eggplant = Ingredient.create!({ name: 'eggplant' })
+zucchini = Ingredient.create!({ name: 'zucchini' })
+mustard = Ingredient.create!({ name: 'mustard' })
+cumin = Ingredient.create!({ name: 'cumin' })

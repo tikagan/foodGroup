@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Splash from './splash.jsx'
 import Overview from './Overview.jsx'
-import Grocerylist from './Grocerylist.jsx'
+import Groceries from './Grocerylist.jsx'
 import Potluck from './Potluck.jsx'
 import Pantry from './Pantry.jsx'
 import grocerylistcreated from './GrocerylistCreated.jsx'
@@ -26,7 +26,7 @@ class App extends Component {
 					
 				  <Route path="/" exact component={Overview}/>
 			  	<Route path="/overview" component={Overview}/>
-			  	<Route path="/groceries" component={Grocerylist}/>
+			  	<Route path="/groceries" component={Groceries}/>
 			  	<Route path="/potlucks" component={Potluck}/>
 			  	<Route path="/pantries" component={Pantry}/>
 			  	<Route path="/GrocerylistCreated" component={grocerylistcreated}/>

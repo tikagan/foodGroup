@@ -1,0 +1,2 @@
+module PotluckGuestHelper
+end
