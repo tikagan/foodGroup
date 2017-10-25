@@ -1,0 +1,2 @@
+class PotluckGuestController < ApplicationController
+end

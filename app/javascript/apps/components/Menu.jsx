@@ -16,8 +16,8 @@ class  Menu extends Component {
 		return (
 			<div >
 			
-			   <Link to="/potluck"  className="btn btn-primary btn-lg" >Create Potluck</Link>
-			  <Link to="/grocery-list" className="grocerylistButton">Create Grocery List</Link>
+			   <Link to="/potlucks"  className="btn btn-primary btn-lg" >Create Potluck</Link>
+			  <Link to="/groceries" className="grocerylistButton">Create Grocery List</Link>
 			 
 
 			  <form>

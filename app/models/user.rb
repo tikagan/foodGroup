@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :grocery_list
+	has_many :potluck
 	has_one :pantry
 
 	def self.find_or_create_from_auth_hash(auth)
@@ -11,7 +12,7 @@ class User < ApplicationRecord
 			user.email = auth[:info][:email]
 			user.picture = auth[:info][:image]
 			user.save!
-			
+
 		end
 	end
 end
