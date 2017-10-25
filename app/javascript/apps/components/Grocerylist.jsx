@@ -22,53 +22,21 @@ class  Grocerylist extends Component {
 		return (
 			<div className="cutbackground">
 				<Navbar />
-				<div id="container">
-				<div className="groupedforms">
-				    <div className="form1">
-				    <div className="col-lg-6 fig">
-             <div className="input-group">
-               <input typeName="text" class="form-control" placeholder="List Name" />
-               <span className="input-group-btn">
-               <button className="btn btn-default" type="button">Go!</button>
-               </span>
-            </div>
-            </div>
-            </div>
-            <div className="form2">
-             <div className="col-lg-6 fig">
-             <div className="input-group">
-               <input typeName="text" class="form-control" placeholder=" List Description" />
-               <span className="input-group-btn">
-               <button className="btn btn-default" type="button">Go!</button>
-               </span>
-            </div>
-            </div>
-            </div>
-            <div className="form3">
-             <div className="col-lg-6 fig">
-             <div className="input-group">
-               <input typeName="text" class="form-control" placeholder="Add Item" />
-               <span className="input-group-btn">
-               <button className="btn btn-default" type="button">Go!</button>
-               </span>
-            </div>
-            </div>
-            </div>
-              <div className="form3">
-             <div className="col-lg-6 fig">
-             <div className="input-group">
-               <input typeName="text" class="form-control" placeholder="Invite Users" />
-               <span className="input-group-btn">
-               <button className="btn btn-default" type="button">Go!</button>
-               </span>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-             <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
+				  <form>
+				    <input type="text" className="formed" name="list name" /><br />
+				    <input type="submit" value="Submit" />
+
+				    <input type="text" className="formed" name="Description" /><br />
+				    <input type="submit" value="Submit" />
+
+				    <input type="text" className="formed" name="add item" /><br />
+				    <input type="submit" value="Submit" />
+
+
+
+
 			
-		       
+		     </form>     
 			</div>
 		)
 	} 
