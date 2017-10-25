@@ -1,1 +1,1 @@
-import 'pantry'
+import '../apps/pantry'
