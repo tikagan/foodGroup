@@ -1,1 +1,1 @@
-import 'potluck'
+import '../apps/potluck'

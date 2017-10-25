@@ -1,1 +1,1 @@
-import 'splash'
+import '../apps/splash'
