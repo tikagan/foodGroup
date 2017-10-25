@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+
 kritika = User.find_or_create_from_auth_hash({
   provider: 'google_oath2',
   uid: 111274006798249701955,
