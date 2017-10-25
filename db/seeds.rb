@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+Pantry.create!({
+  ingredient_id: 1,
+  user_id: 13,
+  quantity: 1,
+  unit: 'gram'
+})
+
 
 kritika = User.find_or_create_from_auth_hash({
   provider: 'google_oath2',
@@ -59,6 +65,14 @@ eggplant = Ingredient.create!({ name: 'eggplant' })
 zucchini = Ingredient.create!({ name: 'zucchini' })
 mustard = Ingredient.create!({ name: 'mustard' })
 cumin = Ingredient.create!({ name: 'cumin' })
+
+
+pantryTest = Pantries.create!({
+  ingredient_id: 1,
+  user_id: 7,
+  quantity: 1,
+  unit: 'gram'
+})
 
 grocery_list = GroceryList.create!({
   
