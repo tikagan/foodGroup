@@ -18,31 +18,30 @@ class  Grocerylist extends Component {
 	}
 
 	render() {
-
+	
 		return (
 			<div className="cutbackground">
-
-				  <form>
-				    <input type="text" className="formed" name="list name" /><br />
-				    <input type="submit" value="Submit" />
-
-				    <input type="text" className="formed" name="Description" /><br />
-				    <input type="submit" value="Submit" />
-
-				    <input type="text" className="formed" name="add item" /><br />
-				    <input type="submit" value="Submit" />
-
-
-
-
-
-		     </form>
+				<Navbar />
+				<form>
+				  <label>
+				  List Name: 
+				  <input type="text" name="name"/>
+				  </label>
+				   <label>
+				  Description: 
+				  <input type="text" name="description"/>
+				  </label>
+				  <label>
+				  add item: 
+				  <input type="text" name="add item"/>
+				  </label>
+				   <input type="submit" value="Submit" />
+				  </form>
+         <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
 			</div>
 		)
-	}
+	} 
 }
-
-
 
 
 

@@ -5,7 +5,7 @@ import Menu from './menu.jsx'
 import Navbar from './Navbar.jsx'
 
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import Grocerylist from './Grocerylist.jsx'
+import Grocerylist from '../../grocerylist/components/Grocerylist.jsx'
 
 
 
