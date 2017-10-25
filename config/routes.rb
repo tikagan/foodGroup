@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope module: :api do
+  namespace :api do
     resources :pantries
     resources :potlucks
     resources :groceries
