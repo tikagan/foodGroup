@@ -7,7 +7,7 @@ import Overview from './Overview.jsx'
 import Groceries from '../../grocerylist/components/Grocerylist.jsx'
 import Potluck from '../../potluck/components/Potluck.jsx'
 import Pantry from '../../pantry/components/Pantry.jsx'
-import Search from '../../pantry/components/search.jsx'
+import search from '../../pantry/components/search.jsx'
 import grocerylistcreated from '../../grocerylistcreated/components/GrocerylistCreated.jsx'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 

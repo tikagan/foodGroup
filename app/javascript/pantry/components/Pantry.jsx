@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import Search from './search.jsx'
+import search from './search.jsx'
 
 class  Pantry extends Component {
 
