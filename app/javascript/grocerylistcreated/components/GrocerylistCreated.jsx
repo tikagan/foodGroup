@@ -21,7 +21,7 @@ class  GrocerylistCreated extends Component {
 		    <div className="jumbotron">
 			  
 			  
-
+		    </div>
 		     </div>
 		)
 	} 
