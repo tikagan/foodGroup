@@ -57,3 +57,7 @@ eggplant = Ingredient.create!({ name: 'eggplant' })
 zucchini = Ingredient.create!({ name: 'zucchini' })
 mustard = Ingredient.create!({ name: 'mustard' })
 cumin = Ingredient.create!({ name: 'cumin' })
+
+grocery_list = GroceryList.create!({
+  
+  })
