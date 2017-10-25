@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-// import Navbar from '../apps/components/Navbar.jsx'
+import Navbar from './Navbar'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -9,16 +9,16 @@ class  Grocerylist extends Component {
 
 	constructor (props) {
 			super(props)
-			
+
 			this.state = {
-				
+
 			};
 
-		 
+
 	}
 
 	render() {
-	
+
 		return (
 			<div className="cutbackground">
 
@@ -35,11 +35,11 @@ class  Grocerylist extends Component {
 
 
 
-			
-		     </form>     
+
+		     </form>
 			</div>
 		)
-	} 
+	}
 }
 
 

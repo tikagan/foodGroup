@@ -30,7 +30,7 @@ class App extends Component {
 					</ul>
 				  <Route path="/" exact component={Overview}/>
 			  	<Route path="/overview" component={Overview}/>
-			  	<Route path="/groceries" component={Grocerylist}/>
+			  	<Route path="/groceries" component={Groceries}/>
 			  	<Route path="/potlucks" component={Potluck}/>
 			  	<Route path="/pantries" component={Pantry}/>
 
