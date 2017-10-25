@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope module: '/api' do
+  scope module: :api do
     resources :pantries
     resources :potlucks
     resources :groceries
@@ -17,5 +17,6 @@ Rails.application.routes.draw do
 
   get 'api_test', to: 'search#show', as: 'search'
 
+  get '*path', to: 'home#show'
 
 end
