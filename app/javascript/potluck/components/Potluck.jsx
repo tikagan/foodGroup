@@ -4,6 +4,7 @@ import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 
 
+
 class  Potluck extends Component {
 
 	constructor (props) {
@@ -21,14 +22,13 @@ class  Potluck extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-		    
+		  
 		    <p>Potluck</p>
 			
 		     </div>
 		)
 	} 
 }
-
 
 
 

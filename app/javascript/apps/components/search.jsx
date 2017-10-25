@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-class App extends Component {
+class Recipequery extends Component {
     
     // getInitialState() {
     //     return {
@@ -199,9 +199,5 @@ class ResultItem extends Component {
 };
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <App />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+export default Recipequery
+  
