@@ -23,13 +23,13 @@ class  Grocerylist extends Component {
 			<div className="cutbackground">
 				<Navbar />
 				  <form>
-				    <input type="text" className="formed" name="list name" /><br />
+				    <input type="text" className="formed" name="list name" />
 				    <input type="submit" value="Submit" />
 
-				    <input type="text" className="formed" name="Description" /><br />
+				    <input type="text" className="formed" name="Description" />
 				    <input type="submit" value="Submit" />
 
-				    <input type="text" className="formed" name="add item" /><br />
+				    <input type="text" className="formed" name="add item" />
 				    <input type="submit" value="Submit" />
 
 

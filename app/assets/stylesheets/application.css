@@ -40,6 +40,89 @@ body {
 overflow:auto;*/
 }
 
+/*grocerylist input labels
+---------------------------*/
+
+.listname {
+	margin-left: 20px;
+
+}
+.add {
+	margin-left: 30px;
+
+}
+.description {
+	margin-left: 10px;
+
+}
+
+
+.threeforms {
+	margin-top: 5em;
+	margin-right:10em;
+	margin-left:25em;
+
+
+}
+/*---------------------------*/
+.headed {
+	width:600px;
+	height:50px;
+	margin-top:60px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding:10px;
+}
+
+.listed2 {
+	width:600px;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;
+	height:400px;
+}
+
+.additem{
+	margin-top: 2em;
+	margin-left: 20em;
+	margin-right: 20em;
+}
+
+.bootform2 {
+	width:400px;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:2em;
+
+}
+
+.form-control {
+	background-color:black;
+    border-color:black;
+    opacity:0.5;
+}
+.btn-primary {
+	background-color:white;
+	color:grey;
+	border-color: white;
+}
+.btn-primary:hover {
+    color: white;
+    background-color: black;
+    border-color: black
+}
+.bootform {
+	width:600px;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:2em;
+}
+.buttoned{
+	width:80px;
+}
+
 .book3 {
 	margin-top:1rem;
 	margin-left:.5rem;
@@ -319,26 +402,8 @@ overflow:auto;
 	max-width:100%;
 }
 
-.form1 {
-	margin-top:.5rem;
-}
 
 
-.form2{
-	margin-top:.5rem;
-
-}
-
-.form3 {
-	margin-top:.5rem;
-
-}
-.formed {
-	width: 600px;
-	height: 30px;
-	border-radius: 4px;
-
-}
 
 
 .invy{

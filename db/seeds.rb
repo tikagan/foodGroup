@@ -8,7 +8,7 @@
 
 Pantry.create!({
   ingredient_id: 1,
-  user_id: 13,
+  user_id: 2,
   quantity: 1,
   unit: 'gram'
 })
@@ -66,13 +66,6 @@ zucchini = Ingredient.create!({ name: 'zucchini' })
 mustard = Ingredient.create!({ name: 'mustard' })
 cumin = Ingredient.create!({ name: 'cumin' })
 
-
-pantryTest = Pantries.create!({
-  ingredient_id: 1,
-  user_id: 7,
-  quantity: 1,
-  unit: 'gram'
-})
 
 grocery_list = GroceryList.create!({
   
