@@ -19,7 +19,7 @@ class  Menu extends Component {
 			
 			  <Link to="/potlucks"  className="book2" >Create Potluck</Link> <br/>
 			  <Link to="/groceries" className="book1">Create List</Link>
-			  <Link to="/pantries" className="book3">Pantry</Link>
+			  <Link to="/pantry" className="book3">Pantry</Link>
 			 
 			
 

@@ -1,12 +1,13 @@
 class Api::PantriesController < Api::ApplicationController
   before_action :set_pantry, only: [:show, :edit, :update, :destroy]
 
-
-    # GET /pantry
-    # GET /pantryjson
+    # GET /pantries/1
+    # GET /pantries/1.json
     def show
       @user = current_user
       @ingredients = @user.ingredients
+      #@pantry = Pantry.includes(:ingredient).where(user_id: params[:id])
+      render json: @ingredients
     end
 
     # POST /pantries

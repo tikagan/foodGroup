@@ -16,7 +16,7 @@ class  Pantry extends Component {
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
-    axios.get('api/pantries/1')
+    axios.get('api/pantry')
      .then( (response) => {
        console.log(response)
        this.setState({
