@@ -1,18 +1,12 @@
 class Api::PantriesController < Api::ApplicationController
   before_action :set_pantry, only: [:show, :edit, :update, :destroy]
 
-    # GET /pantries
-    # GET /pantries.json
-    # K: why would we ever need to show all the pantries if each user only has one pantry?
-    def index
-      @pantries = Pantry.all
-    end
 
-    # GET /pantries/1
-    # GET /pantries/1.json
+    # GET /pantry
+    # GET /pantryjson
     def show
-      @pantry = Pantry.where(user_id: params[:id])
-      render json: @pantry
+      @user = current_user
+      @ingredients = @user.ingredients
     end
 
     # POST /pantries

@@ -1,6 +1,6 @@
 class Ingredient < ApplicationRecord
   has_many :grocery_list
-  has_many :pantry
+  has_many :pantries
 
   validates_uniqueness_of :name
 
