@@ -189,6 +189,68 @@ Pantry.create!({
   unit: 'item'
 })
 
+#kritika's pantry
+Pantry.create!({
+  ingredient_id: potato.id,
+  user_id: kritika.id,
+  quantity: 6,
+  unit: 'lbs'
+})
+Pantry.create!({
+  ingredient_id: cucumber.id,
+  user_id: kritika.id,
+  quantity: 9,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: onion.id,
+  user_id: kritika.id,
+  quantity: 7,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: eggplant.id,
+  user_id: kritika.id,
+  quantity: 3,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: leek.id,
+  user_id: kritika.id,
+  quantity: 5,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: fennel.id,
+  user_id: kritika.id,
+  quantity: 1,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: olive_oil.id,
+  user_id: kritika.id,
+  quantity: 1,
+  unit: 'litre'
+})
+Pantry.create!({
+  ingredient_id: tomato.id,
+  user_id: kritika.id,
+  quantity: 5,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: eggplant.id,
+  user_id: kritika.id,
+  quantity: 8,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: zucchini.id,
+  user_id: luke.id,
+  quantity: 4,
+  unit: 'item'
+})
+
 #luke's weekly grocery list
 Grocery.create!({
   name: 'weekly groceries',
@@ -345,4 +407,83 @@ Grocery.create!({
   user_id: ali.id,
   quantity: 1,
   unit: 'item'
+})
+
+#luke's demo day after party grocery list
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: potato.id,
+  user_id: luke.id,
+  quantity: 400,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: leek.id,
+  user_id: luke.id,
+  quantity: 1000,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: rice.id,
+  user_id: luke.id,
+  quantity: 50,
+  unit: 'kilos'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: chicken.id,
+  user_id: luke.id,
+  quantity: 1000,
+  unit: 'thighs'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: fennel.id,
+  user_id: luke.id,
+  quantity: 500,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: parsley.id,
+  user_id: luke.id,
+  quantity: 1000,
+  unit: 'stalks'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: rosemary.id,
+  user_id: luke.id,
+  quantity: 1000,
+  unit: 'grams'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: olive_oil.id,
+  user_id: luke.id,
+  quantity: 50,
+  unit: 'litres'
+})
+Grocery.create!({
+  name: 'demo day after party',
+  ingredient_id: cumin.id,
+  user_id: luke.id,
+  quantity: 80,
+  unit: 'grams'
+})
+
+extravaganza = Potluck.create!({
+  name: "Luke's Post-DemoDay Extravaganza!",
+  creator_id: luke.id
+})
+
+PotluckGuest.create!({
+  potluck_id: extravaganza.id,
+  user_id: kritika.id
+})
+PotluckGuest.create!({
+  potluck_id: extravaganza.id,
+  user_id: ali.id
 })
