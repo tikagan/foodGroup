@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025161636) do
+ActiveRecord::Schema.define(version: 20171026162625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,17 +23,6 @@ ActiveRecord::Schema.define(version: 20171025161636) do
     t.bigint "user_id"
     t.integer "quantity"
     t.string "unit"
-  end
-
-  create_table "grocery_lists", force: :cascade do |t|
-    t.bigint "ingredient_id"
-    t.bigint "user_id"
-    t.float "quantity"
-    t.string "unit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_grocery_lists_on_ingredient_id"
-    t.index ["user_id"], name: "index_grocery_lists_on_user_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -66,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171025161636) do
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "creator_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,10 +71,9 @@ ActiveRecord::Schema.define(version: 20171025161636) do
 
   add_foreign_key "groceries", "ingredients"
   add_foreign_key "groceries", "users"
-  add_foreign_key "grocery_lists", "ingredients"
-  add_foreign_key "grocery_lists", "users"
   add_foreign_key "pantries", "ingredients"
   add_foreign_key "pantries", "users"
   add_foreign_key "potluck_guests", "potlucks"
   add_foreign_key "potluck_guests", "users"
+  add_foreign_key "potlucks", "users", column: "creator_id"
 end
