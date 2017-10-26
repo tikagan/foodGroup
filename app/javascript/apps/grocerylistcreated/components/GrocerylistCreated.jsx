@@ -18,11 +18,22 @@ class  GrocerylistCreated extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-		    <div className="jumbotron">
-			  
+		    <div className=" jumbotron headed">
+		    </div>
+		    <div className="jumbotron listed2">
+		    </div>
+		    <div className="bootform">
+		    <div class="input-group" >
+             <span class="input-group-btn">
+               <button class="btn btn-secondary" type="button">submit</button>
+            </span>
+              <input type="text" class="form-control" placeholder="Add item"/>
+            </div>
+            </div>
+			
 			  
 		    </div>
-		     </div>
+		    
 		)
 	} 
 }

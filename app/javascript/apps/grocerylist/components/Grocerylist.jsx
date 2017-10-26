@@ -18,35 +18,32 @@ class  Grocerylist extends Component {
 	}
 
 	render() {
-	
-		return (
-			<div className="cutbackground">
-				<Navbar />
-				<form>
-				  <label>
-				  List Name: 
-				  <input type="text" name="name"/>
-				  </label>
-				   <label>
-				  Description: 
-				  <input type="text" name="description"/>
-				  </label>
-				  <label>
-				  add item: 
-				  <input type="text" name="add item"/>
-				  </label>
-				   <input type="submit" value="Submit" />
-				  </form>
+	  return (
+		  <div className="cutbackground">
+			  <Navbar />
+		    <div className="bootform2" >
+		      <form>
+            <div className="form-group">
+              <label for="exampleInputEmail1">List Name</label>
+              <input type="email" className="form-control"  placeholder="Add List Name"/>
+    
+            </div>
+            <div className="form-group">
+              <label for="exampleInputEmail1">Description</label>
+              <input type="email" className="form-control" placeholder="Add Description"/>
+            </div>
+            <div className="form-group">
+              <label for="exampleInputPassword1">Add Item</label>
+              <input type="password" className="form-control" placeholder="Add Item"/>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </form>
+         </div>
          <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
 			</div>
 		)
 	} 
 }
-
-
-
-
-
 
 
 export default Grocerylist

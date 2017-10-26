@@ -6,5 +6,3 @@ class Api::ProfileController < Api::ApplicationController
     end
   end
 end
-
-

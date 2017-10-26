@@ -23,9 +23,6 @@ class  Menu extends Component {
 			 
 			
 
-			  <form>
-			    <textarea rows="2" cols="50" defaultValue="Input your food items here" />
-               </form>
 
 		     </div>
 		)

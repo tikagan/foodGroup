@@ -18,11 +18,10 @@ class  GrocerylistCreated extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-		    <div className="jumbotron listed">
-			  
-			  
+		    
+			
 
-		     </div>
+		    
 		     </div>
 		)
 	} 
