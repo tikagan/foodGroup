@@ -58,8 +58,6 @@ zucchini = Ingredient.create!({ name: 'zucchini' })
 mustard = Ingredient.create!({ name: 'mustard' })
 cumin = Ingredient.create!({ name: 'cumin' })
 
-
-
 #luke's pantry
 Pantry.create!({
   ingredient_id: potato.id,
@@ -273,9 +271,8 @@ Grocery.create!({
 #ali's monthly groceries
 Grocery.create!({
   name: 'monthly groceries',
-  name: 'monthly groceries',
   ingredient_id: potato.id,
-  user_id: luke.id,
+  user_id: ali.id,
   quantity: 1,
   unit: 'item'
   })
