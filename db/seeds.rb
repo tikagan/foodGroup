@@ -190,11 +190,161 @@ Pantry.create!({
   unit: 'item'
 })
 
-#luke's first grocery list
+#luke's weekly grocery list
 Grocery.create!({
   name: 'weekly groceries',
   ingredient_id: potato.id,
   user_id: luke.id,
+  quantity: 1,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: mustard.id,
+  user_id: luke.id,
+  quantity: 34,
+  unit: 'grams'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: cumin.id,
+  user_id: luke.id,
+  quantity: 73,
+  unit: 'grams'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: rice.id,
+  user_id: luke.id,
+  quantity: 10,
+  unit: 'kilos'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: chicken.id,
+  user_id: luke.id,
+  quantity: 5,
+  unit: 'thighs'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: artichoke.id,
+  user_id: luke.id,
+  quantity: 7,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: butter.id,
+  user_id: luke.id,
+  quantity: 5,
+  unit: 'lbs'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: potato.id,
+  user_id: luke.id,
+  quantity: 6,
+  unit: 'lbs'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: cucumber.id,
+  user_id: luke.id,
+  quantity: 9,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: onion.id,
+  user_id: luke.id,
+  quantity: 7,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: eggplant.id,
+  user_id: luke.id,
+  quantity: 3,
+  unit: 'item'
+})
+
+#ali's monthly groceries
+Grocery.create!({
+  name: 'monthly groceries',
+  name: 'monthly groceries',
+  ingredient_id: poali.id,
+  user_id: luke.id,
+  quantity: 1,
+  unit: 'item'
+  })
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: tomato.id,
+  user_id: ali.id,
+  quantity: 9,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: onion.id,
+  user_id: ali.id,
+  quantity: 7,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: leek.id,
+  user_id: ali.id,
+  quantity: 5,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: fennel.id,
+  user_id: ali.id,
+  quantity: 1,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: olive_oil.id,
+  user_id: ali.id,
+  quantity: 1,
+  unit: 'litre'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: potato.id,
+  user_id: ali.id,
+  quantity: 5,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: eggplant.id,
+  user_id: ali.id,
+  quantity: 8,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: zucchini.id,
+  user_id: ali.id,
+  quantity: 4,
+  unit: 'item'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: rosemary.id,
+  user_id: ali.id,
+  quantity: 34,
+  unit: 'gram'
+})
+Grocery.create!({
+  name: 'monthly groceries',
+  ingredient_id: potato.id,
+  user_id: ali.id,
   quantity: 1,
   unit: 'item'
 })
