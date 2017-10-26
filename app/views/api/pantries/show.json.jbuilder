@@ -1,1 +1,2 @@
-json.partial! "pantries/pantry", pantry: @pantry
+json.ingredients @ingredients
+json.user_id @user.id

@@ -1,7 +1,8 @@
 class User < ApplicationRecord
 	has_many :grocery_list
 	has_many :potluck
-	has_one :pantry
+  has_one :pantry
+  has_many :ingredients, through: :pantry
 
 	def self.find_or_create_from_auth_hash(auth)
 		where(provider: auth[:provider], uid: auth[:uid]).first_or_initialize.tap do |user|

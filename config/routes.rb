@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :api do
-    resources :pantries
+    resource :pantry
     resources :potlucks
     resources :groceries
   end
