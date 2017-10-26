@@ -15,7 +15,8 @@ class App extends Component {
 	constructor (props) {
     super(props)
     
-    this.state = {
+    this.state = { 
+    
     	
     };
 	}
@@ -25,11 +26,11 @@ class App extends Component {
 			<Router>
 				<div className="intheway">
 					
-				 <Route path="/" exact component={Overview}/>
+				<Route path="/" exact component={Overview}/>
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/groceries" component={Groceries}/>
 			  	<Route path="/potlucks" component={Potluck}/>
-			  	<Route path="/pantries" component={Pantry}/>
+			  	<Route path="/pantry" component={Pantry}/>
 			  	<Route path="/search" component={Search}/>
 			  	<Route path="/GrocerylistCreated" component={grocerylistcreated}/>
 

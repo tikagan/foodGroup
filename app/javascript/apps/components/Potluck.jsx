@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Menu from './menu.jsx'
 import Navbar from './Navbar.jsx'
-
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import Grocerylist from '../grocerylist/components/Grocerylist.jsx'
 
 
-
-class  Overview extends Component {
+class  Potluck extends Component {
 
 	constructor (props) {
 	    super(props)
@@ -25,11 +21,9 @@ class  Overview extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-			<div className="menu">
-			 
-			  <Menu />
-		     </div>
 		    
+		    <p>Potluck</p>
+			
 		     </div>
 		)
 	} 
@@ -43,4 +37,4 @@ class  Overview extends Component {
 
 
 
-export default Overview
+export default Potluck

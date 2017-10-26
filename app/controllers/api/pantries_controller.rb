@@ -6,7 +6,7 @@ class Api::PantriesController < Api::ApplicationController
     # GET /pantryjson
     def show
       @user = current_user
-      @ingredients = @user.ingredients
+      @ingredients = @user.ingredients 
     end
 
     # POST /pantries

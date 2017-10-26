@@ -1,35 +1,30 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Menu from './menu.jsx'
 import Navbar from './Navbar.jsx'
-
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import Grocerylist from '../grocerylist/components/Grocerylist.jsx'
+import Search from '../../pantry/components/search.jsx'
 
-
-
-class  Overview extends Component {
+class  Pantry extends Component {
 
 	constructor (props) {
 	    super(props)
 	    
+	
+
 	    this.state = {
 	    	
 	    };
-
 	   
 	}
 
-	render() {
-	
+		render() {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-			<div className="menu">
-			 
-			  <Menu />
-		     </div>
-		    
+		   
+			  <Search />
+			  
+
 		     </div>
 		)
 	} 
@@ -43,4 +38,4 @@ class  Overview extends Component {
 
 
 
-export default Overview
+export default Pantry
