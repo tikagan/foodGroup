@@ -11,7 +11,7 @@ class Api::PantriesController < Api::ApplicationController
     # GET /pantries/1
     # GET /pantries/1.json
     def show
-      @pantry = Pantry.find(params[:id])
+      @pantry = Pantry.where(user_id: params[:id])
       render json: @pantry
     end
 
@@ -55,7 +55,7 @@ class Api::PantriesController < Api::ApplicationController
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_pantry
-        @pantry = Pantry.find(params[:id])
+        @pantry = Pantry.where(user_id: params[:id])
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
