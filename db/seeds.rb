@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 Pantry.create!({
   ingredient_id: 1,
   user_id: 2,
@@ -67,6 +68,148 @@ mustard = Ingredient.create!({ name: 'mustard' })
 cumin = Ingredient.create!({ name: 'cumin' })
 
 
+
 grocery_list = GroceryList.create!({
   
   })
+
+#luke's pantry
+Pantry.create!({
+  ingredient_id: potato.id,
+  user_id: luke.id,
+  quantity: 1,
+  unit: 'item'
+  })
+Pantry.create!({
+  ingredient_id: tomato.id,
+  user_id: luke.id,
+  quantity: 9,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: onion.id,
+  user_id: luke.id,
+  quantity: 7,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: leek.id,
+  user_id: luke.id,
+  quantity: 5,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: fennel.id,
+  user_id: luke.id,
+  quantity: 1,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: olive_oil.id,
+  user_id: luke.id,
+  quantity: 1,
+  unit: 'litre'
+})
+Pantry.create!({
+  ingredient_id: potato.id,
+  user_id: luke.id,
+  quantity: 5,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: eggplant.id,
+  user_id: luke.id,
+  quantity: 8,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: zucchini.id,
+  user_id: luke.id,
+  quantity: 4,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: rosemary.id,
+  user_id: luke.id,
+  quantity: 34,
+  unit: 'gram'
+})
+Pantry.create!({
+  ingredient_id: potato.id,
+  user_id: luke.id,
+  quantity: 1,
+  unit: 'item'
+})
+
+
+#ali's pantry
+Pantry.create!({
+  ingredient_id: mustard.id,
+  user_id: ali.id,
+  quantity: 34,
+  unit: 'grams'
+})
+Pantry.create!({
+  ingredient_id: cumin.id,
+  user_id: ali.id,
+  quantity: 73,
+  unit: 'grams'
+})
+Pantry.create!({
+  ingredient_id: rice.id,
+  user_id: ali.id,
+  quantity: 10,
+  unit: 'kilos'
+})
+Pantry.create!({
+  ingredient_id: chicken.id,
+  user_id: ali.id,
+  quantity: 5,
+  unit: 'thighs'
+})
+Pantry.create!({
+  ingredient_id: artichoke.id,
+  user_id: ali.id,
+  quantity: 7,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: butter.id,
+  user_id: ali.id,
+  quantity: 5,
+  unit: 'lbs'
+})
+Pantry.create!({
+  ingredient_id: potato.id,
+  user_id: ali.id,
+  quantity: 6,
+  unit: 'lbs'
+})
+Pantry.create!({
+  ingredient_id: cucumber.id,
+  user_id: ali.id,
+  quantity: 9,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: onion.id,
+  user_id: ali.id,
+  quantity: 7,
+  unit: 'item'
+})
+Pantry.create!({
+  ingredient_id: eggplant.id,
+  user_id: ali.id,
+  quantity: 3,
+  unit: 'item'
+})
+
+#luke's first grocery list
+Grocery.create!({
+  name: 'weekly groceries',
+  ingredient_id: potato.id,
+  user_id: luke.id,
+  quantity: 1,
+  unit: 'item'
+})
+

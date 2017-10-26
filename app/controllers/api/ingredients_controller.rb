@@ -1,4 +1,4 @@
-class Api::IngredientController < Api::ApplicationController
+class Api::IngredientsController < Api::ApplicationController
 
   def create(name)
     i = Ingredient.new
