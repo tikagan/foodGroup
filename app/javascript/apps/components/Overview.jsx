@@ -25,11 +25,31 @@ class  Overview extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-			<div className="menu">
-			 
-			  <Menu />
+		    <div className="container">
+
+         <div className="row">
+
+         <div className="col">
+
+          <div className="menu">
+            <Menu />
+		      </div>
+
+         </div>
+ <div className="jumbotron over">
+        <div className="col">
+               
+          </div>
+          </div>
+  <div className="row">
+
+   <div className="col">
+   
+    </div>
+			
+		    </div>
 		     </div>
-		    
+		     </div>
 		     </div>
 		)
 	} 
