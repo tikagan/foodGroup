@@ -56,6 +56,6 @@ class Api::PantriesController < Api::ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def pantry_params
-        params.require(:pantry).permit(:name)
+        params.require(:pantry).permit(:product_id, :user_id, :quantity, :unit)
       end
 end
