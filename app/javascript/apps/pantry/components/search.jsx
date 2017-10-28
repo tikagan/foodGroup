@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 class App extends Component {
-    
+
     // getInitialState() {
     //     return {
             searchResults: []
@@ -22,7 +22,7 @@ class App extends Component {
         this.setState({searchResults: response.matches});
 
     };
-    
+
     search(query, diet, allergy, course){
       if (diet === "Pescetarian") {
         var URL = 'http://api.yummly.com/v1/api/recipes?_app_id=1187f4c6&_app_key=7dbff064930ce67f94b7ded79f8958f7&q=' + query + '&maxResult=30&allowedDiet[]=390^Pescetarian'
@@ -65,7 +65,6 @@ class App extends Component {
         var URL = URL
       }
       console.log(URL)
-      debugger;
         $.ajax({
             type: "GET",
             dataType: 'jsonp',
@@ -97,7 +96,7 @@ class SearchBox extends Component {
       course: ''
     }
   }
-    
+
     handleChange = (event) => {
       this.setState({query: event.target.value});
     }
@@ -157,7 +156,7 @@ class SearchBox extends Component {
 };
 
 class Results extends Component {
-    
+
     render(){
         var resultItems = this.props.searchResults.map(function(result) {
         return <ResultItem key={result.id} img={result.smallImageUrls} link={result.id} name={result.recipeName} rating={result.rating} />
@@ -165,7 +164,7 @@ class Results extends Component {
         return(
             <ul>
                 {resultItems}
-            </ul>           
+            </ul>
         );
     }
 };
@@ -186,12 +185,12 @@ class ResultItem extends Component {
             }
         });
     };
-    
+
     render(){
         return (
           <li>
           <img src={this.props.img}></img>
-          {this.props.name}, {this.props.rating} / 5 
+          {this.props.name}, {this.props.rating} / 5
           <input type="submit" value="click here to see the recipe" onClick={this.recipeSearch}/>
           </li>
         );
