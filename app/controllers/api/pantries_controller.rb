@@ -6,9 +6,10 @@ class Api::PantriesController < Api::ApplicationController
     def show
       @user = current_user
 
-      @ingredients = @user.ingredients
-      #@pantry = Pantry.includes(:ingredient).where(user_id: params[:id])
-      render json: @ingredients
+      @usersIngredients = @user.ingredients
+      @allIngredients = Ingredient.all
+
+      render json: {result: @usersIngredients, all: @allIngredients}
 
     end
 
@@ -57,6 +58,6 @@ class Api::PantriesController < Api::ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def pantry_params
-        params.require(:pantry).permit(:name)
+        params.require(:pantry).permit(:product_id, :user_id, :quantity, :unit)
       end
 end
