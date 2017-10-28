@@ -5,9 +5,10 @@ class Api::PantriesController < Api::ApplicationController
     # GET /pantries/1.json
     def show
       @user = current_user
-      @ingredients = @user.ingredients
-      #@pantry = Pantry.includes(:ingredient).where(user_id: params[:id])
-      render json: @ingredients
+      @usersIngredients = @user.ingredients
+      @allIngredients = Ingredient.all
+
+      render json: {result: @usersIngredients, all: @allIngredients}
     end
 
     # POST /pantries
