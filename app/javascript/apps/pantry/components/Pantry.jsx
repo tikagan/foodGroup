@@ -7,10 +7,15 @@ import { Route, BrowserRouter,Link } from 'react-router-dom'
 class  Pantry extends Component {
 	constructor (props) {
 	    super(props)
+      this.doesIngredientExist = this.doesIngredientExist.bind(this)
 
 	    this.state = {
         food: [],
-        ingredientDB: []
+        ingredientDB: [],
+        current_user: [],
+        newIng: "",
+        newAmount: "",
+        newUnit: ""
 	    };
 	}
 
@@ -30,7 +35,8 @@ class  Pantry extends Component {
        }
 
        this.setState({
-        food: food
+        food: food,
+        current_user: response.data.user.id
        });
 
        let temp = []
@@ -42,6 +48,7 @@ class  Pantry extends Component {
        this.setState({
         ingredientDB: temp
        });
+       console.log(this.state)
      })
      .catch(function (error) {
         console.log(error);
@@ -52,16 +59,40 @@ class  Pantry extends Component {
     return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
   }
 
-  doesIngredientExist (input) {
-    console.log(input)
-    let ingred = this.state.ingredientDB
-    console.log(ingred)
-    if (ingred.includes(input)) {
+
+
+
+
+
+  doesIngredientExist = (data) => {
+    let checker = this.state.ingredientDB
+
+    if (checker.hasOwnProperty(data)) {
       console.log("true")
     } else {
       console.log("false")
     }
   }
+
+  onChange = (e) => {
+  // Because we named the inputs to match their corresponding values in state, it's
+  // super easy to update the state
+    const state = this.state
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    // get our form data out of state
+    const { newIng } = this.state;
+
+        axios.post('/api/ingredients', { newIng })
+          .then((result) => {
+            console.log(result)
+          });
+      }
+
 
 
 
@@ -77,9 +108,15 @@ class  Pantry extends Component {
           {this.renderFood(this.state.food)}
           </div>
 
-          {this.doesIngredientExist(this.state.food)}
-
         </div>
+
+          <form onSubmit={this.onSubmit}>
+            <input type="text" name="newIng" value={newIng} onChange={this.onChange} />
+            <input type="text" name="newAmount" value={newAmount} onChange={this.onChange} />
+            <input type="text" name="email" value={email} onChange={this.onChange} />
+            <button type="submit">Submit</button>
+          </form>
+        );
 
 		    </div>
 		)

@@ -8,7 +8,7 @@ class Api::PantriesController < Api::ApplicationController
       @usersIngredients = @user.ingredients
       @allIngredients = Ingredient.all
 
-      render json: {result: @usersIngredients, all: @allIngredients}
+      render json: {result: @usersIngredients, all: @allIngredients, user: @user}
     end
 
     # POST /pantries
