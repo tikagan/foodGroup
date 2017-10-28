@@ -9,7 +9,8 @@ class  Pantry extends Component {
 	    super(props)
 
 	    this.state = {
-        food: []
+        food: [],
+        ingredientDB: []
 	    };
 	}
 
@@ -20,8 +21,6 @@ class  Pantry extends Component {
    
     axios.get('api/pantry')
      .then( (response) => {
-       console.log(response.data.result)
-       console.log(response.data.all)
        let food = []
        for (let i = 0; i < response.data.result.length; i++) {
           food.push({
@@ -29,8 +28,19 @@ class  Pantry extends Component {
             item: response.data.result[i].name
           })
        }
+
        this.setState({
         food: food
+       });
+
+       let temp = []
+       for (let x = 0; x < response.data.all.length; x++) {
+         temp.push({
+           id: response.data.all[x].id
+         })
+       }
+       this.setState({
+        ingredientDB: temp
        });
      })
      .catch(function (error) {
@@ -40,6 +50,17 @@ class  Pantry extends Component {
 
   renderFood () {
     return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
+  }
+
+  doesIngredientExist (input) {
+    console.log(input)
+    let ingred = this.state.ingredientDB
+    console.log(ingred)
+    if (ingred.includes(input)) {
+      console.log("true")
+    } else {
+      console.log("false")
+    }
   }
 
 
@@ -56,10 +77,13 @@ class  Pantry extends Component {
           {this.renderFood(this.state.food)}
           </div>
 
+          {this.doesIngredientExist(this.state.food)}
+
         </div>
 
 		    </div>
 		)
 	} 
 }
+
 export default Pantry
