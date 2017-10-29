@@ -13,9 +13,9 @@ class  Pantry extends Component {
         food: [],
         ingredientDB: [],
         current_user: [],
-        newIng: "",
-        newAmount: "",
-        newUnit: ""
+        newIng: "test",
+        newAmount: "test",
+        newUnit: "test"
 	    };
 	}
 
@@ -59,11 +59,6 @@ class  Pantry extends Component {
     return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
   }
 
-
-
-
-
-
   doesIngredientExist = (data) => {
     let checker = this.state.ingredientDB
 
@@ -92,9 +87,6 @@ class  Pantry extends Component {
             console.log(result)
           });
       }
-
-
-
 
 		render() {
 		return (
