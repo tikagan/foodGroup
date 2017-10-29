@@ -60,12 +60,6 @@ cumin = Ingredient.create!({ name: 'cumin' })
 
 #luke's pantry
 Pantry.create!({
-  ingredient_id: potato.id,
-  user_id: luke.id,
-  quantity: 1,
-  unit: 'item'
-  })
-Pantry.create!({
   ingredient_id: tomato.id,
   user_id: luke.id,
   quantity: 9,
@@ -120,7 +114,7 @@ Pantry.create!({
   unit: 'gram'
 })
 Pantry.create!({
-  ingredient_id: potato.id,
+  ingredient_id: mustard.id,
   user_id: luke.id,
   quantity: 1,
   unit: 'item'
@@ -246,7 +240,7 @@ Pantry.create!({
 })
 Pantry.create!({
   ingredient_id: zucchini.id,
-  user_id: luke.id,
+  user_id: kritika.id,
   quantity: 4,
   unit: 'item'
 })
