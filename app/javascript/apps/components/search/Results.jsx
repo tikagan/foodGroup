@@ -6,10 +6,20 @@ class Results extends Component {
 
   componentDidMount(){
     var sortedResults = this.props.searchResults
+    var userIngredients = []
+    $.ajax({
+      url: '/api/pantry',
+      type: 'GET',
+      data: 'json',
+      success: function(res) {
+        res.ingredients.forEach(function(ingObj) {
+            userIngredients.push(ingObj.name)
+        })
+        console.log('userIngredients: ', userIngredients)
+      }
 
-    // ajax fetch call here to the back end api and request pantry data
-    // **make a route for it to hit**
-    //
+    });
+
 
     // rest of the search logic here
   };
