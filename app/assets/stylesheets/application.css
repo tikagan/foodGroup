@@ -293,7 +293,7 @@ overflow:auto;*/
 }
 
 .splashbackground {
-    background: url(https://media.giphy.com/media/HO8vkgFtXj7G/giphy.gif) no-repeat center center fixed;
+    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384977/splash_wmsyld.webp) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -307,7 +307,7 @@ overflow:auto;*/
 }
 
 .cutbackground {
-    background: url(https://theultralinx.com/.image/t_share/MTM3OTE1NzAxMDE2MDc4MTg4/tumblr_inline_nvl90uiuwl1qlgi1f_540gif.gif) no-repeat center center fixed;
+    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384826/tumblr_inline_nvl90uiuwl1qlgi1f_540gif_rartic.gif) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -321,7 +321,7 @@ overflow:auto;*/
 }
 
 .pantryBG {
-    background: url(https://sitefinity.s3.amazonaws.com/sf-images/default-source/rooms/pantries/gallery/_dsc6093.jpg?sfvrsn=b4a6237b_8) no-repeat center center fixed;
+    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384768/pantry_p73y3q.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -336,7 +336,7 @@ overflow:auto;*/
 
 
 .potluckBG {
-     background: url(https://i.pinimg.com/originals/40/d0/40/40d04052ba841af1f04c73bf73c58e22.gif) no-repeat center center fixed;
+     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384664/a5d679ed41277f6214b02aeb67b11f2c_s5uvll.gif) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -351,7 +351,7 @@ overflow:auto;*/
 }
 
 .scaleBG {
-      background: url(http://images.medicaldaily.com/sites/medicaldaily.com/files/2014/05/02/produce.jpg) no-repeat center center fixed;
+      background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384594/produce_crnfkz.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -365,6 +365,22 @@ overflow:auto;*/
 
 
 }
+.potluckcreatedBG {
+     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384499/indian_buffet_v4hz4a.webp) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 99999;
+    height: 100%;
+    color: white;
+
+}
+
+
 
 .logo {
     display: block;

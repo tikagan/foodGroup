@@ -16,7 +16,7 @@ class  PotluckCreated extends Component {
 
 		render() {
 		  return (
-			  <div className="potluckBG">
+			  <div className="potluckcreatedBG">
 		      <Navbar />
 		       <h3 className="potluckname"> Potluck Name</h3>
 		       
