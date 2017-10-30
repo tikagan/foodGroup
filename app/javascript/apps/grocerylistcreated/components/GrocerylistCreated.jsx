@@ -16,7 +16,7 @@ class  GrocerylistCreated extends Component {
 
 		render() {
 		return (
-			<div className="cutbackground">
+			<div className="scaleBG">
 		    <Navbar />
 		    <div className=" jumbotron headed">
 		    </div>

@@ -72,17 +72,19 @@ overflow:auto;*/
     margin-right: auto;
     margin-bottom: 10px;
     padding: 10px;
+    background-color:#868e96;
 }
 
 .listed2 {
 
 	width:600px;
-	margin-top:10px;
+	margin-top:4em;
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:auto;
 	height:400px;
 	background-color:black;
+    opacity:.7;
 
 }
 
@@ -96,13 +98,13 @@ overflow:auto;*/
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2em;
+    margin-top: 6em;
 }
 
 .form-control {
     background-color: black;
     border-color: black;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .btn-primary {
@@ -238,6 +240,52 @@ overflow:auto;*/
     z-index: 99999;
     height: 100%;
     color: white;
+}
+
+.pantryBG {
+    background: url(https://sitefinity.s3.amazonaws.com/sf-images/default-source/rooms/pantries/gallery/_dsc6093.jpg?sfvrsn=b4a6237b_8) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 99999;
+    height: 100%;
+    color: white;
+}
+
+
+.potluckBG {
+     background: url(https://i.pinimg.com/originals/40/d0/40/40d04052ba841af1f04c73bf73c58e22.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 99999;
+    height: 100%;
+    color: white;
+
+}
+
+.scaleBG {
+      background: url(http://images.medicaldaily.com/sites/medicaldaily.com/files/2014/05/02/produce.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 99999;
+    height: 100%;
+    color: white;
+
+
 }
 
 .logo {

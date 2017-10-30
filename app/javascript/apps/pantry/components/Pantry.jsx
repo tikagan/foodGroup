@@ -47,12 +47,9 @@ class  Pantry extends Component {
 
 		render() {
 		return (
-			<div className="cutbackground">
-
-
+			<div className="pantryBG ">
         <Navbar />
-       
-         <div className="jumbotron listed2">
+          <div className="jumbotron listed2">
 
           <div>
           {this.renderFood(this.state.food)}
@@ -61,12 +58,14 @@ class  Pantry extends Component {
         </div>
 
         </div>
+  
 
  
 
 
-		    </div>
+		   
 		)
+  }
 	} 
 
 
