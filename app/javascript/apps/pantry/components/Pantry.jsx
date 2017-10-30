@@ -42,7 +42,8 @@ class  Pantry extends Component {
        let temp = []
        for (let x = 0; x < response.data.all.length; x++) {
          temp.push({
-           id: response.data.all[x].id
+           id: response.data.all[x].id,
+           name: response.data.all[x].name
          })
        }
        this.setState({
@@ -79,9 +80,43 @@ class  Pantry extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // get our form data out of state
-    const { newIng } = this.state;
+
+    let userIng = this.state.newIng
     console.log(this.state)
+
+    let checker = this.state.ingredientDB
+    let checkerName = []
+    checker.forEach(function(item){
+      checkerName.push(item.name)
+    })
+    console.log(checkerName)
+
+    if (checkerName.includes(userIng)) {
+      let obj = checker.find(o => o.name === userIng);
+      let pantryUser = this.state.current_user
+      console.log("true")
+      console.log(obj)
+      axios.post('/api/pantry', {
+        ingredient_id: obj.id,
+        user_id: pantryUser,
+        quantity: 10,
+        unit: 'grams'
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      .then(function (response) {
+      console.log(response);
+      })
+      .catch(function (error) {
+      console.log(error);
+  });
+    } else {
+      console.log("false")
+    }
+
 
         // axios.post('/api/ingredients', { newIng })
         //   .then((result) => {
