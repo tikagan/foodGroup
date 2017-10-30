@@ -47,9 +47,9 @@ class  Pantry extends Component {
 
 		render() {
 		return (
-			<div className="pantryBG ">
+			<div className="pantryBG">
         <Navbar />
-          <div className="jumbotron listed2">
+          <div className="jumbotron container-fluid listed2">
 
           <div>
           {this.renderFood(this.state.food)}
@@ -58,7 +58,7 @@ class  Pantry extends Component {
         </div>
 
         </div>
-  
+
 
  
 
