@@ -14,7 +14,7 @@ class Results extends Component {
       type: 'GET',
       data: 'json',
       success: function(res) {
-        res.ingredients.forEach(function(ingObj) {
+        res.result.forEach(function(ingObj) {
             userIngredients.push(pluralize.singular(ingObj.name))
         })
         console.log('userIngredients: ', userIngredients)
@@ -24,17 +24,18 @@ class Results extends Component {
     var idx = lunr(function () {
       this.field('recipieName')
       this.field('ingredients')
-      results.forEach(function(recipe) {
+      this.ref('recipeName')
+      results.forEach((recipe) => {
         this.add(recipe)
       })
-
     })
+    console.log('soup: ', idx.search('soup'))
 
 
   };
 
   render(){
-    // once componentDidMount sorts this.proprs.searchResults replace this with the newly sorted array
+    // once componentDidMount sorts this.props.searchResults replace this with the newly sorted array
       var resultItems = this.props.searchResults.map(function(result) {
       return <ResultItem key={result.id} img={result.smallImageUrls} link={result.id} name={result.recipeName} rating={result.rating} />
       });
