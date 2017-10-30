@@ -36,7 +36,7 @@ class  Potluck extends Component {
               <input  className="form-control" placeholder="Add Description"/>
               </div>
               <div className="form-group">
-              <label for="exampleInputPassword1">Description</label>
+              <label for="exampleInputPassword1">Recipe</label>
               <input  className="form-control" placeholder="Add recipe"/>
               </div>
               <div className="form-group">
