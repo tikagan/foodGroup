@@ -97,6 +97,18 @@ overflow:auto;*/
    
   
 }
+.btcomment{
+    margin-bottom:2.8em;
+    height:54px;
+}
+
+.potluckcomment{
+    width:400px;
+}
+
+.commentform{
+    margin-left:8em;
+}
 
 .listed3 {
 

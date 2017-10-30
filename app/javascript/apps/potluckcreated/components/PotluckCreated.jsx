@@ -38,6 +38,12 @@ class  PotluckCreated extends Component {
 		          <div className="jumbotron listed6">
 		         <p className="rectext">comments</p>
 		         </div>
+		         <form className="commentform">
+										<textarea className="potluckcomment" placeholder="Comment" />
+									
+										<button type="submit" className="btn btcomment"> Submit</button>
+									</form>
+		         
 		         </div>
 		         </div>
 		         </div>
