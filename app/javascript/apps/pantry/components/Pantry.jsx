@@ -106,6 +106,7 @@ class  Pantry extends Component {
 
     let userIng = this.state.newIng
     console.log(this.state)
+    let pantryUser = this.state.current_user
 
     let checker = this.state.ingredientDB
     let checkerName = []
@@ -116,7 +117,6 @@ class  Pantry extends Component {
 
     if (checkerName.includes(userIng)) {
       let obj = checker.find(o => o.name === userIng);
-      let pantryUser = this.state.current_user
 
       console.log("true")
       console.log(obj)
@@ -169,7 +169,40 @@ class  Pantry extends Component {
         }
       })
       .then( (response) => {
-        console.log(response)
+        console.log(response.data.result.id)
+          axios.post('/api/pantry', {
+            ingredient_id: response.data.result.id,
+            user_id: pantryUser,
+            quantity: 10,
+            unit: 'grams'
+        }, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        })
+      })
+        .then( (response) => {
+          console.log("here")
+          const setState = this.setState.bind(this)
+          axios.get('api/pantry')
+          .then( (response) => {
+          let food = []
+          for (let i = 0; i < response.data.result.length; i++) {
+            food.push({
+              key: response.data.result[i].id,
+              item: response.data.result[i].name
+            })
+          }
+            this.setState({
+              food: food,
+              current_user: response.data.user.id
+            }, () => console.log(this.state));
+         })
+
+        .catch(function (error) {
+        console.log(error);
+        })
       })
        .catch(function (error) {
         console.log(error);
