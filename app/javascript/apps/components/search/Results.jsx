@@ -11,9 +11,9 @@ class Results extends Component {
     }
   }
 
-  componentDidUpdate(){
-    var results = this.props.searchResults
-    //ajax call that gets the current user's pantry, singularizes the ingredients, and puts them in an array
+  componentWillReceiveProps(newprops){
+    console.log('newprops: ', newprops)
+    var results = newprops.searchResults
 
     // tokenizes recipeName without using Lunr's really intensive tokenizing function
     results = results.map(r => {
@@ -35,6 +35,7 @@ class Results extends Component {
   render(){
     // once componentDidMount sorts this.props.searchResults replace this with the newly sorted array
       var resultItems = this.state.sortedResults.map(function(result) {
+        console.log('result: ', result)
       return <ResultItem key={result.id} img={result.smallImageUrls} link={result.id} name={result.recipeName} rating={result.rating} />
       });
       return(
