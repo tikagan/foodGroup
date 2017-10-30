@@ -15,7 +15,8 @@ class  Pantry extends Component {
         current_user: [],
         newIng: '',
         newAmount: '',
-        newUnit: ''
+        newUnit: '',
+        test: "",
 	    };
 	}
 
@@ -122,9 +123,29 @@ class  Pantry extends Component {
           'Accept': 'application/json'
         }
       })
-      .then(function (response) {
+      .then( (response) => {
         console.log("here")
-        this.getPantry();
+        const setState = this.setState.bind(this)
+        axios.get('api/pantry')
+        .then( (response) => {
+        let food = []
+        for (let i = 0; i < response.data.result.length; i++) {
+          food.push({
+            key: response.data.result[i].id,
+            item: response.data.result[i].name
+          })
+        }
+          this.setState({
+            food: food,
+            current_user: response.data.user.id
+          });
+
+         })
+
+        .catch(function (error) {
+        console.log(error);
+        })
+
       })
       .catch(function (error) {
       console.log(error);
