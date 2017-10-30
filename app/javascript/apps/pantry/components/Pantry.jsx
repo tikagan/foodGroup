@@ -256,10 +256,16 @@ class  Pantry extends Component {
 
         </div>
         <div>
-          <form onSubmit={this.onSubmit}>
-            <input type="text" name="newIng" onChange={this.onChange} />
-            <input type="text" name="newAmount" onChange={this.onChange} />
-            <input type="text" name="newUnit" onChange={this.onChange} />
+          <form className="pantry-form" onSubmit={this.onSubmit}>
+           <div className="form-group">
+            <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
+           </div>
+            <div className="form-group"> 
+            <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
+            </div>
+             <div className="form-group">
+            <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
+            </div>
             <button type="submit">Submit</button>
           </form>
         </div>
