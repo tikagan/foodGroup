@@ -246,226 +246,179 @@ Pantry.create!({
 })
 
 #luke's weekly grocery list
-Grocery.create!({
+luke_weekly = Grocery.create!({
   name: 'weekly groceries',
-  ingredient_id: potato.id,
-  user_id: luke.id,
-  quantity: 1,
-  unit: 'item'
+  description: 'this is what I need to buy every week',
+  user_id: luke.id
 })
-Grocery.create!({
-  name: 'weekly groceries',
+GroceryIngredient.create!({
+  ingredient_id: potato.id,
+  grocery_id: luke_weekly.id,
+  quantity: 5,
+})
+GroceryIngredient.create!({
   ingredient_id: mustard.id,
-  user_id: luke.id,
-  quantity: 34,
-  unit: 'grams'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: cumin.id,
-  user_id: luke.id,
-  quantity: 73,
-  unit: 'grams'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: rice.id,
-  user_id: luke.id,
-  quantity: 10,
-  unit: 'kilos'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: chicken.id,
-  user_id: luke.id,
-  quantity: 5,
-  unit: 'thighs'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: artichoke.id,
-  user_id: luke.id,
-  quantity: 7,
-  unit: 'item'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: butter.id,
-  user_id: luke.id,
-  quantity: 5,
-  unit: 'lbs'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: potato.id,
-  user_id: luke.id,
-  quantity: 6,
-  unit: 'lbs'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: cucumber.id,
-  user_id: luke.id,
-  quantity: 9,
-  unit: 'item'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: onion.id,
-  user_id: luke.id,
-  quantity: 7,
-  unit: 'item'
-})
-Grocery.create!({
-  name: 'weekly groceries',
-  ingredient_id: eggplant.id,
-  user_id: luke.id,
+  grocery_id: luke_weekly.id,
   quantity: 3,
-  unit: 'item'
+})
+GroceryIngredient.create!({
+  ingredient_id: cumin.id,
+  grocery_id: luke_weekly.id,
+  quantity: 7,
+})
+GroceryIngredient.create!({
+  ingredient_id: rice.id,
+  grocery_id: luke_weekly.id,
+  quantity: 1,
+})
+GroceryIngredient.create!({
+  ingredient_id: chicken.id,
+  grocery_id: luke_weekly.id,
+  quantity: 5
+})
+GroceryIngredient.create!({
+  ingredient_id: artichoke.id,
+  grocery_id: luke_weekly.id,
+  quantity: 7
+})
+GroceryIngredient.create!({
+  ingredient_id: butter.id,
+  grocery_id: luke_weekly.id,
+  quantity: 5
+})
+GroceryIngredient.create!({
+  ingredient_id: potato.id,
+  grocery_id: luke_weekly.id,
+  quantity: 6
+})
+GroceryIngredient.create!({
+  ingredient_id: cucumber.id,
+  grocery_id: luke_weekly.id,
+  quantity: 9
+})
+GroceryIngredient.create!({
+  ingredient_id: onion.id,
+  grocery_id: luke_weekly.id,
+  quantity: 7
+})
+GroceryIngredient.create!({
+  ingredient_id: eggplant.id,
+  grocery_id: luke_weekly.id,
+  quantity: 3
 })
 
 #ali's monthly groceries
-Grocery.create!({
+ali_monthly = Grocery.create!({
   name: 'monthly groceries',
-  ingredient_id: potato.id,
-  user_id: ali.id,
-  quantity: 1,
-  unit: 'item'
+  description: 'i only do groceries every month',
+  user_id: ali.id
   })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
+  ingredient_id: potato.id,
+  grocery_id: ali_monthly.id,
+  quantity: 1
+  })
+GroceryIngredient.create!({
   ingredient_id: tomato.id,
-  user_id: ali.id,
-  quantity: 9,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 9
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: onion.id,
-  user_id: ali.id,
-  quantity: 7,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 7
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: leek.id,
-  user_id: ali.id,
-  quantity: 5,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 5
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: fennel.id,
-  user_id: ali.id,
-  quantity: 1,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 1
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: olive_oil.id,
-  user_id: ali.id,
-  quantity: 1,
-  unit: 'litre'
+  grocery_id: ali_monthly.id,
+  quantity: 1
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: potato.id,
-  user_id: ali.id,
-  quantity: 5,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 5
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: eggplant.id,
-  user_id: ali.id,
-  quantity: 8,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 8
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: zucchini.id,
-  user_id: ali.id,
-  quantity: 4,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 4
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: rosemary.id,
-  user_id: ali.id,
-  quantity: 34,
-  unit: 'gram'
+  grocery_id: ali_monthly.id,
+  quantity: 34
 })
-Grocery.create!({
-  name: 'monthly groceries',
+GroceryIngredient.create!({
   ingredient_id: potato.id,
-  user_id: ali.id,
-  quantity: 1,
-  unit: 'item'
+  grocery_id: ali_monthly.id,
+  quantity: 1
 })
 
 #luke's demo day after party grocery list
-Grocery.create!({
+luke_extravaganza = Grocery.create!({
   name: 'demo day after party',
+  description: 'i love making food for all my lighthouse buddies',
+  user_id: luke.id
+})
+GroceryIngredient.create!({
   ingredient_id: potato.id,
-  user_id: luke.id,
-  quantity: 400,
-  unit: 'item'
+  grocery_id: luke_extravaganza.id,
+  quantity: 400
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: leek.id,
-  user_id: luke.id,
-  quantity: 1000,
-  unit: 'item'
+  grocery_id: luke_extravaganza.id,
+  quantity: 1000
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: rice.id,
-  user_id: luke.id,
-  quantity: 50,
-  unit: 'kilos'
+  grocery_id: luke_extravaganza.id,
+  quantity: 50
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: chicken.id,
-  user_id: luke.id,
-  quantity: 1000,
-  unit: 'thighs'
+  grocery_id: luke_extravaganza.id,
+  quantity: 1000
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: fennel.id,
-  user_id: luke.id,
-  quantity: 500,
-  unit: 'item'
+  grocery_id: luke_extravaganza.id,
+  quantity: 500
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: parsley.id,
-  user_id: luke.id,
-  quantity: 1000,
-  unit: 'stalks'
+  grocery_id: luke_extravaganza.id,
+  quantity: 1000
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: rosemary.id,
-  user_id: luke.id,
-  quantity: 1000,
-  unit: 'grams'
+  grocery_id: luke_extravaganza.id,
+  quantity: 1000
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: olive_oil.id,
-  user_id: luke.id,
-  quantity: 50,
-  unit: 'litres'
+  grocery_id: luke_extravaganza.id,
+  quantity: 50
 })
-Grocery.create!({
-  name: 'demo day after party',
+GroceryIngredient.create!({
   ingredient_id: cumin.id,
-  user_id: luke.id,
-  quantity: 80,
-  unit: 'grams'
+  grocery_id: luke_extravaganza.id,
+  quantity: 80
 })
 
 extravaganza = Potluck.create!({
