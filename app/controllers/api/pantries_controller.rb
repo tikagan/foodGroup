@@ -1,12 +1,16 @@
 class Api::PantriesController < Api::ApplicationController
   before_action :set_pantry, only: [:show, :edit, :update, :destroy]
 
-
-    # GET /pantry
-    # GET /pantryjson
+    # GET /pantries/1
+    # GET /pantries/1.json
     def show
       @user = current_user
-      @ingredients = @user.ingredients
+
+      @usersIngredients = @user.ingredients
+      @allIngredients = Ingredient.all
+
+      render json: {result: @usersIngredients, all: @allIngredients}
+
     end
 
     # POST /pantries
@@ -54,6 +58,6 @@ class Api::PantriesController < Api::ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def pantry_params
-        params.require(:pantry).permit(:name)
+        params.require(:pantry).permit(:product_id, :user_id, :quantity, :unit)
       end
 end

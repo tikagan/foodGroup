@@ -18,14 +18,37 @@ class  Potluck extends Component {
 	}
 
 	render() {
-	
-		return (
-			<div className="cutbackground">
-		    <Navbar />
-		  
-		    <p>Potluck</p>
-			
-		     </div>
+	  return (
+		  <div className="potluckBG">
+			  <Navbar />
+		    <div className="bootform2" >
+		      <form>
+            <div className="form-group">
+              <label >Potluck Name</label>
+              <input  className="form-control"  placeholder="Add Potluck Name"/>
+              </div>
+              <div className="form-group">
+              <label for="exampleInputEmail1">Add Image</label>
+              <input  className="form-control"  placeholder="Add Image"/>
+              </div>
+              <div className="form-group">
+              <label for="exampleInputEmail1">Description</label>
+              <input  className="form-control" placeholder="Add Description"/>
+              </div>
+              <div className="form-group">
+              <label for="exampleInputPassword1">Description</label>
+              <input  className="form-control" placeholder="Add recipe"/>
+              </div>
+              <div className="form-group">
+              <label for="exampleInputPassword1">Invite Users</label>
+              <input  className="form-control" placeholder="Invite Friends"/>
+              </div>
+            <button  className="btn btn-primary">Submit</button>
+          </form>
+         </div>
+         <Link to="/PotluckCreated"  className="book2" >Potluck created</Link> 
+			</div>
+	 
 		)
 	} 
 }

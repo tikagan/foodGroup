@@ -5,46 +5,68 @@ import { Route, BrowserRouter,Link } from 'react-router-dom'
 
 
 class  Pantry extends Component {
+  constructor (props) {
+      super(props)
 
-	constructor (props) {
-	    super(props)
-	    
-	    this.state = {
-	    	test: ''
-	    };
-	}
+      this.state = {
+        food: []
+      };
+  }
 
   componentDidMount() {
+
     const serverURL = 'http://localhost:3000/'
-    axios.get('api/pantries/1')
+  
+   
+    axios.get('api/pantry')
      .then( (response) => {
-       console.log(response)
+       console.log(response.data.result)
+       console.log(response.data.all)
+       let food = []
+       for (let i = 0; i < response.data.result.length; i++) {
+          food.push({
+            key: response.data.result[i].id,
+            item: response.data.result[i].name
+          })
+       }
        this.setState({
-         test: response.data.ingredient_id
+        food: food
        });
-      console.log(response);
      })
      .catch(function (error) {
-    console.log(error);
+        console.log(error);
      })
   }
 
+  renderFood () {
+    return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
+  }
+
+
+
+
 		render() {
 		return (
-			<div className="cutbackground">
-		    <Navbar />
-        <h1>  {this.state.test}</h1>
-		    </div>
+			<div className="pantryBG ">
+        <Navbar />
+          <div className="jumbotron listed2">
+
+          <div>
+          {this.renderFood(this.state.food)}
+          </div>
+
+        </div>
+
+        </div>
+  
+
+ 
+
+
+		   
 		)
+  }
 	} 
-}
-
-
-
-
-
-
-
 
 
 export default Pantry

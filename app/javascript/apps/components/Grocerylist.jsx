@@ -22,6 +22,7 @@ class  Grocerylist extends Component {
 		return (
 			<div className="cutbackground">
 				<Navbar />
+				
 				  <form>
 				    <input type="text" className="formed" name="list name" />
 				    <input type="submit" value="Submit" />
