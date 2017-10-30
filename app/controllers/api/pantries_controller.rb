@@ -42,9 +42,12 @@ class Api::PantriesController < Api::ApplicationController
     # DELETE /pantries/1
     # DELETE /pantries/1.json
     def destroy
-      @pantry.destroy
-      respond_to do |format|
-        format.json { head :no_content }
+      @delete = Pantry.destroy(pantry_params)
+
+      if @delete.destroy
+        render json: { result: @delete }
+      else
+        format.json { render json: @delete.errors, status: :unprocessable_entity }
       end
     end
 

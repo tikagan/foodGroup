@@ -57,16 +57,24 @@ class  Pantry extends Component {
      })
   }
 
-  // deleteButton = (data) => {
-  //   this.names.key = 
-  //   axios.delete('api/pantry', {params: 
-  //     {afi: 'segi'}
-  //     }
-  //   )
-  // }
+  deleteButton = (data) => {
+    console.log("deleteButton data", data)
+    let ownPantry = this.state.current_user
+    // this.names.key = 
+    axios.delete('api/pantry', {params: {
+      ingredient_id: data.key,
+      user_id: ownPantry
+    }
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+  }
 
   renderFood () {
-    return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
+    return <div>{this.state.food.map((names, index) => <div key={index} onClick={this.deleteButton.bind(this, names)}>{names.item}</div>)}</div>
   }
 
   getPantry = () => {
@@ -181,18 +189,17 @@ class  Pantry extends Component {
             'Accept': 'application/json'
           }
         })
-      })
-        .then( (response) => {
+        .then( (responses) => {
           console.log("here")
           const setState = this.setState.bind(this)
           axios.get('api/pantry')
-          .then( (response) => {
-          console.log(response.data.result.id)
+          .then( (responses) => {
+          console.log("NEWWWWWWWWWWWWWWW", responses.data.result)
           let food = []
-          for (let i = 0; i < response.data.result.length; i++) {
+          for (let i = 0; i < responses.data.result.length; i++) {
             food.push({
-              key: response.data.result[i].id,
-              item: response.data.result[i].name
+              key: responses.data.result[i].id,
+              item: responses.data.result[i].name
             })
           }
             this.setState({
@@ -205,6 +212,8 @@ class  Pantry extends Component {
         console.log(error);
         })
       })
+      })
+        
        .catch(function (error) {
         console.log(error);
       })
