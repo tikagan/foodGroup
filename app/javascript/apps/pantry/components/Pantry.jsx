@@ -5,7 +5,6 @@ import { Route, BrowserRouter,Link } from 'react-router-dom'
 
 
 class  Pantry extends Component {
-
 	constructor (props) {
 	    super(props)
       this.getPantry = this.getPantry.bind(this)
@@ -20,8 +19,6 @@ class  Pantry extends Component {
         test: "",
 	    };
 	}
-
-
 
   componentDidMount() {
 
