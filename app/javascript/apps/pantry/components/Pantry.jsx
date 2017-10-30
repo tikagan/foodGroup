@@ -7,7 +7,7 @@ import { Route, BrowserRouter,Link } from 'react-router-dom'
 class  Pantry extends Component {
 	constructor (props) {
 	    super(props)
-      this.doesIngredientExist = this.doesIngredientExist.bind(this)
+      this.getPantry = this.getPantry.bind(this)
 
 	    this.state = {
         food: [],
@@ -60,14 +60,28 @@ class  Pantry extends Component {
     return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
   }
 
-  doesIngredientExist = (data) => {
-    let checker = this.state.ingredientDB
+  getPantry = () => {
+    const setState = this.setState.bind(this)
+    axios.get('api/pantry')
+     .then( (response) => {
+       let food = []
+       for (let i = 0; i < response.data.result.length; i++) {
+          food.push({
+            key: response.data.result[i].id,
+            item: response.data.result[i].name
+          })
+       }
+       this.setState({
+        food: food,
+        current_user: response.data.user.id
+       });
 
-    if (checker.hasOwnProperty(data)) {
-      console.log("true")
-    } else {
-      console.log("false")
-    }
+     })
+
+      .catch(function (error) {
+      console.log(error);
+      })
+
   }
 
   onChange = (e) => {
@@ -94,6 +108,7 @@ class  Pantry extends Component {
     if (checkerName.includes(userIng)) {
       let obj = checker.find(o => o.name === userIng);
       let pantryUser = this.state.current_user
+
       console.log("true")
       console.log(obj)
       axios.post('/api/pantry', {
@@ -108,21 +123,16 @@ class  Pantry extends Component {
         }
       })
       .then(function (response) {
-      console.log(response);
+        console.log("here")
+        this.getPantry();
       })
       .catch(function (error) {
       console.log(error);
-  });
+      })
     } else {
       console.log("false")
     }
-
-
-        // axios.post('/api/ingredients', { newIng })
-        //   .then((result) => {
-        //     console.log(result)
-        //   });
-      }
+   }
 
 		render() {
 		return (
@@ -145,7 +155,7 @@ class  Pantry extends Component {
             <button type="submit">Submit</button>
           </form>
         </div>
-        );
+        
 
 		    </div>
 		)
