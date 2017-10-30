@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :potlucks
     resources :groceries
     resources :ingredients
+    resources :grocery_ingredients
   end
 
   root to: "home#show"
