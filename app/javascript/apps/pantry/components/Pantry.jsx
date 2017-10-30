@@ -57,6 +57,14 @@ class  Pantry extends Component {
      })
   }
 
+  // deleteButton = (data) => {
+  //   this.names.key = 
+  //   axios.delete('api/pantry', {params: 
+  //     {afi: 'segi'}
+  //     }
+  //   )
+  // }
+
   renderFood () {
     return <div>{this.state.food.map(names => <div key={names.key}>{names.item}</div>)}</div>
   }
@@ -151,7 +159,21 @@ class  Pantry extends Component {
       console.log(error);
       })
     } else {
-      console.log("false")
+      console.log("posting")
+      axios.post('api/ingredients', {
+        name: userIng
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      .then( (response) => {
+        console.log(response)
+      })
+       .catch(function (error) {
+        console.log(error);
+      })
     }
    }
 
