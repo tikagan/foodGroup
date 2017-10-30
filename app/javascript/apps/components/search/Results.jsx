@@ -1,30 +1,37 @@
 import React, { Component } from 'react'
-
+import pluralize from 'pluralize'
+import lunr from 'lunr'
 import ResultItem from './ResultItem'
 
 class Results extends Component {
 
-  componentDidMount(){
-    var sortedResults = this.props.searchResults
+  componentDidUpdate(){
+    var results = this.props.searchResults
     var userIngredients = []
+    //ajax call that gets the current user's pantry, singularizes the ingredients, and puts them in an array
     $.ajax({
       url: '/api/pantry',
       type: 'GET',
       data: 'json',
       success: function(res) {
         res.ingredients.forEach(function(ingObj) {
-            userIngredients.push(ingObj.name)
+            userIngredients.push(pluralize.singular(ingObj.name))
         })
         console.log('userIngredients: ', userIngredients)
       }
-
     });
+    console.log('results: ', results)
+    var idx = lunr(function () {
+      this.field('recipieName')
+      this.field('ingredients')
+      results.forEach(function(recipe) {
+        this.add(recipe)
+      })
+
+    })
 
 
-    // rest of the search logic here
   };
-
-
 
   render(){
     // once componentDidMount sorts this.proprs.searchResults replace this with the newly sorted array
