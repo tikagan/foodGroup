@@ -7,11 +7,9 @@ import Results from './Results'
 import SearchBox from './SearchBox'
 import ResultItem from './ResultItem'
 
+import pluralize from 'pluralize'
+
 class Search extends Component {
-
-  searchResults: []
-
-
   constructor() {
     super();
     this.state = {
@@ -21,7 +19,6 @@ class Search extends Component {
 
   showResults = (response) => {
       this.setState({searchResults: response.matches});
-
   };
 
   search(query, diet, allergy, course){
@@ -74,6 +71,7 @@ class Search extends Component {
               this.showResults(response);
           }.bind(this)
       });
+
   };
 
   render(){
