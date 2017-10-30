@@ -20,7 +20,7 @@ class Results extends Component {
       r.nameTokens = r.recipeName.split(' ');
       return r
     })
-    // creates index for lunr to search on results arrap
+    // creates index for lunr to search on results 
     var idx = lunr(function () {
       this.field('nameTokens')
       this.field('ingredients')
