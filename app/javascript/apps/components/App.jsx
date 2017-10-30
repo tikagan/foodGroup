@@ -15,16 +15,8 @@ import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 class App extends Component {
 	constructor (props) {
     super(props)
-<<<<<<< HEAD
 
     this.state = {
-
-=======
-
-    this.state = {
-
-
->>>>>>> master
     };
 	}
 
@@ -32,13 +24,8 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="intheway">
-<<<<<<< HEAD
 
 				 <Route path="/" exact component={Overview}/>
-=======
-
-				<Route path="/" exact component={Overview}/>
->>>>>>> master
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/groceries" component={Groceries}/>
 			  	<Route path="/potlucks" component={Potluck}/>
