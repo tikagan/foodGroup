@@ -16,11 +16,19 @@ class  GrocerylistCreated extends Component {
 
 		render() {
 		return (
-			<div className="cutbackground">
+			<div className="scaleBG">
 		    <Navbar />
 		    <div className=" jumbotron headed">
+		    <p className="grocerylisttitle">Grocery List Name</p>
 		    </div>
 		    <div className="jumbotron listed2">
+		    <ul className="glist">
+		      <li>boat</li>
+		      <li>fish</li>
+		      <li>drum</li>
+		      <li>gum</li>
+		      <li>butter</li>
+		    </ul>
 		    </div>
 		    <div className="bootform">
 		    <div class="input-group" >

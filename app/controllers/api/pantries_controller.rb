@@ -5,6 +5,7 @@ class Api::PantriesController < Api::ApplicationController
     # GET /pantries/1.json
     def show
       @user = current_user
+
       @usersIngredients = @user.ingredients
       @allIngredients = Ingredient.all
 

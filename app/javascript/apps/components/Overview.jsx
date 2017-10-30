@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Inventory from './inventory.jsx'
 import Menu from './menu.jsx'
 import Navbar from './Navbar.jsx'
 
@@ -26,11 +25,17 @@ class  Overview extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
-			<div className="menu">
-			  <Inventory />
-			  <Menu />
+		    <div className="container">
+		      <div className="row">
+            <div className="col-sm-3">
+              <div className="menu">
+              <Menu />
+		        </div>
+		      </div>
+       
+         
 		     </div>
-		    
+		     </div>
 		     </div>
 		)
 	} 

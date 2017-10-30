@@ -5,6 +5,7 @@ import { Route, BrowserRouter,Link } from 'react-router-dom'
 
 
 class  Pantry extends Component {
+<<<<<<< HEAD
 	constructor (props) {
 	    super(props)
       this.getPantry = this.getPantry.bind(this)
@@ -19,6 +20,15 @@ class  Pantry extends Component {
         test: "",
 	    };
 	}
+=======
+  constructor (props) {
+      super(props)
+
+      this.state = {
+        food: []
+      };
+  }
+>>>>>>> be36f2a166ecfd4c0ae52beb60fce5e046952eb6
 
   componentDidMount() {
 
@@ -240,13 +250,12 @@ class  Pantry extends Component {
     }
    }
 
+
 		render() {
 		return (
-			<div className="cutbackground">
-
-		    <Navbar />
-       
-         <div className="jumbotron listed2">
+			<div className="pantryBG">
+        <Navbar />
+          <div className="jumbotron container-fluid listed2">
 
           <div>
           {this.renderFood(this.state.food)}
@@ -263,9 +272,15 @@ class  Pantry extends Component {
         </div>
         
 
-		    </div>
+        </div>
+
+
+ 
+
+
+		   
 		)
+  }
 	} 
-}
 
 export default Pantry
