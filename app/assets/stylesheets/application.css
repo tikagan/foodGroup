@@ -88,6 +88,72 @@ overflow:auto;*/
 
 }
 
+.potluckname {
+
+    
+    margin-top:1.5em;
+    margin-left:5.3em;
+    
+   
+  
+}
+
+.listed3 {
+
+    width:300px;
+    margin-top:2em;
+    
+    margin-right:auto;
+    margin-bottom:auto;
+    height:200px;
+    background-color:black;
+    opacity:.7;
+
+}
+
+.listed4 {
+
+    width:300px;
+    margin-top:2em;
+   
+    margin-right:auto;
+    margin-bottom:auto;
+    height:200px;
+    background-color:black;
+    opacity:.7;
+
+}
+
+.listed5 {
+
+    width:400px;
+    margin-top:2em;
+   margin-left: 8em;
+    margin-right:4em;
+   
+    height:200px;
+    background-color:white;
+    opacity:.7;
+
+}
+
+.listed6 {
+
+    width:400px;
+    margin-top:2em;
+   margin-left: 8em;
+    margin-right:4em;
+    color:black;
+    height:200px;
+    background-color:white;
+    opacity:.7;
+
+}
+.rectext{
+    color:black;
+}
+
+
 .additem {
     margin-top: 2em;
     margin-left: 20em;
