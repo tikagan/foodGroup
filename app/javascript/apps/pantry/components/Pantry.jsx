@@ -71,6 +71,26 @@ class  Pantry extends Component {
         }
       }
     )
+    .then( (response) => {
+        console.log("here")
+        const setState = this.setState.bind(this)
+        axios.get('api/pantry')
+        .then( (response) => {
+        let food = []
+        for (let i = 0; i < response.data.result.length; i++) {
+          food.push({
+            key: response.data.result[i].id,
+            item: response.data.result[i].name
+          })
+          }
+          this.setState({
+            food: food
+          });
+         })
+        })
+        .catch(function (error) {
+        console.log(error);
+        })
   }
 
   renderFood () {
