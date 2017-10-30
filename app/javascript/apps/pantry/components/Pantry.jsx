@@ -62,15 +62,15 @@ class  Pantry extends Component {
     let ownPantry = this.state.current_user
     // this.names.key = 
     axios.delete('api/pantry', {params: {
-      ingredient_id: data.key,
-      user_id: ownPantry
-    }
-      }, {
+        ingredient_id: data.key,
+      }
+    }, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
-      })
+      }
+    )
   }
 
   renderFood () {

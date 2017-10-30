@@ -42,7 +42,8 @@ class Api::PantriesController < Api::ApplicationController
     # DELETE /pantries/1
     # DELETE /pantries/1.json
     def destroy
-      @delete = Pantry.destroy(pantry_params)
+
+      @delete = Pantry.find_by_ingredient_id params[:ingredient_id]
 
       if @delete.destroy
         render json: { result: @delete }
