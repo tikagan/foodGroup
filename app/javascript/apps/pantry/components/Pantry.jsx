@@ -187,6 +187,7 @@ class  Pantry extends Component {
           const setState = this.setState.bind(this)
           axios.get('api/pantry')
           .then( (response) => {
+          console.log(response.data.result.id)
           let food = []
           for (let i = 0; i < response.data.result.length; i++) {
             food.push({
@@ -195,9 +196,9 @@ class  Pantry extends Component {
             })
           }
             this.setState({
-              food: food,
-              current_user: response.data.user.id
-            }, () => console.log(this.state));
+              food: food
+            });
+            console.log(this.state)
          })
 
         .catch(function (error) {
