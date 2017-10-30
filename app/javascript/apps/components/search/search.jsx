@@ -13,9 +13,31 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      searchResults: []
+      searchResults: [],
+      userIngredients: ""
     }
   }
+
+  setUserIngredients = (userIngredients) => {
+    this.setState({userIngredients: userIngredients.join(" ")});
+  };
+
+  componentWillMount() {
+    //ajax call that gets the current user's pantry, singularizes the ingredients, and puts them in an array
+    var userIngredients = [];
+    $.ajax({
+      url: '/api/pantry',
+      type: 'GET',
+      data: 'json',
+      success: function(res) {
+        res.result.forEach(function(ingObj) {
+          name = pluralize.singular(ingObj.name);
+          userIngredients.push(name);
+        })
+        this.setUserIngredients(userIngredients);
+      }.bind(this)
+    });
+  };
 
   showResults = (response) => {
       this.setState({searchResults: response.matches});
@@ -78,7 +100,7 @@ class Search extends Component {
       return (
           <div>
               <SearchBox search={this.search.bind(this)} />
-              <Results searchResults={this.state.searchResults} />
+              <Results searchResults={this.state.searchResults} userIngredients={this.state.userIngredients} />
           </div>
       );
   };
