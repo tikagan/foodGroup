@@ -27,19 +27,13 @@ class  Overview extends Component {
 		    <Navbar />
 		    <div className="container">
 		      <div className="row">
-            <div className="col">
+            <div className="col-sm-3">
               <div className="menu">
               <Menu />
 		        </div>
 		      </div>
-        <div className="jumbotron over">
-          <div className="col">
-        </div>
-        </div>
-       <div className="row">
-         <div className="col">
-         </div>
-		   </div>
+       
+         
 		     </div>
 		     </div>
 		     </div>

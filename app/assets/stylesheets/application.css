@@ -61,7 +61,13 @@ overflow:auto;*/
 
 
 /*---------------------------*/
-
+.BGtron {
+    height: 400px;
+    width: 450px;
+ 
+    background-color: white;
+    margin:auto;
+}
 
 
 .headed {
@@ -100,6 +106,9 @@ overflow:auto;*/
 .btcomment{
     margin-bottom:2.8em;
     height:54px;
+    background-color:black;
+    opacity:.7;
+    color:white;
 }
 
 .potluckcomment{
@@ -206,6 +215,28 @@ overflow:auto;*/
 
 .buttoned {
     width: 80px;
+}
+
+
+.book4 {
+    margin-top: 1.5rem;
+    margin-left: .5rem;
+    margin-right: 2rem;
+    padding: .5rem 1rem;
+    min-width: 142px;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .book3 {
@@ -336,7 +367,7 @@ overflow:auto;*/
 
 
 .potluckBG {
-     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384664/a5d679ed41277f6214b02aeb67b11f2c_s5uvll.gif) no-repeat center center fixed;
+     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509386613/food_wi2fp2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -366,7 +397,7 @@ overflow:auto;*/
 
 }
 .potluckcreatedBG {
-     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384499/indian_buffet_v4hz4a.webp) no-repeat center center fixed;
+     background: url(http://www.thisiscolossal.com/wp-content/uploads/2015/05/food-4.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -486,7 +517,7 @@ overflow:auto;*/
 
 .menu {
     margin-top: 100px;
-    margin-right: 100px;
+    margin-right: 150px;
     margin-left: 100px;
 }
 
