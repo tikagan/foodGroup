@@ -29,6 +29,10 @@ class Results extends Component {
       })
     })
     // searches results for userIngredients
+    var sortedScore = idx.search(this.props.userIngredients)
+    results = results.map(r => {
+
+    })
     this.setState({sortedResults: idx.search(this.props.userIngredients)})
   };
 
