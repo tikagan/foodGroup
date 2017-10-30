@@ -131,6 +131,13 @@ overflow:auto;*/
    
   
 }
+
+.pantry-form {
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:1em;
+    width: 400px;
+}
 .btcomment{
     margin-bottom:2.8em;
     height:54px;

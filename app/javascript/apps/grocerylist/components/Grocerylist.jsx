@@ -33,10 +33,7 @@ class  Grocerylist extends Component {
               <label for="exampleInputEmail1">Description</label>
               <input  className="form-control" placeholder="Add Description"/>
             </div>
-            <div className="form-group">
-              <label for="exampleInputPassword1">Add Item</label>
-              <input  className="form-control" placeholder="Add Item"/>
-            </div>
+           
             <button  className="btn btn-primary">Submit</button>
           </form>
           </div>
