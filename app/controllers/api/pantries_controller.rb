@@ -9,8 +9,7 @@ class Api::PantriesController < Api::ApplicationController
       @usersIngredients = @user.ingredients
       @allIngredients = Ingredient.all
 
-      render json: {result: @usersIngredients, all: @allIngredients}
-
+      render json: {result: @usersIngredients, all: @allIngredients, user: @user}
     end
 
     # POST /pantries
@@ -18,13 +17,13 @@ class Api::PantriesController < Api::ApplicationController
     def create
       @pantry = Pantry.new(pantry_params)
 
-      respond_to do |format|
+
         if @pantry.save
-          format.json { render :show, status: :created, location: @pantry }
+          render json: {result: @pantry}
         else
-          format.json { render json: @pantry.errors, status: :unprocessable_entity }
+          render json: { result: @pantry.errors, status: :unprocessable_entity }
         end
-      end
+
     end
 
     # PATCH/PUT /pantries/1
@@ -44,9 +43,13 @@ class Api::PantriesController < Api::ApplicationController
     # DELETE /pantries/1
     # DELETE /pantries/1.json
     def destroy
-      @pantry.destroy
-      respond_to do |format|
-        format.json { head :no_content }
+
+      @delete = Pantry.find_by_ingredient_id params[:ingredient_id]
+
+      if @delete.destroy
+        render json: { result: @delete }
+      else
+        format.json { render json: @delete.errors, status: :unprocessable_entity }
       end
     end
 
@@ -58,6 +61,6 @@ class Api::PantriesController < Api::ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def pantry_params
-        params.require(:pantry).permit(:product_id, :user_id, :quantity, :unit)
+        params.require(:pantry).permit(:ingredient_id, :user_id, :quantity, :unit)
       end
 end

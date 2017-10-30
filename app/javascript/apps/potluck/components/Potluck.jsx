@@ -21,6 +21,7 @@ class  Potluck extends Component {
 	  return (
 		  <div className="potluckBG">
 			  <Navbar />
+
 		    <div className="bootform2" >
 		      <form>
             <div className="form-group">
@@ -46,6 +47,8 @@ class  Potluck extends Component {
             <button  className="btn btn-primary">Submit</button>
           </form>
          </div>
+         
+         
          <Link to="/PotluckCreated"  className="book2" >Potluck created</Link> 
 			</div>
 	 
