@@ -21,6 +21,7 @@ class  Grocerylist extends Component {
 	  return (
 		  <div className="scaleBG">
 			  <Navbar />
+        <div className="jumbotron listed7">
 		    <div className="bootform2" >
 		      <form>
             <div className="form-group">
@@ -38,6 +39,7 @@ class  Grocerylist extends Component {
             </div>
             <button  className="btn btn-primary">Submit</button>
           </form>
+          </div>
          </div>
          <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
 			</div>
