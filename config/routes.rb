@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :pantry
     resources :potlucks
     resources :groceries
+    resources :ingredients
   end
 
   root to: "home#show"
