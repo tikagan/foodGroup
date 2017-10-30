@@ -13,9 +13,9 @@ class  Pantry extends Component {
         food: [],
         ingredientDB: [],
         current_user: [],
-        newIng: "test",
-        newAmount: "test",
-        newUnit: "test"
+        newIng: '',
+        newAmount: '',
+        newUnit: ''
 	    };
 	}
 
@@ -81,11 +81,12 @@ class  Pantry extends Component {
     e.preventDefault();
     // get our form data out of state
     const { newIng } = this.state;
+    console.log(this.state)
 
-        axios.post('/api/ingredients', { newIng })
-          .then((result) => {
-            console.log(result)
-          });
+        // axios.post('/api/ingredients', { newIng })
+        //   .then((result) => {
+        //     console.log(result)
+        //   });
       }
 
 		render() {
@@ -101,13 +102,14 @@ class  Pantry extends Component {
           </div>
 
         </div>
-
+        <div>
           <form onSubmit={this.onSubmit}>
-            <input type="text" name="newIng" value={newIng} onChange={this.onChange} />
-            <input type="text" name="newAmount" value={newAmount} onChange={this.onChange} />
-            <input type="text" name="email" value={email} onChange={this.onChange} />
+            <input type="text" name="newIng" onChange={this.onChange} />
+            <input type="text" name="newAmount" onChange={this.onChange} />
+            <input type="text" name="newUnit" onChange={this.onChange} />
             <button type="submit">Submit</button>
           </form>
+        </div>
         );
 
 		    </div>
