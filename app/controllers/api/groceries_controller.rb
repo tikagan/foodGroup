@@ -10,9 +10,7 @@ class Api::GroceriesController < Api::ApplicationController
   # GET /groceries/1
   # GET /groceries/1.json
   def show
-    @user = current_user
-
-    @groceries = @user.Grocery
+    @groceries = Grocery.find_by_id params[:id]
   end
 
 

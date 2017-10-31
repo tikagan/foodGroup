@@ -15,8 +15,7 @@ class  Pantry extends Component {
         current_user: [],
         newIng: '',
         newAmount: '',
-        newUnit: '',
-        test: "",
+        newUnit: ''
 	    };
 	}
 
