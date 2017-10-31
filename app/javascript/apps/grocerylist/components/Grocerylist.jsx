@@ -148,7 +148,7 @@ class  Grocerylist extends Component {
           </div>
          
          </div>
-         <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
+         
 			</div>
 		)
 	} 
