@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
+import Modal from '../../modal/components/modal.jsx'
 
 
 class  Pantry extends Component {
@@ -15,8 +16,10 @@ class  Pantry extends Component {
         current_user: [],
         newIng: '',
         newAmount: '',
-        newUnit: ''
+        newUnit: '',
+        showModal: false
 	    };
+   this.modalmodal = this.modalmodal.bind(this)
 	}
 
   componentDidMount() {
@@ -126,6 +129,13 @@ class  Pantry extends Component {
     const state = this.state
     state[e.target.name] = e.target.value;
     this.setState(state);
+  }
+
+  modalmodal = (e) => {
+    this.setState({
+      showModal: !this.state.showModal
+    })
+    console.log(this.state)
   }
 
   onSubmit = (e) => {
@@ -264,6 +274,14 @@ class  Pantry extends Component {
             </div>
             <button className="book4" type="submit">Submit</button>
           </form>
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-default" data-toggle="modal" onClick={this.modalmodal}>Button</button>
+            {this.state.showModal ?
+               <Modal /> :
+                  null
+            }
         </div>
         
 
