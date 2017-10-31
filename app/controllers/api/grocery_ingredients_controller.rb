@@ -65,5 +65,6 @@ class Api::GroceryIngredientsController < Api::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def grocery_ingredient_params
       params.fetch(:grocery_ingredient, {})
+      params.require(:grocery_ingredient).permit(:ingredient_id, :grocery_id, :quantity)
     end
 end

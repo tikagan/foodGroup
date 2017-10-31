@@ -28,7 +28,22 @@ class  GrocerylistCreated extends Component {
     .catch(function(error) {
       console.log(error)
     })
+
+    axios.get('api/pantry')
+    .then( (response) => {
+      let temp = []
+      for (let x = 0; x < response.data.all.length; x++) {
+        temp.push({
+          id: response.data.all[x].id,
+          name: response.data.all[x].name
+        })
+       }
+       this.setState({
+        ingredientDB: temp
+       });
+    })
   }
+
 
 onChange = (e) => {
   // Because we named the inputs to match their corresponding values in state, it's
@@ -39,7 +54,7 @@ onChange = (e) => {
     console.log(this.state)
   }
 
-  onSubmit = (e) => {
+onSubmit = (e) => {
     e.preventDefault();
 
     let userIng = this.state.newIng
@@ -58,11 +73,10 @@ onChange = (e) => {
 
       console.log("true")
       console.log(obj)
-      axios.post('/api/pantry', {
+      axios.post('api/grocery_ingredients', {
         ingredient_id: obj.id,
-        user_id: pantryUser,
-        quantity: 10,
-        unit: 'grams'
+        grocery_id: 31,
+        quantity: 10
       }, {
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +84,7 @@ onChange = (e) => {
         }
       })
       .then( (response) => {
-        console.log("here")
+        console.log(response)
         const setState = this.setState.bind(this)
         axios.get('api/pantry')
         .then( (response) => {
@@ -110,9 +124,8 @@ onChange = (e) => {
         console.log(response.data.result.id)
           axios.post('/api/pantry', {
             ingredient_id: response.data.result.id,
-            user_id: pantryUser,
-            quantity: 10,
-            unit: 'grams'
+            grocery_id: pantryUser,
+            quantity: 10
         }, {
           headers: {
             'Content-Type': 'application/json',
@@ -170,18 +183,21 @@ onChange = (e) => {
 		    </div>
 		    
 		    <div className="bootform">
-		    <div class="input-group" >
-		     <input type="text" className="form-control" placeholder="Add item"/>
-             <span class="input-group-btn">
-               <button class="btn btn-secondary" type="button">submit</button>
-            </span>
-             
+		      <div>
+            <form className="pantry-form" onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
             </div>
-            <button className="book4" type="submit">Submit</button>
-
-
+            <div className="form-group"> 
+              <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
             </div>
-			
+            <div className="form-group">
+              <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
+            </div>
+              <button className="book4" type="submit">Submit</button>
+            </form>
+        </div>
+			</div>
 			
 		    </div>
 		    
