@@ -163,7 +163,7 @@ font-weight: bold;
     margin-right:auto;
     margin-left:auto;
     margin-top:2em;
-    width: 300px;
+    width: 200px;
 }
 .btcomment{
     margin-bottom:2.8em;
@@ -291,7 +291,7 @@ font-weight: bold;
     margin-right: 2rem;
     padding: .5rem 1rem;
     min-width: 142px;
-    width:300px;
+    width:200px;
     font-size: 1rem;
     line-height: 1.5;
     display: inline-block;
