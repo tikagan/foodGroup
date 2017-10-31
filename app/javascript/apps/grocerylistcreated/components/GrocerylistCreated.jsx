@@ -189,10 +189,19 @@ onSubmit = (e) => {
 		    </div>
 		    
 		    <div className="bootform">
+<<<<<<< HEAD
 		      <div>
             <form className="pantry-form" onSubmit={this.onSubmit}>
             <div className="form-group">
               <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
+=======
+		    <div class="input-group" >
+		  		     <input type="text" className="form-control" placeholder="Add item"/>
+             <span class="input-group-btn">
+               <button class="btn btn-secondary" type="button">submit</button>
+            </span>
+             
+>>>>>>> b050ac1ad06078ee3a7f03ef8e0615211e4a84bc
             </div>
             <div className="form-group"> 
               <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
