@@ -94,7 +94,7 @@ overflow:auto;*/
 .listed2 {
 
 	width:600px;
-	margin-top:4em;
+	margin-top:3em;
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:auto;
@@ -133,10 +133,11 @@ overflow:auto;*/
 }
 
 .pantry-form {
+    margin-bottom: 2em;
     margin-right:auto;
     margin-left:auto;
-    margin-top:1em;
-    width: 400px;
+    margin-top:2em;
+    width: 300px;
 }
 .btcomment{
     margin-bottom:2.8em;
@@ -252,6 +253,27 @@ overflow:auto;*/
     width: 80px;
 }
 
+.book4 {
+    margin-top: 1rem;
+    
+    margin-right: 2rem;
+    padding: .5rem 1rem;
+    min-width: 142px;
+    width:300px;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 
 
 .book3 {
