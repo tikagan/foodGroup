@@ -124,19 +124,6 @@ class  Grocerylist extends Component {
     });
   }
 
-  renderLists () {
-    return <div>
-    
-    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname"> {names.name}:</div> <div className="listdesc">{names.description}</div>      <div>
-        <button onClick={this.showComponentButtonClick}>View Grocery List</button>
-        {this.state.showComponent ?
-           <GrocerylistCreated /> :
-           null
-        }
-      </div>
-    <button onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>)}</div>
-
-  }
 
 	render() {
 	  return (
@@ -144,7 +131,7 @@ class  Grocerylist extends Component {
 			  <Navbar />
         <div className="jumbotron listed7">
          <div className="grocerylistsA">
-            {this.renderLists(this.state.list)}
+            <DatabaseLists lists={this.state.list} />
           </div>
 		    <div className="bootform2" >
 		      <form onSubmit={this.onSubmit}>
