@@ -262,7 +262,7 @@ class  Pantry extends Component {
              <div className="form-group">
             <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
             </div>
-            <button type="submit">Submit</button>
+            <button className="book4" type="submit">Submit</button>
           </form>
         </div>
         
