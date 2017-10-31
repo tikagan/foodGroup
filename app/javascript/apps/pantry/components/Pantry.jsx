@@ -15,18 +15,17 @@ class  Pantry extends Component {
         current_user: [],
         newIng: '',
         newAmount: '',
-        newUnit: '',
-        test: "",
+        newUnit: ''
 	    };
 	}
 
   componentDidMount() {
-
     const serverURL = 'http://localhost:3000/'
   
    
     axios.get('api/pantry')
      .then( (response) => {
+       console.log(response)
        let food = []
        for (let i = 0; i < response.data.result.length; i++) {
           food.push({
@@ -263,18 +262,12 @@ class  Pantry extends Component {
              <div className="form-group">
             <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
             </div>
-            <button type="submit">Submit</button>
+            <button className="book4" type="submit">Submit</button>
           </form>
         </div>
         
 
         </div>
-
-
- 
-
-
-		   
 		)
   }
 	} 

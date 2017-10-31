@@ -4,12 +4,15 @@ class Api::GroceriesController < Api::ApplicationController
   # GET /groceries
   # GET /groceries.json
   def index
+    @user = current_user
     @groceries = Grocery.all
+    render json: { result: @groceries, user: @user }
   end
 
   # GET /groceries/1
   # GET /groceries/1.json
   def show
+    @groceries = Grocery.find_by_id params[:id]
   end
 
 
@@ -17,34 +20,33 @@ class Api::GroceriesController < Api::ApplicationController
   # POST /groceries.json
   def create
     @grocery = Grocery.new(grocery_params)
+    @allGroceries = Grocery.all
 
-    respond_to do |format|
       if @grocery.save
-        format.json { render :show, status: :created, location: @grocery }
+        render json: { result: @allGroceries }
       else
-        format.json { render json: @grocery.errors, status: :unprocessable_entity }
+        render json: { result: @grocery.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PATCH/PUT /groceries/1
   # PATCH/PUT /groceries/1.json
   def update
-    respond_to do |format|
       if @grocery.update(grocery_params)
         format.json { render :show, status: :ok, location: @grocery }
       else
         format.json { render json: @grocery.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # DELETE /groceries/1
   # DELETE /groceries/1.json
   def destroy
-    @grocery.destroy
-    respond_to do |format|
-      format.json { head :no_content }
+    @allGroceries = Grocery.all
+    @delete = Grocery.find_by_id params[:id]
+
+    if @delete.destroy
+      render json: { result: @allGroceries }
     end
   end
 
@@ -55,7 +57,8 @@ class Api::GroceriesController < Api::ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def grocery_params
-      params.require(:grocery).permit(:name)
+      params.permit(:user_id, :name, :description)
     end
 end
