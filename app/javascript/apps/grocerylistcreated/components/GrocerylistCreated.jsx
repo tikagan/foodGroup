@@ -178,8 +178,8 @@ onChange = (e) => {
              
             </div>
             <button className="book4" type="submit">Submit</button>
-          </form>
-        </div>
+
+
             </div>
 			
 			
