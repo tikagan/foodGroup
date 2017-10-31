@@ -11,9 +11,38 @@ class  Grocerylist extends Component {
 			super(props)
 
 			this.state = {
-        list: "",
-        description: ""
+        list: '',
+        user: '',
+        tempName: '',
+        tempDescription: ''
 			};
+  }
+
+  componentDidMount () {
+    axios.get('api/groceries', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+    .then((response) => {
+      let lists = []
+      for (let i = 0; i < response.data.result.length; i++) {
+        lists.push({
+          name: response.data.result[i].name,
+          description: response.data.result[i].description
+        })
+      }
+      this.setState({
+        list: lists,
+        user: response.data.user.id
+      })
+      console.log(response)
+      console.log(this.state)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
   }
   
   onChange = (e) => {
@@ -24,6 +53,46 @@ class  Grocerylist extends Component {
     console.log(this.state)
   }
 
+  onSubmit = (e) => {
+    e.preventDefault()
+    console.log(e)
+    let newListName = this.state.tempName
+    let newDescription = this.state.tempDescription
+    let user = this.state.user
+    axios.post('api/groceries', {
+      user_id: user,
+      name: newListName,
+      description: newDescription
+      }, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+      })
+    .then((response) => {
+      console.log(response)
+      let lists = []
+      for (let i = 0; i < response.data.result.length; i++) {
+        lists.push({
+          list: response.data.result[i].name,
+          description: response.data.result[i].description
+        })
+      }
+      this.setState({
+        list: lists
+      })
+      console.log(this.state)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
+
+  renderLists () {
+    return <div>{this.state.list.map((names, index) => <div key={index}>{names.name}</div>)}</div>
+  }
+
+
 
 	render() {
 	  return (
@@ -31,19 +100,23 @@ class  Grocerylist extends Component {
 			  <Navbar />
         <div className="jumbotron listed7">
 		    <div className="bootform2" >
-		      <form>
+		      <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label for="exampleInputEmail1">List Name</label>
-              <input  className="form-control" name="list" placeholder="Add List Name" onChange={this.onChange}/>
+              <input  className="form-control" name="tempName" placeholder="Add List Name" onChange={this.onChange}/>
     
             </div>
             <div className="form-group">
               <label for="exampleInputEmail1">Description</label>
-              <input  className="form-control" name="description" placeholder="Add Description" onChange={this.onChange}/>
+              <input  className="form-control" name="tempDescription" placeholder="Add Description" onChange={this.onChange}/>
             </div>
            
             <button  className="btn btn-primary">Submit</button>
           </form>
+          <div>
+          {this.renderLists}
+          </div>
+
           </div>
          </div>
          <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
