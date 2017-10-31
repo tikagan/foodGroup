@@ -65,7 +65,7 @@ class DatabaseLists extends Component {
     return (
       <div>
         <div>
-          <div key={this.props.lists.id}> <div className="ingrdientname"> {this.props.lists.name}:</div> <div className="listdesc">{this.props.lists.description}</div><button onClick={this.deleteButton.bind(this, this.props.lists.id)}>Delete</button></div>)}
+          <div key={this.props.lists.id}> <div className="ingrdientname"> {this.props.lists.name}:</div> <div className="listdesc">{this.props.lists.description}</div><button onClick={this.deleteButton.bind(this, this.props.lists.id)}>Delete</button></div>
         </div>
       </div>
     )

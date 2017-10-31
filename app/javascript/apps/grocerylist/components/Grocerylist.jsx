@@ -125,12 +125,12 @@ class  Grocerylist extends Component {
   }
 
   renderLists () {
-    return 
+    return (
     <div className="doesItShow">
   
-      {this.state.list.map((names, index)=> <DatabaseLists lists={names} />)}
+      {this.state.list.map((names, index)=> <div key={index}><DatabaseLists lists={names} /></div>)}
     </div>
-
+    )
   }
 
 	render() {
