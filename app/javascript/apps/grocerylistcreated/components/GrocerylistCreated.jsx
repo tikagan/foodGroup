@@ -16,12 +16,13 @@ class  GrocerylistCreated extends Component {
 
 		render() {
 		return (
-			<div className="scaleBG">
-		    <Navbar />
-		    <div className=" jumbotron headed">
+			
+		    
+		   
+		    <div>
 		    <p className="grocerylisttitle">Grocery List Name</p>
-		    </div>
-		    <div className="jumbotron listed2">
+		  
+		    <div>
 		    <ul className="glist">
 		      <li>boat</li>
 		      <li>fish</li>
@@ -30,16 +31,18 @@ class  GrocerylistCreated extends Component {
 		      <li>butter</li>
 		    </ul>
 		    </div>
+		    
 		    <div className="bootform">
 		    <div class="input-group" >
+		     <input type="text" className="form-control" placeholder="Add item"/>
              <span class="input-group-btn">
                <button class="btn btn-secondary" type="button">submit</button>
             </span>
-              <input type="text" class="form-control" placeholder="Add item"/>
+             
             </div>
             </div>
 			
-			  
+			
 		    </div>
 		    
 		)

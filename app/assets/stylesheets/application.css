@@ -84,12 +84,10 @@ overflow:auto;*/
 }
 
 .grocerylisttitle {
-    font-size: 24pt;
-    margin-top: -0.3em;
-
-
-
+        margin-top: -0.3em;
 }
+
+
 
 .listed2 {
 
@@ -123,6 +121,7 @@ overflow:auto;*/
     height:22px;
     font-size:8pt;
     color:grey;
+    float:right;
 }
 
 .grocerylistsA {
@@ -141,6 +140,7 @@ font-weight: bold;
 .listdesc {
     color:black;
     font-style: italic;
+    font-size:10pt;
 }
 
 .glist {
@@ -248,6 +248,12 @@ font-weight: bold;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
+
+}
+
+.growform {
+    margin-bottom: 2em;
+
 }
 
 .form-control {
@@ -269,7 +275,7 @@ font-weight: bold;
 }
 
 .bootform {
-    width: 600px;
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;

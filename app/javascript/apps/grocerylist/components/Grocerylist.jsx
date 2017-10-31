@@ -131,7 +131,7 @@ class  Grocerylist extends Component {
             {this.renderLists(this.state.list)}
           </div>
 		    <div className="bootform2" >
-		      <form onSubmit={this.onSubmit}>
+		      <form className="growform" onSubmit={this.onSubmit}>
             <div className="form-group">
               <label for="exampleInputEmail1">List Name</label>
               <input  className="form-control" name="tempName" placeholder="Add List Name" onChange={this.onChange}/>
