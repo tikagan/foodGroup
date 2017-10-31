@@ -124,6 +124,14 @@ class  Grocerylist extends Component {
     });
   }
 
+  renderLists () {
+    return 
+    <div className="doesItShow">
+  
+      {this.state.list.map((names, index)=> <DatabaseLists lists={names} />)}
+    </div>
+
+  }
 
 	render() {
 	  return (
@@ -131,7 +139,7 @@ class  Grocerylist extends Component {
 			  <Navbar />
         <div className="jumbotron listed7">
          <div className="grocerylistsA">
-            <DatabaseLists lists={this.state.list} />
+            {this.renderLists(this.state.list)}
           </div>
 		    <div className="bootform2" >
 		      <form onSubmit={this.onSubmit}>

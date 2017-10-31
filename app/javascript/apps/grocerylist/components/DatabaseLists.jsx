@@ -15,21 +15,8 @@ class DatabaseLists extends Component {
       }
   }
 
-
   componentDidMount () {
-    console.log(this.props.lists)
-    let lists = []
-    for (let i = 0; i < this.props.lists.length; i++) {
-      lists.push({
-        id: this.props.lists[i].id,
-        name: this.props.lists[i].name,
-        description: this.props.lists[i].description
-      })
-    }
-    this.setState({
-      list: lists
-    })
-    console.log(this.state)
+
   }
 
   deleteButton = (data) => {
@@ -52,17 +39,33 @@ class DatabaseLists extends Component {
       this.setState({
         list: lists
       })
+      console.log(this.state)
     })
     .catch(function(error) {
       console.log(error)
     })
   }
 
+  // componentWillUpdate(){
+  //   let lists = []
+  //   for (let i = 0; i < this.props.lists.length; i++) {
+  //     lists.push({
+  //       id: this.props.lists[i].id,
+  //       name: this.props.lists[i].name,
+  //       description: this.props.lists[i].description
+  //     })
+  //   }
+  //   this.setState({
+  //     list: lists
+  //   })
+  // console.log(this.state)
+  // }
+
   render() {
     return (
       <div>
         <div>
-          {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname"> {names.name}:</div> <div className="listdesc">{names.description}</div><button onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>)}
+          <div key={this.props.lists.id}> <div className="ingrdientname"> {this.props.lists.name}:</div> <div className="listdesc">{this.props.lists.description}</div><button onClick={this.deleteButton.bind(this, this.props.lists.id)}>Delete</button></div>)}
         </div>
       </div>
     )
