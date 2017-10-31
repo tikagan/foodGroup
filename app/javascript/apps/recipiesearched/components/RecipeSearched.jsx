@@ -26,7 +26,7 @@ class  RecipeSearched extends Component {
 		render() {
 		  return (
 		  	<div className="potluckBG">
-		  	  <Button onClick={this._onButtonClick}>Button</Button>
+		  	  <button onClick={this._onButtonClick}>button</button>
         {this.state.showComponent ?
          :
            null
