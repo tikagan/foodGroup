@@ -171,7 +171,7 @@ onChange = (e) => {
 		    
 		    <div className="bootform">
 		    <div class="input-group" >
-		     <input type="text" className="form-control" placeholder="Add item"/>
+		  		     <input type="text" className="form-control" placeholder="Add item"/>
              <span class="input-group-btn">
                <button class="btn btn-secondary" type="button">submit</button>
             </span>
