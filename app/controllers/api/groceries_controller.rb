@@ -42,8 +42,11 @@ class Api::GroceriesController < Api::ApplicationController
   # DELETE /groceries/1
   # DELETE /groceries/1.json
   def destroy
-    if @grocery.destroy
-      format.json { head :no_content }
+    @allGroceries = Grocery.all
+    @delete = Grocery.find_by_id params[:id]
+
+    if @delete.destroy
+      render json: { result: @allGroceries }
     end
   end
 

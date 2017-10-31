@@ -11,7 +11,7 @@ class  Grocerylist extends Component {
 			super(props)
 
 			this.state = {
-        list: '',
+        list: [],
         user: '',
         tempName: '',
         tempDescription: ''
@@ -88,8 +88,39 @@ class  Grocerylist extends Component {
     })
   }
 
+  deleteButton = (data) => {
+    console.log("deleteButton data", data)
+
+    axios.delete('api/groceries/' + data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    )
+    .then((response) => {
+      console.log(response)
+      let lists = []
+      for (let i = 0; i < response.data.result.length; i++) {
+        lists.push({
+          name: response.data.result[i].name,
+          description: response.data.result[i].description
+        })
+      }
+      this.setState({
+        list: lists
+      })
+      console.log(response)
+      console.log(this.state)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
+
   renderLists () {
-    return <div>{this.state.list.map((names, index) => <div key={index}>{names.name}</div>)}</div>
+    console.log("here")
+    return <div>{this.state.list.map((names, index) => <div key={index} onClick={this.deleteButton.bind(this, index)}>{names.name}</div>)}</div>
   }
 
 	render() {
@@ -111,10 +142,9 @@ class  Grocerylist extends Component {
            
             <button  className="btn btn-primary">Submit</button>
           </form>
-
           </div>
           <div>
-          {this.renderLists}
+            {this.renderLists(this.state.list)}
           </div>
          </div>
          <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 

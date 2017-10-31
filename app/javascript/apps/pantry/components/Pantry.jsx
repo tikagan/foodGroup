@@ -20,7 +20,6 @@ class  Pantry extends Component {
 	}
 
   componentDidMount() {
-
     const serverURL = 'http://localhost:3000/'
   
    
