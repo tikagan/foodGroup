@@ -92,8 +92,6 @@ class  Grocerylist extends Component {
     return <div>{this.state.list.map((names, index) => <div key={index}>{names.name}</div>)}</div>
   }
 
-
-
 	render() {
 	  return (
 		  <div className="scaleBG">
@@ -113,10 +111,10 @@ class  Grocerylist extends Component {
            
             <button  className="btn btn-primary">Submit</button>
           </form>
+
+          </div>
           <div>
           {this.renderLists}
-          </div>
-
           </div>
          </div>
          <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 

@@ -269,12 +269,6 @@ class  Pantry extends Component {
         
 
         </div>
-
-
- 
-
-
-		   
 		)
   }
 	} 
