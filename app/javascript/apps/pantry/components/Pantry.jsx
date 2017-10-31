@@ -27,6 +27,7 @@ class  Pantry extends Component {
    
     axios.get('api/pantry')
      .then( (response) => {
+       console.log(response)
        let food = []
        for (let i = 0; i < response.data.result.length; i++) {
           food.push({

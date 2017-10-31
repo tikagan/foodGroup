@@ -10,6 +10,9 @@ class Api::GroceriesController < Api::ApplicationController
   # GET /groceries/1
   # GET /groceries/1.json
   def show
+    @user = current_user
+
+    @groceries = @user.Grocery
   end
 
 
@@ -18,11 +21,10 @@ class Api::GroceriesController < Api::ApplicationController
   def create
     @grocery = Grocery.new(grocery_params)
 
-    respond_to do |format|
       if @grocery.save
-        format.json { render :show, status: :created, location: @grocery }
+        render json: { result: @grocery }
       else
-        format.json { render json: @grocery.errors, status: :unprocessable_entity }
+        render json: { result: @grocery.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,6 +58,6 @@ class Api::GroceriesController < Api::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grocery_params
-      params.require(:grocery).permit(:name)
+      params.require(:grocery).permit(:user_id, :name, :description)
     end
 end

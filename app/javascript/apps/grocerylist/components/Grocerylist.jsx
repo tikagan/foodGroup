@@ -11,11 +11,19 @@ class  Grocerylist extends Component {
 			super(props)
 
 			this.state = {
-
+        list: "",
+        description: ""
 			};
+  }
+  
+  onChange = (e) => {
 
+    const state = this.state
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+    console.log(this.state)
+  }
 
-	}
 
 	render() {
 	  return (
@@ -26,12 +34,12 @@ class  Grocerylist extends Component {
 		      <form>
             <div className="form-group">
               <label for="exampleInputEmail1">List Name</label>
-              <input  className="form-control"  placeholder="Add List Name"/>
+              <input  className="form-control" name="list" placeholder="Add List Name" onChange={this.onChange}/>
     
             </div>
             <div className="form-group">
               <label for="exampleInputEmail1">Description</label>
-              <input  className="form-control" placeholder="Add Description"/>
+              <input  className="form-control" name="description" placeholder="Add Description" onChange={this.onChange}/>
             </div>
            
             <button  className="btn btn-primary">Submit</button>
