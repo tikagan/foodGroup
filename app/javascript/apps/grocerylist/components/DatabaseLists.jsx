@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import GrocerylistCreated from '../../grocerylistcreated/components/GroceryListCreated.jsx'
 
 class DatabaseLists extends Component {
 
@@ -11,12 +12,16 @@ class DatabaseLists extends Component {
         list: [],
         id: '',
         name: '',
-        description: ''
+        description: '',
+        showComponent: false
       }
+      this.showList = this.showList.bind(this);
   }
 
-  componentDidMount () {
-
+  showList = () => {
+    this.setState({
+      showComponent: !this.state.showComponent
+    });
   }
 
   deleteButton = (e) => {
@@ -29,7 +34,15 @@ class DatabaseLists extends Component {
     return (
       <div>
         <div>
-          <div key={this.props.lists.id}> <div className="ingrdientname"> {this.props.lists.name}:</div> <div className="listdesc">{this.props.lists.description}</div><button onClick={this.deleteButton}>Delete</button></div>
+          <div key={this.props.lists.id}> <div className="ingrdientname"> {this.props.lists.name}:</div> <div className="listdesc">{this.props.lists.description}</div>
+            <div>
+              <button onClick={this.showList}>Show Grocery List</button>
+                {this.state.showComponent ?
+                  <GrocerylistCreated /> :
+                  null
+                }
+              </div> 
+          <div><button onClick={this.deleteButton}>Delete</button></div></div>
         </div>
       </div>
     )
@@ -38,13 +51,3 @@ class DatabaseLists extends Component {
 
 
 export default DatabaseLists
-
-
-// <div>
-//         <button onClick={this.showComponentButtonClick}>View Grocery List</button>
-//         {this.state.showComponent ?
-//            <GrocerylistCreated /> :
-//            null
-//         }
-//       </div>
-

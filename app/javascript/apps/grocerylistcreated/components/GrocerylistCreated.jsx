@@ -31,11 +31,11 @@ class  GrocerylistCreated extends Component {
 		    </ul>
 		    </div>
 		    <div className="bootform">
-		    <div class="input-group" >
-             <span class="input-group-btn">
-               <button class="btn btn-secondary" type="button">submit</button>
+		    <div className="input-group" >
+             <span className="input-group-btn">
+               <button className="btn btn-secondary" type="button">submit</button>
             </span>
-              <input type="text" class="form-control" placeholder="Add item"/>
+              <input type="text" className="form-control" placeholder="Add item"/>
             </div>
             </div>
 			
