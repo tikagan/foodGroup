@@ -21,7 +21,7 @@ class  Grocerylist extends Component {
         selectedID: '',
         selectedName: ''
 			};
-    this.showComponentButtonClick = this.showComponentButtonClick.bind(this);
+
   }
 
   componentDidMount () {
@@ -117,13 +117,6 @@ class  Grocerylist extends Component {
       console.log(error)
     })
   }
-
-  renderLists () {
-    return <div>
-    
-    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname">{names.name}:</div> 
-      <div className="listdesc">{names.description}<button className="btn btn-sm listButton" onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>
-      </div>)}</div>
 
   deleteButton = (data) => {
     console.log(data)
