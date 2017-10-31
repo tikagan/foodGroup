@@ -9,11 +9,11 @@ class  GrocerylistCreated extends Component {
 	    super(props)
 	    
 	    this.state = {
-        food: '',
-        current_user: '',
+        food: [],
         newIng: '',
         newAmount: '',
-        newUnit: ''
+        newUnit: '',
+        ingredientDB: []
 	    };
 	   
 	}
@@ -21,26 +21,35 @@ class  GrocerylistCreated extends Component {
   componentDidMount(){
     let id = this.props.id
     console.log(id)
-    axios.get('api/grocery_ingredients/' + 31)
+    axios.get('api/grocery_ingredients/', {
+      params: {
+        grocery_id: id
+      }
+    })
     .then( (response) => {
       console.log(response)
+      let food = []
+        for (let i = 0; i < response.data.result.length; i++) {
+          food.push({
+            id: response.data.result[i].ingredient_id
+          })
+        }
+      let temp = {}
+      for (let x = 0; x < response.data.all.length; x++) {
+        temp[response.data.all[x].id] = {
+          id: response.data.all[x].id,
+          name: response.data.all[x].name
+        };
+       }
+      console.log(temp)
+        
+        this.setState({
+          food: food,
+          ingredientDB: temp
+        });
     })
     .catch(function(error) {
       console.log(error)
-    })
-
-    axios.get('api/pantry')
-    .then( (response) => {
-      let temp = []
-      for (let x = 0; x < response.data.all.length; x++) {
-        temp.push({
-          id: response.data.all[x].id,
-          name: response.data.all[x].name
-        })
-       }
-       this.setState({
-        ingredientDB: temp
-       });
     })
   }
 
@@ -59,23 +68,28 @@ onSubmit = (e) => {
 
     let userIng = this.state.newIng
     console.log(this.state)
-    let pantryUser = this.state.current_user
+    let groceryList= this.props.id
 
     let checker = this.state.ingredientDB
     let checkerName = []
-    checker.forEach(function(item){
-      checkerName.push(item.name)
+    Object.keys(checker).forEach(function(key) {
+      checkerName.push(checker[key].name)
     })
     console.log(checkerName)
 
     if (checkerName.includes(userIng)) {
-      let obj = checker.find(o => o.name === userIng);
+      let newObj = {}
+      Object.keys(checker).forEach(function(key) {
+        if (checker[key].name == userIng) {
+          newObj = checker[key]
+        } 
+      })
 
       console.log("true")
-      console.log(obj)
+      console.log(newObj)
       axios.post('api/grocery_ingredients', {
-        ingredient_id: obj.id,
-        grocery_id: 31,
+        ingredient_id: newObj.id,
+        grocery_id: groceryList,
         quantity: 10
       }, {
         headers: {
@@ -84,28 +98,16 @@ onSubmit = (e) => {
         }
       })
       .then( (response) => {
-        console.log(response)
+        console.log("ingred exists post to server", response)
         const setState = this.setState.bind(this)
-        axios.get('api/pantry')
-        .then( (response) => {
-        let food = []
-        for (let i = 0; i < response.data.result.length; i++) {
-          food.push({
-            key: response.data.result[i].id,
-            item: response.data.result[i].name
-          })
-        }
-          this.setState({
-            food: food,
-            current_user: response.data.user.id
-          });
-
-         })
-
-        .catch(function (error) {
-        console.log(error);
-        })
-
+        let newGID = {
+            id: response.data.result.id
+          }
+          console.log(newGID)
+          
+            this.setState({
+              food: [...this.state.food, newGID]
+            })
       })
       .catch(function (error) {
       console.log(error);
@@ -122,9 +124,9 @@ onSubmit = (e) => {
       })
       .then( (response) => {
         console.log(response.data.result.id)
-          axios.post('/api/pantry', {
+          axios.post('api/grocery_ingredients', {
             ingredient_id: response.data.result.id,
-            grocery_id: pantryUser,
+            grocery_id: groceryList,
             quantity: 10
         }, {
           headers: {
@@ -133,21 +135,18 @@ onSubmit = (e) => {
           }
         })
         .then( (responses) => {
+          console.log("last", responses)
           console.log("here")
           const setState = this.setState.bind(this)
-          axios.get('api/pantry')
-          .then( (responses) => {
-          console.log("NEWWWWWWWWWWWWWWW", responses.data.result)
-          let food = []
-          for (let i = 0; i < responses.data.result.length; i++) {
-            food.push({
-              key: responses.data.result[i].id,
-              item: responses.data.result[i].name
-            })
+          console.log('>>>>>> ', response.data.result)
+          let newGID = {
+            id: response.data.result.id
           }
+          console.log(newGID)
+          
             this.setState({
-              food: food
-            });
+              food: [...this.state.food, newGID]
+            })
             console.log(this.state)
          })
 
@@ -155,13 +154,26 @@ onSubmit = (e) => {
         console.log(error);
         })
       })
-      })
         
        .catch(function (error) {
         console.log(error);
       })
     }
    }
+
+  getName = (item) => {
+    console.log(this.state.ingredientDB[item.id])
+    return this.state.ingredientDB[item.id]["name"]
+  };
+
+  renderFood () {
+    return (
+      <div>{this.state.food.map((item, index) => 
+        <div key={index}>{this.getName(item)}</div>
+        )}
+      </div>
+    )
+  }
 
 
 		render() {
@@ -173,13 +185,7 @@ onSubmit = (e) => {
 		    <p className="grocerylisttitle">Grocery List Name</p>
 		  
 		    <div>
-		    <ul className="glist">
-		      <li>boat</li>
-		      <li>fish</li>
-		      <li>drum</li>
-		      <li>gum</li>
-		      <li>butter</li>
-		    </ul>
+          {this.renderFood(this.state.food)}
 		    </div>
 		    
 		    <div className="bootform">
