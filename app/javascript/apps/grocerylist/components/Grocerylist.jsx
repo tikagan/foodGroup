@@ -38,8 +38,6 @@ class  Grocerylist extends Component {
         list: lists,
         user: response.data.user.id
       })
-      console.log(response)
-      console.log(this.state)
     })
     .catch(function(error) {
       console.log(error)
@@ -51,12 +49,10 @@ class  Grocerylist extends Component {
     const state = this.state
     state[e.target.name] = e.target.value;
     this.setState(state);
-    console.log(this.state)
   }
 
   onSubmit = (e) => {
     e.preventDefault()
-    console.log(e)
     let newListName = this.state.tempName
     let newDescription = this.state.tempDescription
     let user = this.state.user
@@ -91,8 +87,6 @@ class  Grocerylist extends Component {
   }
 
   deleteButton = (data) => {
-    console.log("deleteButton data", data)
-
     axios.delete('api/groceries/' + data, {
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +95,6 @@ class  Grocerylist extends Component {
       }
     )
     .then((response) => {
-      console.log(response)
       let lists = []
       for (let i = 0; i < response.data.result.length; i++) {
         lists.push({
@@ -113,8 +106,6 @@ class  Grocerylist extends Component {
       this.setState({
         list: lists
       })
-      console.log(response)
-      console.log(this.state)
     })
     .catch(function(error) {
       console.log(error)
@@ -122,11 +113,7 @@ class  Grocerylist extends Component {
   }
 
   renderLists () {
-    console.log("here")
-
     return <div>{this.state.list.map((names, index)=> <div key={names.id} onClick={this.deleteButton.bind(this, names.id)}>{names.name}</div>)}</div>
-    console.log(names)
-    console.log(index)
   }
 
 	render() {
