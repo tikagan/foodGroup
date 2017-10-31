@@ -128,6 +128,9 @@ class  Grocerylist extends Component {
 		  <div className="scaleBG">
 			  <Navbar />
         <div className="jumbotron listed7">
+         <div className="grocerylistsA">
+            {this.renderLists(this.state.list)}
+          </div>
 		    <div className="bootform2" >
 		      <form onSubmit={this.onSubmit}>
             <div className="form-group">
@@ -143,9 +146,7 @@ class  Grocerylist extends Component {
             <button  className="btn btn-primary">Submit</button>
           </form>
           </div>
-          <div>
-            {this.renderLists(this.state.list)}
-          </div>
+         
          </div>
          <Link to="/GrocerylistCreated"  className="book2" >grocerylist created</Link> 
 			</div>
