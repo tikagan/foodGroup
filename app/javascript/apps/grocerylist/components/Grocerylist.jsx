@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Navbar from './Navbar'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import GrocerylistCreated from '../../grocerylistcreated/components/GrocerylistCreated.jsx'
 
 
 class  Grocerylist extends Component {
@@ -143,6 +144,7 @@ class  Grocerylist extends Component {
            
             <button  className="btn btn-primary">Submit</button>
           </form>
+          <GrocerylistCreated />
           </div>
          
          </div>
