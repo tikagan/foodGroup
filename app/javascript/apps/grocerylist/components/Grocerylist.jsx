@@ -115,7 +115,9 @@ class  Grocerylist extends Component {
   renderLists () {
     return <div>
     
-    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname">{names.name}:</div> <div className="listdesc">{names.description}</div><button onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>)}</div>
+    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname">{names.name}:</div> 
+      <div className="listdesc">{names.description}<button className="btn btn-sm listButton" onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>
+      </div>)}</div>
 
   }
 
