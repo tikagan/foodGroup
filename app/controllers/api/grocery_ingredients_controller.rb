@@ -1,10 +1,14 @@
-class GroceryIngredientsController < ApplicationController
+class Api::GroceryIngredientsController < Api::ApplicationController
   before_action :set_grocery_ingredient, only: [:show, :edit, :update, :destroy]
 
   # GET /grocery_ingredients
   # GET /grocery_ingredients.json
-  def index
-    @grocery_ingredients = GroceryIngredient.all
+  def show
+    @user = current_user
+    @allIngredients = Ingredient.all
+    @grocery_ingredients = GroceryIngredient.where(grocery_id = params[:grocery_id])
+
+    render json: {result: @grocery_ingredients, all: @allIngredients, user: @user}
   end
 
   # GET /grocery_ingredients/new
@@ -23,12 +27,11 @@ class GroceryIngredientsController < ApplicationController
 
       if @grocery_ingredient.save
 
-        format.json { render :show, status: :created, location: @grocery_ingredient }
+       render json: { result: @grocery_ingredient }
       else
 
         format.json { render json: @grocery_ingredient.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PATCH/PUT /grocery_ingredients/1
@@ -43,7 +46,7 @@ class GroceryIngredientsController < ApplicationController
         format.json { render json: @grocery_ingredient.errors, status: :unprocessable_entity }
       end
     end
-  end
+
 
   # DELETE /grocery_ingredients/1
   # DELETE /grocery_ingredients/1.json
@@ -51,7 +54,6 @@ class GroceryIngredientsController < ApplicationController
     @grocery_ingredient.destroy
 
       format.json { head :no_content }
-    end
   end
 
   private
