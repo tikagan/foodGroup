@@ -72,7 +72,7 @@ class  Grocerylist extends Component {
       for (let i = 0; i < response.data.result.length; i++) {
         lists.push({
           id: response.data.result[i].id,
-          list: response.data.result[i].name,
+          name: response.data.result[i].name,
           description: response.data.result[i].description
         })
       }
