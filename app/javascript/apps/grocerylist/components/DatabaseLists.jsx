@@ -20,7 +20,8 @@ class DatabaseLists extends Component {
 
   showList = () => {
     this.setState({
-      showComponent: !this.state.showComponent
+      showComponent: !this.state.showComponent,
+      id: this.props.lists.id
     });
   }
 
@@ -38,7 +39,7 @@ class DatabaseLists extends Component {
             <div>
               <button onClick={this.showList}>Show Grocery List</button>
                 {this.state.showComponent ?
-                  <GrocerylistCreated /> :
+                  <GrocerylistCreated id={this.state.id}/> :
                   null
                 }
               </div> 

@@ -9,10 +9,14 @@ class  GrocerylistCreated extends Component {
 	    super(props)
 	    
 	    this.state = {
-	    	
 	    };
 	   
 	}
+
+  componentDidMount(){
+    let id = this.props.id
+    console.log(id)
+  }
 
 		render() {
 		return (
