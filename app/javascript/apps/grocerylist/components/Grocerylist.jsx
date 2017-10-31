@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import GrocerylistCreated from '../../grocerylistcreated/components/GrocerylistCreated.jsx'
+import DatabaseLists from './DatabaseLists'
 
 
 class  Grocerylist extends Component {
@@ -15,8 +16,12 @@ class  Grocerylist extends Component {
         list: [],
         user: '',
         tempName: '',
-        tempDescription: ''
+        tempDescription: '',
+        showComponent: false,
+        selectedID: '',
+        selectedName: ''
 			};
+    this.showComponentButtonClick = this.showComponentButtonClick.bind(this);
   }
 
   componentDidMount () {
@@ -113,10 +118,23 @@ class  Grocerylist extends Component {
     })
   }
 
+  showComponentButtonClick = () => {
+    this.setState({
+      showComponent: !this.state.showComponent
+    });
+  }
+
   renderLists () {
     return <div>
     
-    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname">{names.name}:</div> <div className="listdesc">{names.description}</div><button onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>)}</div>
+    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname"> {names.name}:</div> <div className="listdesc">{names.description}</div>      <div>
+        <button onClick={this.showComponentButtonClick}>View Grocery List</button>
+        {this.state.showComponent ?
+           <GrocerylistCreated /> :
+           null
+        }
+      </div>
+    <button onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>)}</div>
 
   }
 
@@ -142,7 +160,6 @@ class  Grocerylist extends Component {
            
             <button  className="btn btn-primary">Submit</button>
           </form>
-          <GrocerylistCreated />
           </div>
          
          </div>
