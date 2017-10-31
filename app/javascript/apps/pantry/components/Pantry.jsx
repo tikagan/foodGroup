@@ -288,6 +288,6 @@ class  Pantry extends Component {
         </div>
 		)
   }
-	} 
+} 
 
 export default Pantry
