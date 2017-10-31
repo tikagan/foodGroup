@@ -29,6 +29,7 @@ class  Grocerylist extends Component {
       let lists = []
       for (let i = 0; i < response.data.result.length; i++) {
         lists.push({
+          id: response.data.result[i].id,
           name: response.data.result[i].name,
           description: response.data.result[i].description
         })
@@ -74,6 +75,7 @@ class  Grocerylist extends Component {
       let lists = []
       for (let i = 0; i < response.data.result.length; i++) {
         lists.push({
+          id: response.data.result[i].id,
           list: response.data.result[i].name,
           description: response.data.result[i].description
         })
@@ -103,6 +105,7 @@ class  Grocerylist extends Component {
       let lists = []
       for (let i = 0; i < response.data.result.length; i++) {
         lists.push({
+          id: response.data.result[i].id,
           name: response.data.result[i].name,
           description: response.data.result[i].description
         })
@@ -120,7 +123,10 @@ class  Grocerylist extends Component {
 
   renderLists () {
     console.log("here")
-    return <div>{this.state.list.map((names, index) => <div key={index} onClick={this.deleteButton.bind(this, index)}>{names.name}</div>)}</div>
+
+    return <div>{this.state.list.map((names, index)=> <div key={names.id} onClick={this.deleteButton.bind(this, names.id)}>{names.name}</div>)}</div>
+    console.log(names)
+    console.log(index)
   }
 
 	render() {
