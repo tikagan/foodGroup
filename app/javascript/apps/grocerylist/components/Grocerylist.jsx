@@ -124,11 +124,39 @@ class  Grocerylist extends Component {
     });
   }
 
+  deleteButton = (data) => {
+    console.log(data)
+    axios.delete('api/groceries/' + data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    )
+    .then((response) => {
+      let lists = []
+      for (let i = 0; i < response.data.result.length; i++) {
+        lists.push({
+          id: response.data.result[i].id,
+          name: response.data.result[i].name,
+          description: response.data.result[i].description
+        })
+      }
+      this.setState({
+        list: lists
+      })
+      console.log(this.state)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
+
   renderLists () {
     return (
     <div className="doesItShow">
   
-      {this.state.list.map((names, index)=> <div key={index}><DatabaseLists lists={names} /></div>)}
+      {this.state.list.map((names, index)=> <div key={index}><DatabaseLists lists={names} deleter={this.deleteButton} /></div>)}
     </div>
     )
   }
