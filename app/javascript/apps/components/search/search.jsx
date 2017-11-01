@@ -9,8 +9,8 @@ import SearchBox from './SearchBox'
 import pluralize from 'pluralize'
 
 class Search extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
       searchResults: [],
       userIngredients: ""
@@ -18,7 +18,7 @@ class Search extends Component {
   }
 
   setUserIngredients = (userIngredients) => {
-    this.setState({userIngredients: userIngredients.join(" ")});
+    this.setState({userIngredients: userIngredients.join(" ")})
   };
 
   componentWillMount() {
