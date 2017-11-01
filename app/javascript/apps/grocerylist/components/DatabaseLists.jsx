@@ -37,13 +37,14 @@ class DatabaseLists extends Component {
         <div>
           <div key={this.props.lists.id}> <div className="ingrdientname"> {this.props.lists.name}:</div> <div className="listdesc">{this.props.lists.description}</div>
             <div>
-              <button onClick={this.showList}>Show Grocery List</button>
+              <button type="button" className="btn btn-sm showgrocerylistbutton" onClick={this.showList}>Show</button>
                 {this.state.showComponent ?
                   <GrocerylistCreated id={this.state.id}/> :
                   null
                 }
               </div> 
-          <div><button onClick={this.deleteButton}>Delete</button></div></div>
+          <div><button type="button" className=" btn btn-sm deletegrocerylistbutton" onClick={this.deleteButton}>Delete</button></div></div>
+          <div className="emptydiv"></div>
         </div>
       </div>
     )
