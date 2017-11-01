@@ -31,11 +31,12 @@ class Api::GroceryIngredientsController < Api::ApplicationController
   # POST /grocery_ingredients
   # POST /grocery_ingredients.json
   def create
+    @allIngredients = Ingredient.all
     @grocery_ingredient = GroceryIngredient.new(grocery_ingredient_params)
 
       if @grocery_ingredient.save
 
-       render json: { result: @grocery_ingredient }
+       render json: { result: @grocery_ingredient, all: @allIngredients }
       else
 
         format.json { render json: @grocery_ingredient.errors, status: :unprocessable_entity }
@@ -59,9 +60,12 @@ class Api::GroceryIngredientsController < Api::ApplicationController
   # DELETE /grocery_ingredients/1
   # DELETE /grocery_ingredients/1.json
   def destroy
-    @grocery_ingredient.destroy
 
-      format.json { head :no_content }
+    @delete = GroceryIngredient.find params[:id]
+
+    if @delete.destroy
+      render json: { result: @delete }
+    end
   end
 
   private

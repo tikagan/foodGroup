@@ -32,6 +32,7 @@ class  GrocerylistCreated extends Component {
       let food = []
         for (let i = 0; i < response.data.result.length; i++) {
           food.push({
+            key: response.data.result[i].id,
             id: response.data.result[i].ingredient_id
           })
         }
@@ -102,6 +103,7 @@ onSubmit = (e) => {
         console.log("ingred exists post to server", response)
         const setState = this.setState.bind(this)
         let newGID = {
+            key: response.data.result[i].id,
             id: response.data.result.ingredient_id
           }
           console.log(newGID)
@@ -141,38 +143,26 @@ onSubmit = (e) => {
           const setState = this.setState.bind(this)
           console.log('>>>>>> ', response.data.result)
           let newGID = {
+            key: response.data.result[i].id,
             id: response.data.result.id
           }
           console.log(newGID)
+
+          let temp = {}
+          for (let x = 0; x < response.data.all.length; x++) {
+            temp[response.data.all[x].id] = {
+              id: response.data.all[x].id,
+              name: response.data.all[x].name
+            };
+          }
+          console.log(temp)
           
             this.setState({
-              food: [...this.state.food, newGID]
+              food: [...this.state.food, newGID],
+              ingredientDB: temp
             })
             })
-            console.log(this.state)
-            let id = this.props.id
-            axios.get('api/grocery_ingredients/', {
-              params: {
-                grocery_id: id
-              }
-            })
-            .then( (response) => {
-            console.log("setting new ingred DB state ", response)
-            let food = []
-            
-            let temp = {}
-            for (let x = 0; x < response.data.all.length; x++) {
-              temp[response.data.all[x].id] = {
-                id: response.data.all[x].id,
-                name: response.data.all[x].name
-              };
-            }
-          console.log("this is temp", temp)
-        
-          this.setState({
-            ingredientDB: temp
-          });
-         })
+           
         .catch(function (error) {
         console.log(error);
         })
@@ -184,6 +174,46 @@ onSubmit = (e) => {
     }
    }
 
+   deleteButton = (data) => {
+    console.log("deleteButton data", data)
+    let ownPantry = this.state.current_user
+    let toDelete = data.id
+    console.log(toDelete)
+    // this.names.key = 
+    axios.delete('api/grocery_ingredients/' + data.key, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    )
+    .then( (response) => {
+        console.log("here")
+        let thisList = this.props.id
+        const setState = this.setState.bind(this)
+        axios.get('api/grocery_ingredients', {
+          params: {
+            grocery_id: thisList
+          }
+        })
+        .then( (response) => {
+        let food = []
+        for (let i = 0; i < response.data.result.length; i++) {
+          food.push({
+            key: response.data.result[i].id,
+            id: response.data.result[i].ingredient_id
+          })
+          }
+          this.setState({
+            food: food
+          });
+         })
+        })
+        .catch(function (error) {
+        console.log(error);
+        })
+  }
+
   getName = (item) => {
     console.log(item)
     // console.log(this.state.ingredientDB[item.id])
@@ -193,18 +223,16 @@ onSubmit = (e) => {
   renderFood () {
     return (
       <div>{this.state.food.map((item, index) => 
-        <div key={index}>{this.getName(item)}</div>
+        <div key={index}>{this.getName(item)}
+        <div><button onClick={this.deleteButton.bind(this, item)}>Delete Item</button></div>
+        </div>
         )}
       </div>
     )
   }
 
-
 		render() {
 		return (
-			
-		    
-		   
 		    <div>
 		    <p className="grocerylisttitle">Grocery List Name</p>
 		  
