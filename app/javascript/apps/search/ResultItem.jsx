@@ -19,10 +19,10 @@ class ResultItem extends Component {
 
     render(){
         return (
-          <li>
-          <img src={this.props.img}></img>
+          <li className="recipe-search-item">
+          <img className="search-item-image" src={this.props.img}></img>
           {this.props.name}, {this.props.rating} / 5
-          <input type="submit" value="click here to see the recipe" onClick={this.recipeSearch}/>
+          <button className= "btn btn-sm searchresult-button" type="submit"  onClick={this.recipeSearch}> Show Recipe</button>
           </li>
         );
     }

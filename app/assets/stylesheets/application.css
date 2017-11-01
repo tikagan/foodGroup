@@ -30,6 +30,7 @@ html {
 
 body {
     height: 100%;
+    color:white;
 }
 
 #root {
@@ -102,6 +103,17 @@ overflow:auto;*/
 	min-height:400px;
 	background-color: rgba(0, 0, 0, 0.8);
     
+}
+
+.listedpantry {
+    width:500px;
+    margin-top:3em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+    min-height:400px;
+    background-color: rgba(0, 0, 0, 0.8);
+
     
 
 }
@@ -260,6 +272,7 @@ font-weight: bold;
 
 }
 
+
 .form-control {
     background-color: black;
     border-color: black;
@@ -293,6 +306,77 @@ font-weight: bold;
     width:100px;
 }
 
+/*SEARCH STYLING
+----------------*/
+.recipe-search-item {
+    margin:1em;
+}
+.recipesearchsubmit-button {
+    margin-top:.5em;
+    background-color:#80ff2b;
+    color:black;
+}
+
+.diet {
+background-color:white;
+margin:.5em;
+border:none;
+height:30px;
+color:grey;
+}
+
+.allergy {
+    background-color:white;
+   margin-right:.5em; 
+   border:none;
+   height:30px;
+   color:grey;
+}
+
+.courses {
+    background-color:white;
+    margin:.05em;
+    border:none;
+    height:30px;
+    color:grey;
+}
+
+.recipeinputbox {
+    border:none;
+    border-radius: 5px;
+    height:30px;
+
+}
+
+.rsearch {
+    margin-top:1em;
+    width:200px;
+    color:#000000;
+    background-color:darkgrey;
+}
+
+.search-item-image {
+    margin-top:.5em;
+    margin-bottom:.5em;
+    margin-right:2em;
+    margin-left:1em;
+    border-radius: 20%;
+
+}
+
+.searchresult-button {
+    margin-left:1em;
+    margin-right:1em;
+    margin-top:1.5em;
+    float:right;
+    background-color: #80ff2b;
+}
+
+
+
+
+
+/*-------------------*/
 
 .btn-primary {
     background-color: white;
@@ -518,8 +602,7 @@ font-weight: bold;
     display: block;
     height: 92px;
     width: 400px;
-    /*margin-left:390px;
-	margin-top: 50px;*/
+   
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;

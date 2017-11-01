@@ -2,8 +2,26 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import Modal from '../../modal/components/modal.jsx'
+import Modal from 'react-modal'
+import Search from '../../search/search.jsx'
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    overflow              : 'scroll',
+    WebkitOverflowScrolling    : 'auto',
+    height:          '500px',
+    backgroundColor:'rgba(0,0,0,0.7)'
+  
+
+   
+  }
+};
 
 class  Pantry extends Component {
 	constructor (props) {
@@ -17,10 +35,27 @@ class  Pantry extends Component {
         newIng: '',
         newAmount: '',
         newUnit: '',
-        showModal: false
+        modalIsOpen: false
 	    };
    this.modalmodal = this.modalmodal.bind(this)
+   this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
 	}
+
+openModal() {
+    this.setState({modalIsOpen: true});
+  }
+ 
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#ffffff';
+
+  }
+ 
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
@@ -254,7 +289,7 @@ class  Pantry extends Component {
 		return (
 			<div className="pantryBG">
         <Navbar />
-          <div className="jumbotron listed2">
+          <div className="jumbotron listedpantry">
 
           <div>
           {this.renderFood(this.state.food)}
@@ -273,15 +308,28 @@ class  Pantry extends Component {
             <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
             </div>
             <button className="book4" type="submit">Submit</button>
+            <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
+
           </form>
         </div>
 
         <div>
-          <button type="button" class="btn btn-default" data-toggle="modal" onClick={this.modalmodal}>Button</button>
-            {this.state.showModal ?
-               <Modal /> :
-                  null
-            }
+        
+          <Modal 
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+           >
+ 
+            <h2 ref={subtitle => this.subtitle = subtitle}>Recipe Search</h2>
+            
+            <Search />
+         
+          </Modal>
+         
+          
         </div>
         
 

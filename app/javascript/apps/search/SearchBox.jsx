@@ -31,21 +31,21 @@ class SearchBox extends Component {
     render(){
         return (
             <div>
-                <input type="text" value={this.state.query} onChange={this.handleChange} />
-                <select onChange={this.handleDiet}>
+                <input className= "recipeinputbox" type="text" value={this.state.query} onChange={this.handleChange} />
+                <select className="diet" onChange={this.handleDiet}>
                     <option value="">No Dietary Restrictions</option>
                     <option value="Pescetarian">Pescetarian</option>
                     <option value="Vegetarian">Vegetarian</option>
                     <option value="Vegan">Vegan</option>
                 </select>
-                <select onChange={this.handleAllergy}>
+                <select className="allergy" onChange={this.handleAllergy}>
                     <option value="">No Allergy Restrictions</option>
                     <option value="Dairy">Dairy</option>
                     <option value="Gluten">Gluten</option>
                     <option value="Peanut">Peanut</option>
                     <option value="Seafood">Seafood</option>
                 </select>
-                <select onChange={this.handleCourse}>
+                <select className= "courses" onChange={this.handleCourse}>
                     <option value="">All Courses</option>
                     <option value="Breakfast and Brunch">Breakfast and Brunch</option>
                     <option value="Lunch">Lunch</option>
@@ -59,7 +59,7 @@ class SearchBox extends Component {
                 <div>
                 {this.state.query}
                 </div>
-                <input type="submit" onClick={this.createAjax} />
+                <input className="btn  recipesearchsubmit-button" type="submit" onClick={this.createAjax} />
             </div>
         );
     }
