@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101204213) do
+ActiveRecord::Schema.define(version: 20171101222832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(version: 20171101204213) do
     t.index ["user_id"], name: "index_potluck_guests_on_user_id"
   end
 
+  create_table "potluck_recipies", force: :cascade do |t|
+    t.bigint "potlucks_id"
+    t.bigint "recipies_id"
+    t.index ["potlucks_id"], name: "index_potluck_recipies_on_potlucks_id"
+    t.index ["recipies_id"], name: "index_potluck_recipies_on_recipies_id"
+  end
+
   create_table "potlucks", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
@@ -65,6 +72,12 @@ ActiveRecord::Schema.define(version: 20171101204213) do
     t.bigint "creator_id"
     t.string "image"
     t.string "description"
+  end
+
+  create_table "recipies", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "URI"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,5 +98,7 @@ ActiveRecord::Schema.define(version: 20171101204213) do
   add_foreign_key "pantries", "users"
   add_foreign_key "potluck_guests", "potlucks"
   add_foreign_key "potluck_guests", "users"
+  add_foreign_key "potluck_recipies", "potlucks", column: "potlucks_id"
+  add_foreign_key "potluck_recipies", "recipies", column: "recipies_id"
   add_foreign_key "potlucks", "users", column: "creator_id"
 end
