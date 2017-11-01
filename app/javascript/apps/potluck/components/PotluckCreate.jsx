@@ -41,7 +41,24 @@ class  PotluckCreate extends Component {
   }
 
   onSubmit = (e) => {
-
+    e.preventDefault()
+    axios.post('api/potlucks', {
+        name: this.state.tempName,
+        description: this.state.tempDescription,
+        image: this.state.tempImgURL,
+        creator_id: this.state.currentUser
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+    .then((response) => {
+      console.log(response)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
   }
 	
 
