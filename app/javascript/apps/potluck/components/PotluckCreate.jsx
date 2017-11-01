@@ -11,13 +11,38 @@ class  PotluckCreate extends Component {
 	    super(props)
 	    
 	    this.state = {
-	    	
+	    	currentUser: '',
+        tempDescription: '',
+        tempName: '',
+        tempImgURL: ''
 	    	
 	    };
-	    
-
-	   
 	}
+
+  componentDidMount(){
+    axios.get('api/potlucks')
+    .then( (response) => {
+      console.log(response)
+      this.setState({
+        currentUser: response.data.user.id
+      })
+      console.log(this.state)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
+
+  onChange = (e) => {
+    const state = this.state
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+    console.log(this.state)
+  }
+
+  onSubmit = (e) => {
+
+  }
 	
 
 	render() {
@@ -26,26 +51,18 @@ class  PotluckCreate extends Component {
 			  <Navbar />
 
 		    <div className="bootform2" >
-		      <form>
+		      <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label >Potluck Name</label>
-              <input  className="form-control"  placeholder="Add Potluck Name"/>
+              <input onChange={this.onChange} name="tempName" className="form-control"  placeholder="Add Potluck Name"/>
               </div>
               <div className="form-group">
               <label for="exampleInputEmail1">Add Image</label>
-              <input  className="form-control"  placeholder="Add Image"/>
+              <input onChange={this.onChange} name="tempImgURL" className="form-control"  placeholder="Add Image"/>
               </div>
               <div className="form-group">
               <label for="exampleInputEmail1">Description</label>
-              <input  className="form-control" placeholder="Add Description"/>
-              </div>
-              <div className="form-group">
-              <label for="exampleInputPassword1">Recipe</label>
-              <input  className="form-control" placeholder="Add recipe"/>
-              </div>
-              <div className="form-group">
-              <label for="exampleInputPassword1">Invite Users</label>
-              <input  className="form-control" placeholder="Invite Friends"/>
+              <input onChange={this.onChange} name="tempDescription" className="form-control" placeholder="Add Description"/>
               </div>
             <button  className="btn btn-primary">Submit</button>
           </form>

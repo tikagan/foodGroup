@@ -4,9 +4,10 @@ class Api::PotlucksController < Api::ApplicationController
   # GET /potlucks
   # GET /potlucks.json
   def index
+    @user = current_user
     @potlucks = Potluck.all
 
-    render json: {result: @potlucks}
+    render json: {result: @potlucks, user: @user}
   end
 
   # GET /potlucks/1
@@ -57,6 +58,6 @@ class Api::PotlucksController < Api::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def potluck_params
-      params.require(:potluck).permit(:name)
+      params.require(:potluck).permit(:name, :description, :creator_id)
     end
 end
