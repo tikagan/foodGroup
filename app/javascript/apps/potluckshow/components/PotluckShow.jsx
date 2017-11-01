@@ -14,7 +14,9 @@ class  PotluckCreated extends Component {
 	   
 	}
 
-	
+	componentDidMount() {
+    console.log("props log", this.props.location.state)
+  }
             
 
 		render() {

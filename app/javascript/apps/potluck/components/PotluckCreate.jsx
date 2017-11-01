@@ -15,6 +15,7 @@ class  PotluckCreate extends Component {
         tempDescription: '',
         tempName: '',
         tempImgURL: '',
+        passID: '',
         redirectToNewPage: false
 	    	
 	    };
@@ -56,7 +57,12 @@ class  PotluckCreate extends Component {
       })
     .then((response) => {
       console.log(response)
-      this.setState({ redirectToNewPage: true })
+
+      this.setState({ 
+        passID: response.data.result.id,
+        redirectToNewPage: true
+      })
+      console.log("still on create page", this.state)
     })
     .catch(function(error) {
       console.log(error)
@@ -67,10 +73,15 @@ class  PotluckCreate extends Component {
 	render() {
 
     if (this.state.redirectToNewPage) {
-     return (
-     <Redirect to="/PotluckShow"/>
-     )
-   }
+      let passID = this.state.passID
+      return (
+         <Redirect to={{
+           pathname: "/PotluckShow",
+           state: { id: passID }
+          }} />
+      )
+    }
+
 	  return (
 		  <div className="potluckBG">
 			  <Navbar />
