@@ -2,9 +2,32 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
+<<<<<<< HEAD
 
 
 
+=======
+import Modal from 'react-modal'
+import Search from '../../search/search.jsx'
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    overflow              : 'scroll',
+    WebkitOverflowScrolling    : 'auto',
+    height:          '500px',
+    backgroundColor:'rgba(0,0,0,0.7)'
+
+
+
+  }
+};
+>>>>>>> 1dd17dda5cebb6150a6eb800478620fae46b494d
 
 class  Pantry extends Component {
 	constructor (props) {
@@ -20,9 +43,31 @@ class  Pantry extends Component {
         newUnit: '',
        
 	    };
+<<<<<<< HEAD
  
 	}
 
+=======
+   this.modalmodal = this.modalmodal.bind(this)
+   this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+	}
+
+openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#ffffff';
+
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+>>>>>>> 1dd17dda5cebb6150a6eb800478620fae46b494d
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
@@ -278,33 +323,39 @@ class  Pantry extends Component {
             <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
 
 
+
           </form>
         <div>
-        
-          <Modal 
+
+          <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={customStyles}
             contentLabel="Example Modal"
            >
- 
+
             <h2 ref={subtitle => this.subtitle = subtitle}>Recipe Search</h2>
-            
+
             <Search />
-         
+
           </Modal>
          
         </div>
 
        
 
+
+
+        </div>
+
+
+
         </div>
 		)
   }
 
+
 	}
-
-
 
 export default Pantry
