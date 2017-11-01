@@ -68,7 +68,7 @@ class Search extends Component {
     })
     .then( (res) => {
       console.log('res: ', res)
-    }
+    })
     .then((guestData) => {
       this.setGuestData(this.guestData)
     })
