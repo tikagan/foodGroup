@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :ingredients
     resources :grocery_ingredients
     resources :recipes
+    resources :potluck_recipes
   end
 
   root to: "home#show"
