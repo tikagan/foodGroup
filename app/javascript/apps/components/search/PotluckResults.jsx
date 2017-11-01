@@ -3,63 +3,85 @@ import pluralize from 'pluralize'
 import lunr from 'lunr'
 import ResultItem from './ResultItem'
 
-class Results extends Component {
-  constructor() {
-    super();
+class PotluckResults extends Component {
+  constructor(props) {
+    super(props)
     this.state = {
       sortedResults: []
     }
   }
 
   componentWillReceiveProps(newprops){
+    this.guestData = newprops.guestData
     // tokenizes recipeName without using Lunr's really intensive tokenizing function
     var results = newprops.searchResults.map(r => {
-      r.nameTokens = r.recipeName.split(' ')
+      r.nameTokens = r.recipeName.split(' ');
       return r
     })
     // creates index for lunr to search on results
-    var idx = lunr(function () {
+    this.idx = lunr(function () {
       this.field('nameTokens')
       this.field('ingredients')
       results.forEach((recipe) => {
         this.add(recipe)
       })
     })
-    // searches results for userIngredients
-    var lunrSearch = idx.search(this.props.userIngredients)
+    console.log('results: ', results)
+    // searches results for guestData
+    // for each (let id in guestData) {
+    //   var `user${id}search` = idx.search(guestData[id].ingredients)
+    //   console.log(`user${id}search: `, `user${id}search`)
+    // }
+
+    var lunrSearch = Object.keys(this.guestData).map(id => {
+      var i = this.guestData[id].ingredients
+      console.log('i: ', i)
+      return this.idx.search(i)
+    }, this)
+    console.log('lunrSearch: ', lunrSearch)
+
     var dictionary = {}
-    lunrSearch.map(function(r, i) {
-      dictionary[r.ref] = {score: r.score,
-                           index: i
-                          }
+    // maps the array of searches
+    lunrSearch.map((search, i) => {
+      // maps the recipies in each search
+      search.map((r, i) => {
+        if (dictionary[r.ref]) {
+        dictionary[r.ref] += r.score
+        } else {
+          dictionary[r.ref] = r.score
+        }
+      })
     })
-    // adds score to each recipie object, if no score exists removes it from results  
+    console.log('dictionary: ', dictionary)
+
+    // adds score to each recipie object, if no score exists removes it from results
+    var sortedResults = {}
     results.map(function (recipie, i) {
       if (dictionary[recipie.id]) {
         // adds the score to the recipie object
-        recipie.score = dictionary[recipie.id].score
+        recipie.score = dictionary[recipie.id]
       } else {
         results.splice(i, 1)
       }
     })
-    // sorts results by score
     results.sort((a, b) => {
       return b.score - a.score
     })
-    // reduces results to top 30 matches
     var reduceTo30 = (results) => {
       if (results.length > 30) {
         var excess = results.length - 30
         results.splice(30, excess)
       }
-    }
+    };
     reduceTo30(results)
     // sets sortedResults state
     var setSortedState = (results) => {
       this.setState({sortedResults: results })
-    }
+    };
+    console.log('sortedResults: ', results)
     setSortedState(results)
   }
+
 
   render(){
       var resultItems = this.state.sortedResults.map(function(result) {
@@ -69,8 +91,8 @@ class Results extends Component {
           <ol>
               {resultItems}
           </ol>
-      )
+      );
   }
-}
+};
 
-export default Results
+export default PotluckResults

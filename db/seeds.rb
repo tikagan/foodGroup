@@ -158,12 +158,7 @@ Pantry.create!({
   quantity: 5,
   unit: 'lbs'
 })
-Pantry.create!({
-  ingredient_id: potato.id,
-  user_id: ali.id,
-  quantity: 6,
-  unit: 'lbs'
-})
+
 Pantry.create!({
   ingredient_id: cucumber.id,
   user_id: ali.id,
@@ -230,12 +225,6 @@ Pantry.create!({
   ingredient_id: tomato.id,
   user_id: kritika.id,
   quantity: 5,
-  unit: 'item'
-})
-Pantry.create!({
-  ingredient_id: eggplant.id,
-  user_id: kritika.id,
-  quantity: 8,
   unit: 'item'
 })
 Pantry.create!({

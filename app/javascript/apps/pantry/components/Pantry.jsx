@@ -26,8 +26,8 @@ class  Pantry extends Component {
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
-  
-   
+
+
     axios.get('api/pantry')
      .then( (response) => {
        console.log(response)
@@ -64,7 +64,7 @@ class  Pantry extends Component {
   deleteButton = (data) => {
     console.log("deleteButton data", data)
     let ownPantry = this.state.current_user
-    // this.names.key = 
+    // this.names.key =
     axios.delete('api/pantry', {params: {
         ingredient_id: data.key,
       }
@@ -238,7 +238,7 @@ class  Pantry extends Component {
         })
       })
       })
-        
+
        .catch(function (error) {
         console.log(error);
       })
@@ -267,20 +267,44 @@ class  Pantry extends Component {
            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
            </div>
+
          
             <button className="pantry-submitbutton" type="submit">Submit</button>
            
 
-          </form>
+            <div className="form-group">
+            
+            <button className="book4" type="submit">Submit</button>
+            <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
 
+
+          </form>
+        <div>
+        
+          <Modal 
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+           >
+ 
+            <h2 ref={subtitle => this.subtitle = subtitle}>Recipe Search</h2>
+            
+            <Search />
+         
+          </Modal>
+         
         </div>
 
        
-        
 
         </div>
 		)
   }
-} 
+
+	}
+
+
 
 export default Pantry

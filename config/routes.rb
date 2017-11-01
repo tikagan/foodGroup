@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+
+
+
   namespace :api do
     resource :pantry
     resources :potlucks
+    resources :potluck_guests
     resources :groceries
     resources :ingredients
     resources :grocery_ingredients
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'profile#show', as: 'profile'
 
   get 'api_test', to: 'search#show', as: 'search'
+  get 'api_test', to: 'search#potluck', as: 'potlucksearch'
 
   get '*path', to: 'home#show'
 
