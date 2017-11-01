@@ -8,7 +8,7 @@ import Groceries from '../grocerylist/components/Grocerylist.jsx'
 import PotluckOverview from './PotluckOverview.jsx'
 import PotluckCreate from '../potluck/components/PotluckCreate.jsx'
 import Pantry from '../pantry/components/Pantry.jsx'
-import PotluckCreated from '../potluckcreated/components/PotluckCreated.jsx'
+import PotluckShow from '../potluckshow/components/PotluckShow.jsx'
 
 import Search from '../search/Search.jsx'
 import PotluckSearch from '../search/PotluckSearch.jsx'
@@ -34,12 +34,12 @@ class App extends Component {
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/groceries" component={Groceries}/>
 			  	<Route path="/potlucks" component={PotluckOverview}/>
-          <Route path="/potluckCreate" component={potluckCreate} />
+          <Route path="/potluckCreate" component={PotluckCreate} />
 			  	<Route path="/pantry" component={Pantry}/>
 			  	<Route path="/search" component={Search}/>
 					<Route path="/potlucksearch" component={PotluckSearch}/>
 			  	<Route path="/GrocerylistCreated" component={grocerylistcreated}/>
-			  	<Route path="/PotluckCreated" component={PotluckCreated}/>
+			  	<Route path="/PotluckShow" component={PotluckShow}/>
 
 
 

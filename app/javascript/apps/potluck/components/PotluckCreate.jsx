@@ -52,7 +52,7 @@ class  PotluckCreate extends Component {
          </div>
       
          
-         <Link to="/PotluckCreated"  className="book2" >Potluck created</Link> 
+         <Link to="/PotluckShow"  className="book2" >Potluck created</Link> 
 			</div>
 	 
 		)
