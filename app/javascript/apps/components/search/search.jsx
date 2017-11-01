@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 import Results from './Results'
 import SearchBox from './SearchBox'
-import ResultItem from './ResultItem'
 
 import pluralize from 'pluralize'
 
