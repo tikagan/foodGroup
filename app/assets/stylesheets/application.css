@@ -105,18 +105,6 @@ overflow:auto;*/
     
 }
 
-.listedpantry {
-    width:500px;
-    margin-top:3em;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:auto;
-    min-height:400px;
-    background-color: rgba(0, 0, 0, 0.8);
-
-    
-
-}
 
 .listed7 {
     width:480px;
@@ -174,13 +162,7 @@ font-weight: bold;
   
 }
 
-.pantry-form {
-    margin-bottom: 2em;
-    margin-right:auto;
-    margin-left:auto;
-    margin-top:2em;
-    width: 200px;
-}
+
 .btcomment{
     margin-bottom:2.8em;
     height:54px;
@@ -352,7 +334,14 @@ color:grey;
     margin-top:1em;
     width:200px;
     color:#000000;
-    background-color:darkgrey;
+    background-color:white;
+    margin-bottom:.5em;
+    float:right;
+    
+   
+}
+.navbar-header {
+    width:100%;
 }
 
 .search-item-image {
@@ -378,6 +367,70 @@ color:grey;
 
 /*-------------------*/
 
+/*---------pantry------------*/
+.foodlist {
+
+}
+
+.listedpantry {
+    width:500px;
+    margin-top:3em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+    min-height:400px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    
+
+}
+
+.pantry-submitbutton {
+    
+    margin-right: 2rem;
+    padding: .5rem 1rem;
+    min-width: 142px;
+    width:200px;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.pantry-form {
+    margin-bottom: 2em;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:2em;
+    width: 200px;
+}
+
+.pantryBG {
+    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384768/pantry_p73y3q.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 99999;
+    height: 100%;
+    color: white;
+}
+
+
+/*----------end of pantry -------*/
+
 .btn-primary {
     background-color: white;
     color: grey;
@@ -402,7 +455,7 @@ color:grey;
 }
 
 .book4 {
-    margin-top: 1rem;
+    margin-top: .5rem;
     
     margin-right: 2rem;
     padding: .5rem 1rem;
@@ -536,19 +589,7 @@ color:grey;
     color: white;
 }
 
-.pantryBG {
-    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384768/pantry_p73y3q.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: block;
-    overflow: auto;
-    font-family: 'Open Sans', sans-serif;
-    z-index: 99999;
-    height: 100%;
-    color: white;
-}
+
 
 
 .potluckBG {
@@ -742,4 +783,6 @@ color:grey;
     width: 200px;
     height: 46px;
     margin-top: 5px;
+    float:left;
+   
 }

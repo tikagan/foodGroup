@@ -23,6 +23,7 @@ const customStyles = {
   }
 };
 
+
 class  Pantry extends Component {
 	constructor (props) {
 	    super(props)
@@ -36,9 +37,11 @@ class  Pantry extends Component {
         newAmount: '',
         newUnit: '',
         modalIsOpen: false
+       
 	    };
-   this.modalmodal = this.modalmodal.bind(this)
-   this.openModal = this.openModal.bind(this);
+
+
+    this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 	}
@@ -56,6 +59,7 @@ openModal() {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
@@ -166,13 +170,7 @@ openModal() {
     this.setState(state);
   }
 
-  modalmodal = (e) => {
-    this.setState({
-      showModal: !this.state.showModal
-    })
-    console.log(this.state)
-  }
-
+ 
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -283,15 +281,20 @@ openModal() {
       })
     }
    }
-
+   // <div className="form-group"> 
+            // <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
+            // </div>
+            //  <div className="form-group">
+            // <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
+            // </div>
 
 		render() {
 		return (
 			<div className="pantryBG">
         <Navbar />
           <div className="jumbotron listedpantry">
-
-          <div>
+          
+          <div className="foodlist">
           {this.renderFood(this.state.food)}
           </div>
 
@@ -300,21 +303,15 @@ openModal() {
           <form className="pantry-form" onSubmit={this.onSubmit}>
            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
-           </div>
+            </div>
+            <button className="pantry-submitbutton" type="submit">Submit</button>
             <div className="form-group">
-            <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
-            </div>
-             <div className="form-group">
-            <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
-            </div>
             <button className="book4" type="submit">Submit</button>
             <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
-
+            </div>
           </form>
-        </div>
 
-        <div>
-
+      
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
@@ -328,14 +325,12 @@ openModal() {
             <Search />
 
           </Modal>
-
-
-        </div>
-
-
-        </div>
+         </div>
+      </div>
+     
 		)
   }
 }
+
 
 export default Pantry

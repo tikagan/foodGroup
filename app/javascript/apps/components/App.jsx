@@ -9,8 +9,8 @@ import Potluck from '../potluck/components/Potluck.jsx'
 import Pantry from '../pantry/components/Pantry.jsx'
 import PotluckCreated from '../potluckcreated/components/PotluckCreated.jsx'
 
-import Search from './search/Search.jsx'
-import PotluckSearch from './search/PotluckSearch.jsx'
+import Search from '../search/Search.jsx'
+import PotluckSearch from '../search/PotluckSearch.jsx'
 
 import grocerylistcreated from '../grocerylistcreated/components/GrocerylistCreated.jsx'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
