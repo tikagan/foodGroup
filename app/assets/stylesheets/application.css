@@ -444,18 +444,39 @@ color:grey;
 
 /*-----potluck overview----*/
 .listedpotluck {
-    width:500px;
+    width:300px;
     margin-top:3em;
     padding-top:2em;
     margin-left:auto;
     margin-right:auto;
     margin-bottom:auto;
-    min-height:400px;
+    min-height:300px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
 .potluckcreate {
    }
+
+.book8 {
+    margin-top: 2.5rem;
+    
+    padding: .5rem 1rem;
+    min-width: 142px;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+}
 /*-----------end of potluck overview------------------   
 */
 

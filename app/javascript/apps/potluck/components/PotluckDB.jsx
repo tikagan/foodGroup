@@ -49,7 +49,7 @@ class  PotluckDB extends Component {
 		  <div>
         {this.renderPotluck(this.state.list)}
 
-        <Link to="/PotluckCreate"  className="book2" >PotluckCreate created</Link> 
+        <Link to="/PotluckCreate"  className="book8" >Create Potluck</Link> 
 			</div>
   
 		)
