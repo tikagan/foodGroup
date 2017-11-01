@@ -33,8 +33,7 @@ class Results extends Component {
                            index: i
                           }
     })
-    // adds score to each recipie object, if no score exists removes it from results
-    var sortedResults = {}
+    // adds score to each recipie object, if no score exists removes it from results  
     results.map(function (recipie, i) {
       if (dictionary[recipie.id]) {
         // adds the score to the recipie object
