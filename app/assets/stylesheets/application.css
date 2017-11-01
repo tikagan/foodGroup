@@ -218,6 +218,11 @@ font-weight: bold;
 
 }
 
+.potlucktitle {
+    font-weight:bold;
+    padding-top:.5em;
+}
+
 .listed6 {
 
     width:400px;
@@ -363,8 +368,6 @@ color:grey;
 
 
 
-
-
 /*-------------------*/
 
 /*---------pantry------------*/
@@ -430,6 +433,48 @@ color:grey;
 
 
 /*----------end of pantry -------*/
+
+
+/*-----potluck overview----*/
+.listedpotluck {
+    width:500px;
+    margin-top:3em;
+    padding-top:2em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+    min-height:400px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*-----------end of potluck overview------------------   
+*/
+
+
+/*----------potluck show-------------*/
+.recipeinput {
+    width:400px;
+}
+
+.recipegroup{
+    width:400px;
+}
+
+.rep {
+    width:400px;
+    margin-left:8em;
+    margin-right:2em;
+
+}
+
+.invite { 
+    width: 400px;
+
+}
+
+.invite2{
+width: 400px;
+}
+/*-------------end of potluck show-------*/
 
 .btn-primary {
     background-color: white;
