@@ -103,7 +103,7 @@ onSubmit = (e) => {
         console.log("ingred exists post to server", response)
         const setState = this.setState.bind(this)
         let newGID = {
-            key: response.data.result[i].id,
+            key: response.data.result.id,
             id: response.data.result.ingredient_id
           }
           console.log(newGID)

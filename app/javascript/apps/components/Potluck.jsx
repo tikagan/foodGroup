@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
+import PotluckDB from '../../potluck/components/PotluckDB.jsx'
 
 
 class  Potluck extends Component {
@@ -21,6 +22,10 @@ class  Potluck extends Component {
 		return (
 			<div className="cutbackground">
 		    <Navbar />
+
+        <div>
+          <PotluckDB />
+        </div>
 		    
 		    <p>Potluck</p>
 			
