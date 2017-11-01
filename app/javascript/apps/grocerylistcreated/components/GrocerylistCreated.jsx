@@ -148,15 +148,16 @@ onSubmit = (e) => {
             this.setState({
               food: [...this.state.food, newGID]
             })
+            })
             console.log(this.state)
+            let id = this.props.id
             axios.get('api/grocery_ingredients/', {
               params: {
                 grocery_id: id
               }
             })
-            })
             .then( (response) => {
-            console.log(response)
+            console.log("setting new ingred DB state ", response)
             let food = []
             
             let temp = {}
@@ -166,7 +167,7 @@ onSubmit = (e) => {
                 name: response.data.all[x].name
               };
             }
-          console.log(temp)
+          console.log("this is temp", temp)
         
           this.setState({
             ingredientDB: temp
