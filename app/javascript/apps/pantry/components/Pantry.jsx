@@ -306,8 +306,7 @@ openModal() {
             </div>
             <button className="pantry-submitbutton" type="submit">Submit</button>
             <div className="form-group">
-            <button className="book4" type="submit">Submit</button>
-            <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
+            
             </div>
           </form>
 
