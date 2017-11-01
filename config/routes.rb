@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-
-
   namespace :api do
     resource :pantry
     resources :potlucks
@@ -10,6 +8,7 @@ Rails.application.routes.draw do
     resources :groceries
     resources :ingredients
     resources :grocery_ingredients
+    resources :recipes
   end
 
   root to: "home#show"
