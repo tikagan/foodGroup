@@ -265,6 +265,11 @@ font-weight: bold;
     border-color: black;
     opacity: 0.7;
 }
+/*----Grocery list--------*/
+.divlength {
+    
+    margin-bottom:1em; 
+}
 .deletegrocerylistbutton {
     color: grey;
     background-color: white;
@@ -273,6 +278,7 @@ font-weight: bold;
     float:right;
     margin-left:.5em;
     margin-right:.5em;
+
     
 
 }
@@ -287,6 +293,8 @@ font-weight: bold;
     margin-left:.5em;
 
 }
+
+/*----end of Grocery list--------*/
 
 .emptydiv {
     height:20px;
@@ -372,6 +380,7 @@ color:grey;
 
 /*---------pantry------------*/
 .foodlist {
+    color:white;
 
 }
 
@@ -383,8 +392,6 @@ color:grey;
     margin-bottom:auto;
     min-height:400px;
     background-color: rgba(0, 0, 0, 0.8);
-
-    
 
 }
 
@@ -446,13 +453,16 @@ color:grey;
     min-height:400px;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+.potluckcreate {
+   }
 /*-----------end of potluck overview------------------   
 */
 
 
 /*----------potluck show-------------*/
 .recipeinput {
-    width:400px;
+    width:300px;
 }
 
 .recipegroup{
@@ -460,21 +470,25 @@ color:grey;
 }
 
 .rep {
-    width:400px;
-    margin-left:8em;
+    width:300px;
+   margin-top: 1em;
     margin-right:2em;
 
 }
 
 .invite { 
-    width: 400px;
+    width: 300px;
+    margin-top:1em;
 
 }
 
 .invite2{
-width: 400px;
+width: 300px;
 }
 /*-------------end of potluck show-------*/
+
+
+
 
 .btn-primary {
     background-color: white;

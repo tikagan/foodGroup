@@ -222,8 +222,8 @@ onSubmit = (e) => {
   renderFood () {
     return (
       <div>{this.state.food.map((item, index) =>
-        <div key={index}>{this.getName(item)}
-        <div><button onClick={this.deleteButton.bind(this, item)}>Delete Item</button></div>
+        <div className="divlength" key={index}>{this.getName(item)}
+        <div><button className="btn btn-sm deletegrocerylistbutton" onClick={this.deleteButton.bind(this, item)}>Delete Item</button></div>
         </div>
         )}
       </div>
