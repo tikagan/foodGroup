@@ -21,8 +21,8 @@ class  Pantry extends Component {
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
-  
-   
+
+
     axios.get('api/pantry')
      .then( (response) => {
        console.log(response)
@@ -59,7 +59,7 @@ class  Pantry extends Component {
   deleteButton = (data) => {
     console.log("deleteButton data", data)
     let ownPantry = this.state.current_user
-    // this.names.key = 
+    // this.names.key =
     axios.delete('api/pantry', {params: {
         ingredient_id: data.key,
       }
@@ -232,7 +232,7 @@ class  Pantry extends Component {
         })
       })
       })
-        
+
        .catch(function (error) {
         console.log(error);
       })
@@ -256,7 +256,7 @@ class  Pantry extends Component {
            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
            </div>
-            <div className="form-group"> 
+            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
             </div>
              <div className="form-group">
@@ -265,11 +265,11 @@ class  Pantry extends Component {
             <button className="book4" type="submit">Submit</button>
           </form>
         </div>
-        
+
 
         </div>
 		)
   }
-	} 
+	}
 
 export default Pantry
