@@ -2,26 +2,9 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import Modal from 'react-modal'
-import Search from '../../search/search.jsx'
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    overflow              : 'scroll',
-    WebkitOverflowScrolling    : 'auto',
-    height:          '500px',
-    backgroundColor:'rgba(0,0,0,0.7)'
-  
 
-   
-  }
-};
+
 
 class  Pantry extends Component {
 	constructor (props) {
@@ -35,27 +18,11 @@ class  Pantry extends Component {
         newIng: '',
         newAmount: '',
         newUnit: '',
-        modalIsOpen: false
+       
 	    };
-   this.modalmodal = this.modalmodal.bind(this)
-   this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+ 
 	}
 
-openModal() {
-    this.setState({modalIsOpen: true});
-  }
- 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#ffffff';
-
-  }
- 
-  closeModal() {
-    this.setState({modalIsOpen: false});
-  }
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
@@ -166,13 +133,7 @@ openModal() {
     this.setState(state);
   }
 
-  modalmodal = (e) => {
-    this.setState({
-      showModal: !this.state.showModal
-    })
-    console.log(this.state)
-  }
-
+ 
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -283,15 +244,20 @@ openModal() {
       })
     }
    }
-
+   // <div className="form-group"> 
+            // <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
+            // </div>
+            //  <div className="form-group">
+            // <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
+            // </div>
 
 		render() {
 		return (
 			<div className="pantryBG">
         <Navbar />
           <div className="jumbotron listedpantry">
-
-          <div>
+          
+          <div className="foodlist">
           {this.renderFood(this.state.food)}
           </div>
 
@@ -301,36 +267,15 @@ openModal() {
            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
            </div>
-            <div className="form-group"> 
-            <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
-            </div>
-             <div className="form-group">
-            <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
-            </div>
-            <button className="book4" type="submit">Submit</button>
-            <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
+         
+            <button className="pantry-submitbutton" type="submit">Submit</button>
+           
 
           </form>
+
         </div>
 
-        <div>
-        
-          <Modal 
-            isOpen={this.state.modalIsOpen}
-            onAfterOpen={this.afterOpenModal}
-            onRequestClose={this.closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-           >
- 
-            <h2 ref={subtitle => this.subtitle = subtitle}>Recipe Search</h2>
-            
-            <Search />
-         
-          </Modal>
-         
-          
-        </div>
+       
         
 
         </div>
