@@ -39,7 +39,7 @@ class  Potluck extends Component {
 	
 
   renderPotluck () {
-    return <div>{this.state.list.map((item, index) => <div key={index}>{item.name}</div>)}</div>
+    return <div>{this.state.list.map((item, index) => <div key={index}>{item.name}, {item.description}</div>)}</div>
   }
 
 	render() {
