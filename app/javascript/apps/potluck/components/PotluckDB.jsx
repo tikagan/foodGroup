@@ -24,7 +24,9 @@ class  PotluckDB extends Component {
       for (let i = 0; i < response.data.result.length; i++) {
         temp.push({
           id: response.data.result[i].id,
-          name: response.data.result[i].name
+          name: response.data.result[i].name,
+          image: response.data.result[i].image,
+          description: response.data.result[i].description
         })
       }
       this.setState({
