@@ -39,14 +39,7 @@ class  PotluckCreate extends Component {
               <label for="exampleInputEmail1">Description</label>
               <input  className="form-control" placeholder="Add Description"/>
               </div>
-              <div className="form-group">
-              <label for="exampleInputPassword1">Recipe</label>
-              <input  className="form-control" placeholder="Add recipe"/>
-              </div>
-              <div className="form-group">
-              <label for="exampleInputPassword1">Invite Users</label>
-              <input  className="form-control" placeholder="Invite Friends"/>
-              </div>
+              
             <button  className="btn btn-primary">Submit</button>
           </form>
          </div>
@@ -58,7 +51,7 @@ class  PotluckCreate extends Component {
 		)
 	} 
 }
-
+              
 
 
 

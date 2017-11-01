@@ -14,6 +14,9 @@ class  PotluckCreated extends Component {
 	   
 	}
 
+	
+            
+
 		render() {
 		  return (
 			  <div className="potluckcreatedBG">
@@ -35,9 +38,25 @@ class  PotluckCreated extends Component {
 		         <div className="jumbotron listed5">
 		         <p className="rectext">recipie</p>
 		         </div>
+		        
 		          <div className="jumbotron listed6">
 		         <p className="rectext">comments</p>
 		         </div>
+		           <form>
+              <div className="form-group invite ">
+              <label for="exampleInputPassword1">Invite Users</label>
+              <input  className="form-control invite2" placeholder="Invite Friends"/>
+              </div>
+              <button  className="btn btn-primary">Submit</button>
+              </form>
+               <form className= "rep">
+                   <div className="form-group recipegroup">
+                     <label for="exampleInputPassword1">Recipe</label>
+                     <input  className="form-control recipeinput" placeholder="Add recipe"/>
+                   </div>
+                    <button  className="btn btn-primary">Submit</button>
+                </form>   
+
 		         <form className="commentform">
 										<textarea className="potluckcomment" placeholder="Comment" />
 									

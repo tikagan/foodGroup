@@ -56,9 +56,7 @@ class SearchBox extends Component {
                     <option value="Snacks">Snacks</option>
                     <option value="Soups">Soups</option>
                 </select>
-                <div>
-                {this.state.query}
-                </div>
+              <div></div>
                 <input className="btn  recipesearchsubmit-button" type="submit" onClick={this.createAjax} />
             </div>
         );

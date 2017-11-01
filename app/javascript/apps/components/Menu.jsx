@@ -17,8 +17,8 @@ class  Menu extends Component {
 			<div >
 			  
 			
-			  <Link to="/potlucks"  className="book2" >Create Potluck</Link> <br/>
-			  <Link to="/groceries" className="book1">Create List</Link>
+			  <Link to="/potlucks"  className="book2" >Potlucks</Link> <br/>
+			  <Link to="/groceries" className="book1">Grocery List</Link>
 			  <Link to="/pantry" className="book3">Pantry</Link>
 			 
 			
