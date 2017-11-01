@@ -33,6 +33,21 @@ class  PotluckCreated extends Component {
 		             <div className="jumbotron listed4">
 		             <p>description</p>
 		             </div>
+		             
+                  <div className="input-group invite ">
+                   <span className="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Invite</button>
+                   </span>
+                   <input type="text" class="form-control" placeholder="users" aria-label="Users" />
+                  </div>    
+
+                 <div className="input-group rep ">
+                  <span className="input-group-btn">
+                   <button class="btn btn-secondary" type="button">Add</button>
+                  </span>
+                   <input type="text" class="form-control" placeholder="Recipe" aria-label="Recipe" />
+                 </div>    
+             
 		          </div>
 		         <div className="col-sm">
 		         <div className="jumbotron listed5">
@@ -42,32 +57,17 @@ class  PotluckCreated extends Component {
 		          <div className="jumbotron listed6">
 		         <p className="rectext">comments</p>
 		         </div>
-		           <form>
-              <div className="form-group invite ">
-              <label for="exampleInputPassword1">Invite Users</label>
-              <input  className="form-control invite2" placeholder="Invite Friends"/>
-              </div>
-              <button  className="btn btn-primary">Submit</button>
-              </form>
-               <form className= "rep">
-                   <div className="form-group recipegroup">
-                     <label for="exampleInputPassword1">Recipe</label>
-                     <input  className="form-control recipeinput" placeholder="Add recipe"/>
-                   </div>
-                    <button  className="btn btn-primary">Submit</button>
-                </form>   
+		           
 
 		         <form className="commentform">
-										<textarea className="potluckcomment" placeholder="Comment" />
-									
-										<button type="submit" className="btn btcomment"> Submit</button>
-									</form>
+				  <textarea className="potluckcomment" placeholder="Comment" />
+				  <button type="submit" className="btn btcomment"> Submit</button>
+				</form>
 		         
-		         </div>
-		         </div>
-		         </div>
-
-		     </div>
+		        </div>
+		       </div>
+		      </div>
+		    </div>
 		    
 		)
 	} 
