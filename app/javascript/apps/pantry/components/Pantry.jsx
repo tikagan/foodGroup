@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-<<<<<<< HEAD
-
-
-
-=======
 import Modal from 'react-modal'
 import Search from '../../search/search.jsx'
 
@@ -27,7 +22,7 @@ const customStyles = {
 
   }
 };
->>>>>>> 1dd17dda5cebb6150a6eb800478620fae46b494d
+
 
 class  Pantry extends Component {
 	constructor (props) {
@@ -41,13 +36,14 @@ class  Pantry extends Component {
         newIng: '',
         newAmount: '',
         newUnit: '',
+        modalIsOpen: false
        
 	    };
-<<<<<<< HEAD
+
  
 	}
 
-=======
+
    this.modalmodal = this.modalmodal.bind(this)
    this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -67,7 +63,7 @@ openModal() {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
->>>>>>> 1dd17dda5cebb6150a6eb800478620fae46b494d
+d
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
