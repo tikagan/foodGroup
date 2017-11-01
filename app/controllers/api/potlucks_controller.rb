@@ -4,9 +4,10 @@ class Api::PotlucksController < Api::ApplicationController
   # GET /potlucks
   # GET /potlucks.json
   def index
+    @user = current_user
     @potlucks = Potluck.all
 
-    render json: {result: @potlucks}
+    render json: {result: @potlucks, user: @user}
   end
 
   # GET /potlucks/1
@@ -19,13 +20,11 @@ class Api::PotlucksController < Api::ApplicationController
   def create
     @potluck = Potluck.new(potluck_params)
 
-    respond_to do |format|
       if @potluck.save
-        format.json { render :show, status: :created, location: @potluck }
+        render json: {result: @potluck }
       else
-        format.json { render json: @potluck.errors, status: :unprocessable_entity }
+        render json: { result: @potluck.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PATCH/PUT /potlucks/1
@@ -57,6 +56,6 @@ class Api::PotlucksController < Api::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def potluck_params
-      params.require(:potluck).permit(:name)
+      params.require(:potluck).permit(:name, :description, :image, :creator_id)
     end
 end

@@ -20,10 +20,12 @@ class  Potluck extends Component {
 	render() {
 	
 		return (
-			<div className="cutbackground">
-		    <Navbar />
+			<div className="potluckcreatedBG">
+              <Navbar />
 
-        <div>
+        <div className="jumbotron listedpotluck ">
+          <h3 className="potlucktitle"> Current Potlucks </h3>
+
           <PotluckDB />
         </div>
 		    </div>
