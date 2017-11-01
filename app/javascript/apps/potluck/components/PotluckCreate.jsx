@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
-import { Route, BrowserRouter,Link } from 'react-router-dom'
+import { Route, BrowserRouter, Link, Redirect } from 'react-router-dom'
 
 
 
@@ -14,7 +14,8 @@ class  PotluckCreate extends Component {
 	    	currentUser: '',
         tempDescription: '',
         tempName: '',
-        tempImgURL: ''
+        tempImgURL: '',
+        redirectToNewPage: false
 	    	
 	    };
 	}
@@ -55,6 +56,7 @@ class  PotluckCreate extends Component {
       })
     .then((response) => {
       console.log(response)
+      this.setState({ redirectToNewPage: true })
     })
     .catch(function(error) {
       console.log(error)
@@ -63,6 +65,12 @@ class  PotluckCreate extends Component {
 	
 
 	render() {
+
+    if (this.state.redirectToNewPage) {
+     return (
+     <Redirect to="/PotluckShow"/>
+     )
+   }
 	  return (
 		  <div className="potluckBG">
 			  <Navbar />

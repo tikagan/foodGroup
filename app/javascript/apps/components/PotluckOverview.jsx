@@ -21,7 +21,7 @@ class  Potluck extends Component {
 	
 		return (
 			<div className="potluckcreatedBG">
-              <Navbar />
+          <Navbar />
 
         <div className="jumbotron listedpotluck ">
           <h3 className="potlucktitle"> Current Potlucks </h3>
