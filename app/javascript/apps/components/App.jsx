@@ -11,7 +11,7 @@ import PotluckCreated from '../potluckcreated/components/PotluckCreated.jsx'
 import Search from '../search/search.jsx'
 import grocerylistcreated from '../grocerylistcreated/components/GrocerylistCreated.jsx'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
-import Modal from '../modal/components/modal.jsx'
+
 
 class App extends Component {
 	constructor (props) {
@@ -34,7 +34,7 @@ class App extends Component {
 			  	<Route path="/search" component={Search}/>
 			  	<Route path="/GrocerylistCreated" component={grocerylistcreated}/>
 			  	<Route path="/PotluckCreated" component={PotluckCreated}/>
-			  	<Route path="/Modal" component={Modal}/>
+			  
 			  
 
 
