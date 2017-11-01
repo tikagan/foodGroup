@@ -58,13 +58,30 @@ class Search extends Component {
           })
           guestData[id].ingredients = ingredients.join(" ")
         })
-
+        this.guestData = guestData
         return guestData;
       })
     })
+    .then( () => {
+      return axios.get('/api/pantry')
+    })
+    .then( (res) => {
+      console.log('res: ', res)
+      var id = res.data.user.id
+      this.guestData[id] = {
+        name: res.data.user.firstname,
+      }
+      ingredients = []
+      res.data.result.forEach((i) => {
+        name = pluralize.singular(i.name);
+        ingredients.push(name);
+      })
+      this.guestData[id].ingredients = ingredients.join(" ")
+      return this.guestData
+    })
     .then((guestData) => {
+      console.log('guestData: ', guestData)
       this.setGuestData(guestData)
-      // console.log('this.state.guestData: ', guestData)
     })
     .catch( (error) => {
       console.log(error)
