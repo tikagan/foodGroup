@@ -17,9 +17,9 @@ const customStyles = {
     WebkitOverflowScrolling    : 'auto',
     height:          '500px',
     backgroundColor:'rgba(0,0,0,0.7)'
-  
 
-   
+
+
   }
 };
 
@@ -46,13 +46,13 @@ class  Pantry extends Component {
 openModal() {
     this.setState({modalIsOpen: true});
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#ffffff';
 
   }
- 
+
   closeModal() {
     this.setState({modalIsOpen: false});
   }
@@ -313,36 +313,29 @@ openModal() {
           </form>
         </div>
 
-<<<<<<< HEAD
-=======
         <div>
-        
-          <Modal 
+
+          <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={customStyles}
             contentLabel="Example Modal"
            >
- 
+
             <h2 ref={subtitle => this.subtitle = subtitle}>Recipe Search</h2>
-            
+
             <Search />
-         
+
           </Modal>
-         
-          
+
+
         </div>
-        
->>>>>>> master
+
 
         </div>
 		)
   }
-<<<<<<< HEAD
-	}
-=======
-} 
->>>>>>> master
+}
 
 export default Pantry
