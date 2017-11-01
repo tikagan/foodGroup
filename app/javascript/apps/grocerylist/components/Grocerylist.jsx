@@ -4,6 +4,8 @@ import Navbar from './Navbar'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import GrocerylistCreated from '../../grocerylistcreated/components/GrocerylistCreated.jsx'
+import DatabaseLists from './DatabaseLists'
+
 
 
 class  Grocerylist extends Component {
@@ -15,8 +17,12 @@ class  Grocerylist extends Component {
         list: [],
         user: '',
         tempName: '',
-        tempDescription: ''
+        tempDescription: '',
+        showComponent: false,
+        selectedID: '',
+        selectedName: ''
 			};
+
   }
 
   componentDidMount () {
@@ -113,13 +119,41 @@ class  Grocerylist extends Component {
     })
   }
 
-  renderLists () {
-    return <div>
-    
-    {this.state.list.map((names, index)=> <div key={names.id}> <div className="ingrdientname">{names.name}:</div> 
-      <div className="listdesc">{names.description}<button className="btn btn-sm listButton" onClick={this.deleteButton.bind(this, names.id)}>Delete</button></div>
-      </div>)}</div>
+  deleteButton = (data) => {
+    console.log(data)
+    axios.delete('api/groceries/' + data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    )
+    .then((response) => {
+      let lists = []
+      for (let i = 0; i < response.data.result.length; i++) {
+        lists.push({
+          id: response.data.result[i].id,
+          name: response.data.result[i].name,
+          description: response.data.result[i].description
+        })
+      }
+      this.setState({
+        list: lists
+      })
+      console.log(this.state)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
 
+  renderLists () {
+    return (
+    <div className="doesItShow">
+  
+      {this.state.list.map((names, index)=> <div key={index}><DatabaseLists lists={names} deleter={this.deleteButton} /></div>)}
+    </div>
+    )
   }
 
 	render() {
@@ -144,7 +178,6 @@ class  Grocerylist extends Component {
            
             <button  className="btn btn-primary">Submit</button>
           </form>
-          <GrocerylistCreated />
           </div>
          
          </div>
