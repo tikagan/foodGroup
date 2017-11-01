@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Potluck Recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>References</th>
+      <th>References</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @potluck_recipes.each do |potluck_recipe| %>
+      <tr>
+        <td><%= potluck_recipe.references %></td>
+        <td><%= potluck_recipe.references %></td>
+        <td><%= link_to 'Show', potluck_recipe %></td>
+        <td><%= link_to 'Edit', edit_potluck_recipe_path(potluck_recipe) %></td>
+        <td><%= link_to 'Destroy', potluck_recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Potluck Recipe', new_potluck_recipe_path %>
