@@ -3,9 +3,8 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-import Results from './Results'
+import PotluckResults from './PotluckResults'
 import SearchBox from './SearchBox'
-import ResultItem from './ResultItem'
 
 import pluralize from 'pluralize'
 
@@ -14,60 +13,61 @@ class Search extends Component {
     super();
     this.state = {
       searchResults: [],
-      userIngredients: {},
+      guestData: {},
       potluck_id: 1
     }
   }
 
-  setUserIngredients = (userIngredients) => {
-    this.setState({userIngredients: userIngredients})
+  setGuestData = (guestData) => {
+    this.setState({guestData: guestData})
   };
 
   componentWillMount() {
     var searchparams = this.state.potluck_id
-    var userIngredients = {};
     var ids = []
     var ingredients = []
-    // axios call that fetches each potluck_guest's id and puts it into userIngredients
+    // axios call that fetches each potluck_guest's id and puts it into guestData
     axios.get('api/potluck_guests/', {
               params: {
                 potluck_id: searchparams
                 }
               })
     .then( (res) => {
-      res.data.result.forEach((g) => {
-        userIngredients[g.user_id] = {}
-      })
-      return userIngredients
+      return res.data.result.reduce((acc, g) => {
+        acc[g.user_id] = {}
+        return acc
+      }, {});
     })
-    .catch( (error) => {
-      console.log(error)
-    })
-    .then(() => {
-      ids = Object.keys(userIngredients),
-      ids.forEach((id) => {
-        axios.get('api/pantry', {
+    .then((guestData) => {
+      ids = Object.keys(guestData);
+      return Promise.all(ids.map((id) => {
+        return axios.get('api/pantry', {
           params: {
             id: id
           }
         })
-        .then( (res) => {
-          userIngredients[id].name = res.data.user.firstname
+      }))
+      .then( (res) => {
+        res.forEach((res) => {
+          var id = res.data.user.id
+          guestData[id].name = res.data.user.firstname
           ingredients = []
           res.data.result.forEach((i) => {
             name = pluralize.singular(i.name);
             ingredients.push(name);
           })
-          userIngredients[id].ingredients = ingredients.join(" ")
+          guestData[id].ingredients = ingredients.join(" ")
         })
-        .catch( (error) => {
-          console.log(error)
-        })
+
+        return guestData;
       })
     })
-    .then(() => {
-      this.setUserIngredients(userIngredients),
-      console.log('this.state.userIngredients: ', userIngredients)
+    .then((guestData) => {
+      this.setGuestData(guestData)
+      // console.log('this.state.guestData: ', guestData)
+    })
+    .catch( (error) => {
+      console.log(error)
     })
   }
 
@@ -133,7 +133,7 @@ class Search extends Component {
       return (
           <div>
               <SearchBox search={this.search.bind(this)} />
-              <Results searchResults={this.state.searchResults} userIngredients={this.state.userIngredients} />
+              <PotluckResults searchResults={this.state.searchResults} guestData={this.state.guestData} />
           </div>
       );
   };
