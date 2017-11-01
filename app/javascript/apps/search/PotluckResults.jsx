@@ -26,19 +26,11 @@ class PotluckResults extends Component {
         this.add(recipe)
       })
     })
-    console.log('results: ', results)
-    // searches results for guestData
-    // for each (let id in guestData) {
-    //   var `user${id}search` = idx.search(guestData[id].ingredients)
-    //   console.log(`user${id}search: `, `user${id}search`)
-    // }
-
+    // creates array (lunrSearch) of search results
     var lunrSearch = Object.keys(this.guestData).map(id => {
       var i = this.guestData[id].ingredients
-      console.log('i: ', i)
       return this.idx.search(i)
     }, this)
-    console.log('lunrSearch: ', lunrSearch)
 
     var dictionary = {}
     // maps the array of searches
@@ -52,7 +44,6 @@ class PotluckResults extends Component {
         }
       })
     })
-    console.log('dictionary: ', dictionary)
 
     // adds score to each recipie object, if no score exists removes it from results
     var sortedResults = {}
@@ -78,7 +69,6 @@ class PotluckResults extends Component {
     var setSortedState = (results) => {
       this.setState({sortedResults: results })
     };
-    console.log('sortedResults: ', results)
     setSortedState(results)
   }
 
