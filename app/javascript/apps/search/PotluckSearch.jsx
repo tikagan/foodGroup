@@ -58,13 +58,19 @@ class Search extends Component {
           })
           guestData[id].ingredients = ingredients.join(" ")
         })
-
+        this.guestData = guestData
         return guestData;
       })
     })
+    .then( (value) => {
+      console.log('value: ', value)
+      return axios.get('/api/pantry')
+    })
+    .then( (res) => {
+      console.log('res: ', res)
+    }
     .then((guestData) => {
-      this.setGuestData(guestData)
-      // console.log('this.state.guestData: ', guestData)
+      this.setGuestData(this.guestData)
     })
     .catch( (error) => {
       console.log(error)
