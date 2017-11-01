@@ -13,7 +13,8 @@ class  GrocerylistCreated extends Component {
         newIng: '',
         newAmount: '',
         newUnit: '',
-        ingredientDB: []
+        ingredientDB: [],
+        tempID: ''
 	    };
 	   
 	}
@@ -101,7 +102,7 @@ onSubmit = (e) => {
         console.log("ingred exists post to server", response)
         const setState = this.setState.bind(this)
         let newGID = {
-            id: response.data.result.id
+            id: response.data.result.ingredient_id
           }
           console.log(newGID)
           
@@ -148,8 +149,29 @@ onSubmit = (e) => {
               food: [...this.state.food, newGID]
             })
             console.log(this.state)
+            axios.get('api/grocery_ingredients/', {
+              params: {
+                grocery_id: id
+              }
+            })
+            })
+            .then( (response) => {
+            console.log(response)
+            let food = []
+            
+            let temp = {}
+            for (let x = 0; x < response.data.all.length; x++) {
+              temp[response.data.all[x].id] = {
+                id: response.data.all[x].id,
+                name: response.data.all[x].name
+              };
+            }
+          console.log(temp)
+        
+          this.setState({
+            ingredientDB: temp
+          });
          })
-
         .catch(function (error) {
         console.log(error);
         })
@@ -162,7 +184,8 @@ onSubmit = (e) => {
    }
 
   getName = (item) => {
-    console.log(this.state.ingredientDB[item.id])
+    console.log(item)
+    // console.log(this.state.ingredientDB[item.id])
     return this.state.ingredientDB[item.id]["name"]
   };
 
