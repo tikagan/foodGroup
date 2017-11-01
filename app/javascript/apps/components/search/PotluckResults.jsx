@@ -19,7 +19,7 @@ class PotluckResults extends Component {
       return r
     })
     // creates index for lunr to search on results
-    var idx = lunr(function () {
+    this.idx = lunr(function () {
       this.field('nameTokens')
       this.field('ingredients')
       results.forEach((recipe) => {
@@ -34,47 +34,52 @@ class PotluckResults extends Component {
     // }
 
     var lunrSearch = Object.keys(this.guestData).map(id => {
-      console.log('this in lunrSearch: ', this)
-      console.log("this.guestData[id]: ", this.guestData[id])
       var i = this.guestData[id].ingredients
       console.log('i: ', i)
-      return {[id]: idx.search(i)}
+      return this.idx.search(i)
     }, this)
     console.log('lunrSearch: ', lunrSearch)
 
+    var dictionary = {}
+    // maps the array of searches
+    lunrSearch.map((search, i) => {
+      // maps the recipies in each search
+      search.map((r, i) => {
+        if (dictionary[r.ref]) {
+        dictionary[r.ref] += r.score
+        } else {
+          dictionary[r.ref] = r.score
+        }
+      })
+    })
+    console.log('dictionary: ', dictionary)
 
-    // var lunrSearch = idx.search(newprops.guestData)
-    // var dictionary = {}
-    // lunrSearch.map(function(r, i) {
-    //   dictionary[r.ref] = {score: r.score,
-    //                        index: i
-    //                       }
-    // });
     // adds score to each recipie object, if no score exists removes it from results
-  //   var sortedResults = {}
-  //   results.map(function (recipie, i) {
-  //     if (dictionary[recipie.id]) {
-  //       // adds the score to the recipie object
-  //       recipie.score = dictionary[recipie.id].score
-  //     } else {
-  //       results.splice(i, 1)
-  //     }
-  //   })
-  //   results.sort((a, b) => {
-  //     return b.score - a.score
-  //   })
-  //   var reduceTo30 = (results) => {
-  //     if (results.length > 30) {
-  //       var excess = results.length - 30
-  //       results.splice(30, excess)
-  //     }
-  //   };
-  //   reduceTo30(results)
-  //   // sets sortedResults state
-  //   var setSortedState = (results) => {
-  //     this.setState({sortedResults: results })
-  //   };
-  //   setSortedState(results)
+    var sortedResults = {}
+    results.map(function (recipie, i) {
+      if (dictionary[recipie.id]) {
+        // adds the score to the recipie object
+        recipie.score = dictionary[recipie.id]
+      } else {
+        results.splice(i, 1)
+      }
+    })
+    results.sort((a, b) => {
+      return b.score - a.score
+    })
+    var reduceTo30 = (results) => {
+      if (results.length > 30) {
+        var excess = results.length - 30
+        results.splice(30, excess)
+      }
+    };
+    reduceTo30(results)
+    // sets sortedResults state
+    var setSortedState = (results) => {
+      this.setState({sortedResults: results })
+    };
+    console.log('sortedResults: ', results)
+    setSortedState(results)
   }
 
 
