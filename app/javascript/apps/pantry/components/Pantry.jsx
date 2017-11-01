@@ -17,9 +17,9 @@ const customStyles = {
     WebkitOverflowScrolling    : 'auto',
     height:          '500px',
     backgroundColor:'rgba(0,0,0,0.7)'
-  
 
-   
+
+
   }
 };
 
@@ -46,21 +46,21 @@ class  Pantry extends Component {
 openModal() {
     this.setState({modalIsOpen: true});
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     this.subtitle.style.color = '#ffffff';
 
   }
- 
+
   closeModal() {
     this.setState({modalIsOpen: false});
   }
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
-  
-   
+
+
     axios.get('api/pantry')
      .then( (response) => {
        console.log(response)
@@ -97,7 +97,7 @@ openModal() {
   deleteButton = (data) => {
     console.log("deleteButton data", data)
     let ownPantry = this.state.current_user
-    // this.names.key = 
+    // this.names.key =
     axios.delete('api/pantry', {params: {
         ingredient_id: data.key,
       }
@@ -277,7 +277,7 @@ openModal() {
         })
       })
       })
-        
+
        .catch(function (error) {
         console.log(error);
       })
@@ -301,7 +301,7 @@ openModal() {
            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
            </div>
-            <div className="form-group"> 
+            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
             </div>
              <div className="form-group">
@@ -314,28 +314,28 @@ openModal() {
         </div>
 
         <div>
-        
-          <Modal 
+
+          <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={customStyles}
             contentLabel="Example Modal"
            >
- 
+
             <h2 ref={subtitle => this.subtitle = subtitle}>Recipe Search</h2>
-            
+
             <Search />
-         
+
           </Modal>
-         
-          
+
+
         </div>
-        
+
 
         </div>
 		)
   }
-} 
+}
 
 export default Pantry

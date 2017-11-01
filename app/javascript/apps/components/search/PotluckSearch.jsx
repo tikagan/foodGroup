@@ -3,46 +3,80 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-import Results from './Results'
+import PotluckResults from './PotluckResults'
 import SearchBox from './SearchBox'
 
 import pluralize from 'pluralize'
 
 class Search extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super();
     this.state = {
       searchResults: [],
-      userIngredients: ""
+      guestData: {},
+      potluck_id: 1
     }
   }
 
-  setUserIngredients = (userIngredients) => {
-    this.setState({userIngredients: userIngredients.join(" ")})
+  setGuestData = (guestData) => {
+    this.setState({guestData: guestData})
   };
 
   componentWillMount() {
-    //ajax call that gets the current user's pantry, singularizes the ingredients, and puts them in an array
-    var userIngredients = [];
-    $.ajax({
-      url: '/api/pantry',
-      type: 'GET',
-      data: 'json',
-      success: function(res) {
-        res.result.forEach(function(ingObj) {
-          name = pluralize.singular(ingObj.name);
-          userIngredients.push(name);
+    var searchparams = this.state.potluck_id
+    var ids = []
+    var ingredients = []
+    // axios call that fetches each potluck_guest's id and puts it into guestData
+    axios.get('api/potluck_guests/', {
+              params: {
+                potluck_id: searchparams
+                }
+              })
+    .then( (res) => {
+      return res.data.result.reduce((acc, g) => {
+        acc[g.user_id] = {}
+        return acc
+      }, {});
+    })
+    .then((guestData) => {
+      ids = Object.keys(guestData);
+      return Promise.all(ids.map((id) => {
+        return axios.get('api/pantry', {
+          params: {
+            id: id
+          }
         })
-        this.setUserIngredients(userIngredients);
-      }.bind(this)
-    });
-  };
+      }))
+      .then( (res) => {
+        res.forEach((res) => {
+          var id = res.data.user.id
+          guestData[id].name = res.data.user.firstname
+          ingredients = []
+          res.data.result.forEach((i) => {
+            name = pluralize.singular(i.name);
+            ingredients.push(name);
+          })
+          guestData[id].ingredients = ingredients.join(" ")
+        })
+
+        return guestData;
+      })
+    })
+    .then((guestData) => {
+      this.setGuestData(guestData)
+      // console.log('this.state.guestData: ', guestData)
+    })
+    .catch( (error) => {
+      console.log(error)
+    })
+  }
+
 
   showResults = (response) => {
-      this.setState({searchResults: response.matches});
-  };
+      this.setState({searchResults: response.matches})
+  }
 
-  search(query, diet, allergy, course){
+  search(query, diet, allergy, course) {
     if (diet === "Pescetarian") {
       var URL = 'http://api.yummly.com/v1/api/recipes?_app_id=1187f4c6&_app_key=7dbff064930ce67f94b7ded79f8958f7&q=' + query + '&maxResult=100&allowedDiet[]=390^Pescetarian'
     } else if (diet === "Vegan") {
@@ -99,7 +133,7 @@ class Search extends Component {
       return (
           <div>
               <SearchBox search={this.search.bind(this)} />
-              <Results searchResults={this.state.searchResults} userIngredients={this.state.userIngredients} />
+              <PotluckResults searchResults={this.state.searchResults} guestData={this.state.guestData} />
           </div>
       );
   };

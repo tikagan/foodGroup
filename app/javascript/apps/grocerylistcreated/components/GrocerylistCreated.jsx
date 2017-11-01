@@ -7,7 +7,7 @@ class  GrocerylistCreated extends Component {
 
 	constructor (props) {
 	    super(props)
-	    
+
 	    this.state = {
         food: [],
         newIng: '',
@@ -16,7 +16,7 @@ class  GrocerylistCreated extends Component {
         ingredientDB: [],
         tempID: ''
 	    };
-	   
+
 	}
 
   componentDidMount(){
@@ -44,7 +44,7 @@ class  GrocerylistCreated extends Component {
         };
        }
       console.log(temp)
-        
+
         this.setState({
           food: food,
           ingredientDB: temp
@@ -84,7 +84,7 @@ onSubmit = (e) => {
       Object.keys(checker).forEach(function(key) {
         if (checker[key].name == userIng) {
           newObj = checker[key]
-        } 
+        }
       })
 
       console.log("true")
@@ -107,7 +107,7 @@ onSubmit = (e) => {
             id: response.data.result.ingredient_id
           }
           console.log(newGID)
-          
+
             this.setState({
               food: [...this.state.food, newGID]
             })
@@ -141,7 +141,6 @@ onSubmit = (e) => {
           console.log("last", responses)
           console.log("here")
           const setState = this.setState.bind(this)
-          console.log('>>>>>> ', response.data.result)
           let newGID = {
             key: response.data.result[i].id,
             id: response.data.result.id
@@ -156,18 +155,18 @@ onSubmit = (e) => {
             };
           }
           console.log(temp)
-          
+
             this.setState({
               food: [...this.state.food, newGID],
               ingredientDB: temp
             })
             })
-           
+
         .catch(function (error) {
         console.log(error);
         })
       })
-        
+
        .catch(function (error) {
         console.log(error);
       })
@@ -179,7 +178,7 @@ onSubmit = (e) => {
     let ownPantry = this.state.current_user
     let toDelete = data.id
     console.log(toDelete)
-    // this.names.key = 
+    // this.names.key =
     axios.delete('api/grocery_ingredients/' + data.key, {
         headers: {
           'Content-Type': 'application/json',
@@ -222,7 +221,7 @@ onSubmit = (e) => {
 
   renderFood () {
     return (
-      <div>{this.state.food.map((item, index) => 
+      <div>{this.state.food.map((item, index) =>
         <div key={index}>{this.getName(item)}
         <div><button onClick={this.deleteButton.bind(this, item)}>Delete Item</button></div>
         </div>
@@ -235,18 +234,18 @@ onSubmit = (e) => {
 		return (
 		    <div>
 		    <p className="grocerylisttitle">Grocery List Name</p>
-		  
+
 		    <div>
           {this.renderFood(this.state.food)}
 		    </div>
-		    
+
 		    <div className="bootform">
 		      <div>
             <form className="pantry-form" onSubmit={this.onSubmit}>
             <div className="form-group">
               <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
             </div>
-            <div className="form-group"> 
+            <div className="form-group">
               <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
             </div>
             <div className="form-group">
@@ -256,11 +255,11 @@ onSubmit = (e) => {
             </form>
         </div>
 			</div>
-			
+
 		    </div>
-		    
+
 		)
-	} 
+	}
 }
 
 
