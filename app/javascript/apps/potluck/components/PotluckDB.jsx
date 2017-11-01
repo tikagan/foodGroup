@@ -5,7 +5,7 @@ import { Route, BrowserRouter,Link } from 'react-router-dom'
 
 
 
-class  Potluck extends Component {
+class  PotluckDB extends Component {
 
 	constructor (props) {
 	    super(props)
@@ -46,10 +46,12 @@ class  Potluck extends Component {
 	  return (
 		  <div>
         {this.renderPotluck(this.state.list)}
+
+        <Link to="/PotluckCreate"  className="book2" >PotluckCreate created</Link> 
 			</div>
-	 
+  
 		)
 	} 
 }
 
-export default Potluck
+export default PotluckDB

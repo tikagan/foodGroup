@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 import Splash from '../splash/components/Splash.jsx'
 import Overview from './Overview.jsx'
 import Groceries from '../grocerylist/components/Grocerylist.jsx'
-import Potluck from '../potluck/components/Potluck.jsx'
+import PotluckOverview from './PotluckOverview.jsx'
+import PotluckCreate from '../potluck/components/PotluckCreate.jsx'
 import Pantry from '../pantry/components/Pantry.jsx'
 import PotluckCreated from '../potluckcreated/components/PotluckCreated.jsx'
 
@@ -32,7 +33,8 @@ class App extends Component {
 				 <Route path="/" exact component={Overview}/>
 			  	<Route path="/overview" component={Overview}/>
 			  	<Route path="/groceries" component={Groceries}/>
-			  	<Route path="/potlucks" component={Potluck}/>
+			  	<Route path="/potlucks" component={PotluckOverview}/>
+          <Route path="/potluckCreate" component={potluckCreate} />
 			  	<Route path="/pantry" component={Pantry}/>
 			  	<Route path="/search" component={Search}/>
 					<Route path="/potlucksearch" component={PotluckSearch}/>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import PotluckDB from '../../potluck/components/PotluckDB.jsx'
+import PotluckDB from '/Users/ali/lighthouse/projects/FoodGroup/app/javascript/apps/potluck/components/PotluckDB.jsx'
 
 
 class  Potluck extends Component {
@@ -26,10 +26,7 @@ class  Potluck extends Component {
         <div>
           <PotluckDB />
         </div>
-		    
-		    <p>Potluck</p>
-			
-		     </div>
+		    </div>
 		)
 	} 
 }

@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
-import PotluckDB from '../../potluck/components/PotluckDB.jsx'
 
 
 
-class  Potluck extends Component {
+class  PotluckCreate extends Component {
 
 	constructor (props) {
 	    super(props)
@@ -27,7 +26,6 @@ class  Potluck extends Component {
 			  <Navbar />
 
 		    <div className="bootform2" >
-        <PotluckDB />
 		      <form>
             <div className="form-group">
               <label >Potluck Name</label>
@@ -68,4 +66,4 @@ class  Potluck extends Component {
 
 
 
-export default Potluck
+export default PotluckCreate
