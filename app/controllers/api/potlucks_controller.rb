@@ -5,6 +5,8 @@ class Api::PotlucksController < Api::ApplicationController
   # GET /potlucks.json
   def index
     @potlucks = Potluck.all
+
+    render json: {result: @potlucks}
   end
 
   # GET /potlucks/1
