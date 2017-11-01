@@ -40,12 +40,8 @@ class  Pantry extends Component {
        
 	    };
 
- 
-	}
 
-
-   this.modalmodal = this.modalmodal.bind(this)
-   this.openModal = this.openModal.bind(this);
+    this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 	}
@@ -63,7 +59,7 @@ openModal() {
   closeModal() {
     this.setState({modalIsOpen: false});
   }
-d
+
 
   componentDidMount() {
     const serverURL = 'http://localhost:3000/'
@@ -307,22 +303,15 @@ d
           <form className="pantry-form" onSubmit={this.onSubmit}>
            <div className="form-group">
             <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
-           </div>
-
-         
+            </div>
             <button className="pantry-submitbutton" type="submit">Submit</button>
-           
-
             <div className="form-group">
-            
             <button className="book4" type="submit">Submit</button>
             <button className="btn  rsearch" onClick={this.openModal}>Recipe Search</button>
-
-
-
+            </div>
           </form>
-        <div>
 
+      
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
@@ -336,22 +325,12 @@ d
             <Search />
 
           </Modal>
-         
-        </div>
-
-       
-
-
-
-        </div>
-
-
-
-        </div>
+         </div>
+      </div>
+     
 		)
   }
+}
 
-
-	}
 
 export default Pantry
