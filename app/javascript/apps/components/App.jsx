@@ -38,7 +38,7 @@ class App extends Component {
 			  	<Route path="/pantry" component={Pantry}/>
 			  	<Route path="/search" component={Search}/>
 					<Route path="/potlucksearch" component={PotluckSearch}/>
-			  	<Route path="/GrocerylistCreated" component={grocerylistcreated}/>
+			  	<Route path="/GrocerylistCreated" component={GrocerylistCreated}/>
 			  	<Route path="/PotluckShow" component={PotluckShow}/>
 
 
