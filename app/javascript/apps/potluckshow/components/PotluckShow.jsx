@@ -47,7 +47,7 @@ class  PotluckCreated extends Component {
 
 		          <div className="col-sm-3">
 		             <div className="jumbotron listed3">
-		             <p>{this.state.img}</p>
+		             <img src={this.state.img} style={{width: '7em', height: '7em'}} ></img>
 		             </div>
 		             <div className="jumbotron listed4">
 		             <p>{this.state.description}</p>
