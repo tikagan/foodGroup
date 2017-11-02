@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Navbar from './Navbar.jsx'
 import { Route, BrowserRouter,Link } from 'react-router-dom'
 import Modal from 'react-modal'
-import Search from '../../search/search.jsx'
+import Search from '../../search/Search.jsx'
 
 const customStyles = {
   content : {
