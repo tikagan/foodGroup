@@ -73,7 +73,7 @@ class  PotluckDB extends Component {
       <Link to={{
         pathname: '/PotluckShow',
         state: { id: item.id }
-      }} className="book2">View Potluck</Link>
+      }} className="btn btn-sm deletegrocerylistbutton">View Potluck</Link>
       <button onClick={this.deleteButton.bind(this, item)}>Delete</button>
     </div>)}</div>
   }
