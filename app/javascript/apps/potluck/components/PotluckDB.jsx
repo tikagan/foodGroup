@@ -38,6 +38,22 @@ class  PotluckDB extends Component {
       console.log(error)
     })
   }
+
+  deleteButton = (data) => {
+    axios.delete('api/potlucks/' + data.id, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }
+    )
+    .then((response) => {
+      console.log(response)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
 	
 
   renderPotluck () {
@@ -46,6 +62,7 @@ class  PotluckDB extends Component {
         pathname: '/PotluckShow',
         state: { id: item.id }
       }} className="book2">View Potluck</Link>
+      <button onClick={this.deleteButton.bind(this, item)}>Delete</button>
     </div>)}</div>
   }
 
