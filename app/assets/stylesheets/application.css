@@ -166,8 +166,8 @@ body {
     margin-right:auto;
     margin-bottom:auto;
     height:200px;
-    background-color:black;
-    opacity:.7;
+    background-color:none;
+    
 
 }
 
@@ -597,6 +597,15 @@ width: 300px;
     z-index: 99999;
     height: 100%;
     color: white;
+}
+
+.overviewtitle {
+  margin-top: 2.7em;
+  margin-left: 2em;
+}
+
+.listofbuttons {
+  height:200px;
 }
 
 
