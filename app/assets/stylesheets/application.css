@@ -35,61 +35,96 @@ body {
 
 #root {
     height: 100%;
-    /*	height:100%;
-	width:100%;
-	display:block;
-overflow:auto;*/
-}
-
-
-/*grocerylist input labels
----------------------------*/
-
-.listname {
-    margin-left: 20px;
-}
-
-.add {
-    margin-left: 30px;
-}
-
-.description {
-    margin-left: 10px;
-}
-
-.threeforms {
-    margin-top: 5em;
-    margin-right: 10em;
-    margin-left: 25em;
-}
-
-
-/*---------------------------*/
-.BGtron {
-    height: 400px;
-    width: 450px;
  
-    background-color: white;
-    margin:auto;
 }
 
 
-.headed {
-    width: 600px;
-    height: 50px;
-    margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    padding: 10px;
-    
-    background-color: rgba(0, 0, 0, 0.6);
+/*grocerylist 
+---------------------------*/
+.growform {
+  margin-bottom: 2em;
+}
 
+.listButton {
+  background-color:white;
+  margin:.7em;
+  height:22px;
+  font-size:8pt;
+  color:grey;
+  float:right;
+}
+
+.grocerylistsA {
+  margin-top:1.5em;
+  margin-right: auto;
+  margin-left:auto;
+}
+
+.ingrdientname {
+  font-weight: bold;
+}
+
+.listdesc {
+  color:black;
+  font-style: italic;
+  font-size:10pt;
+}
+
+.glist {
+  font-size: 14pt;
+  color:white;
 }
 
 .grocerylisttitle {
-        margin-top: -0.3em;
+  margin-top: -0.3em;
 }
+
+.divlength {
+  margin-bottom:1em; 
+}
+.deletegrocerylistbutton {
+  color: grey;
+  background-color: white;
+  height: 20px;
+  font-size:7pt;
+  float:right;
+  margin-left:.5em;
+  margin-right:.5em;
+}
+
+.showgrocerylistbutton {
+    color: grey;
+    background-color: white;
+    height: 20px;
+    font-size:7pt;
+    float:right;
+    margin-right:.5em;
+    margin-left:.5em;
+
+}
+
+.bootform {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+}
+
+.listed7 {
+    width:480px;
+    min-height:460px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:4em;
+    padding-bottom: 40px;
+    padding-top:1px;
+    background-color: rgba(211, 209, 210, 0.9);
+
+}
+
+/*---------------------------*/
+
+
 
 
 
@@ -106,70 +141,14 @@ overflow:auto;*/
 }
 
 
-.listed7 {
-    width:480px;
-    min-height:460px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:4em;
-    padding-bottom: 40px;
-    padding-top:1px;
-    background-color: rgba(211, 209, 210, 0.9);
-
-}
-
-.listButton {
-    background-color:white;
-    margin:.7em;
-    height:22px;
-    font-size:8pt;
-    color:grey;
-    float:right;
-}
-
-.grocerylistsA {
-    margin-top:1.5em;
-    margin-right: auto;
-    margin-left:auto;
 
 
 
-}
-
-.ingrdientname {
-font-weight: bold;
-    
-}
-.listdesc {
-    color:black;
-    font-style: italic;
-    font-size:10pt;
-
-}
-
-.glist {
-    font-size: 14pt;
-    color:white;
-}
-
-.potluckname {
-
-    
-    margin-top:1.5em;
-    margin-left:3.5em;
-    
-   
-  
-}
 
 
-.btcomment{
-    margin-bottom:2.8em;
-    height:54px;
-    background-color:black;
-    opacity:.7;
-    color:white;
-}
+
+
+
 
 .potluckcomment{
     width:400px;
@@ -218,10 +197,7 @@ font-weight: bold;
 
 }
 
-.potlucktitle {
-    font-weight:bold;
-    padding-top:.5em;
-}
+
 
 .listed6 {
 
@@ -254,10 +230,7 @@ font-weight: bold;
 
 }
 
-.growform {
-    margin-bottom: 2em;
 
-}
 
 
 .form-control {
@@ -265,36 +238,7 @@ font-weight: bold;
     border-color: black;
     opacity: 0.7;
 }
-/*----Grocery list--------*/
-.divlength {
-    
-    margin-bottom:1em; 
-}
-.deletegrocerylistbutton {
-    color: grey;
-    background-color: white;
-    height: 20px;
-    font-size:7pt;
-    float:right;
-    margin-left:.5em;
-    margin-right:.5em;
 
-    
-
-}
-
-.showgrocerylistbutton {
-    color: grey;
-    background-color: white;
-    height: 20px;
-    font-size:7pt;
-    float:right;
-    margin-right:.5em;
-    margin-left:.5em;
-
-}
-
-/*----end of Grocery list--------*/
 
 .emptydiv {
     height:20px;
@@ -444,7 +388,7 @@ color:grey;
 
 /*-----potluck overview----*/
 .listedpotluck {
-    width:300px;
+    width:450px;
     margin-top:3em;
     padding-top:2em;
     margin-left:auto;
@@ -477,8 +421,7 @@ color:grey;
     box-sizing: border-box;
 
 }
-/*-----------end of potluck overview------------------   
-*/
+/*-----------end of potluck overview------------------ */
 
 
 /*----------potluck show-------------*/
@@ -494,17 +437,46 @@ color:grey;
     width:300px;
    margin-top: 1em;
     margin-right:2em;
-
 }
 
 .invite { 
     width: 300px;
     margin-top:1em;
-
 }
 
 .invite2{
 width: 300px;
+}
+
+.potluckname {
+  margin-top:1.5em;
+  margin-left:3.5em;
+}
+
+.btcomment{
+    margin-bottom:2.8em;
+    height:54px;
+    background-color:black;
+    opacity:.7;
+    color:white;
+}
+.potlucktitle {
+    font-weight:bold;
+    padding-top:.5em;
+}
+.potluckBG {
+     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509386613/food_wi2fp2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 99999;
+    height: 100%;
+    color: white;
+
 }
 /*-------------end of potluck show-------*/
 
@@ -523,12 +495,7 @@ width: 300px;
     border-color: black
 }
 
-.bootform {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-}
+
 
 .buttoned {
     width: 80px;
@@ -557,6 +524,27 @@ width: 300px;
 }
 
 
+
+/*-------------Overview-----------------*/
+.book1 {
+    margin-top: 1rem;
+    margin-left: .5rem;
+    padding: .5rem 1rem;
+    min-width: 142px;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 .book3 {
     margin-top: 1rem;
     margin-left: .5rem;
@@ -597,64 +585,6 @@ width: 300px;
     border-radius: 8px;
     box-sizing: border-box;
 }
-
-.book1 {
-    margin-top: 1rem;
-    margin-left: .5rem;
-    padding: .5rem 1rem;
-    min-width: 142px;
-    font-size: 1rem;
-    line-height: 1.5;
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    user-select: none;
-    color: black;
-    border: 1px solid transparent;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.luckbutton {
-    display: inline-block;
-    background-color: white;
-    border-color: white;
-    width: 142.1px;
-    height: 42px;
-    margin-left: 8rem;
-    margin-right: .5rem;
-    padding: .5rem 1rem;
-    font-size: 1rem;
-}
-
-.grocbutton {
-    background-color: white;
-    display: inline-block;
-    border-color: white;
-    margin-top: 1rem;
-    margin-left: 8rem;
-    margin-right: .5rem;
-    padding: .5rem 1rem;
-    font-size: 1rem;
-}
-
-.splashbackground {
-    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384977/splash_wmsyld.webp) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: block;
-    overflow: auto;
-    font-family: 'Open Sans', sans-serif;
-    z-index: 99999;
-    height: 100%;
-    color: white;
-}
-
 .cutbackground {
     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384826/tumblr_inline_nvl90uiuwl1qlgi1f_540gif_rartic.gif) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -671,9 +601,14 @@ width: 300px;
 
 
 
+/*----------------end of overview------------*/
 
-.potluckBG {
-     background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509386613/food_wi2fp2.jpg) no-repeat center center fixed;
+
+
+
+
+.splashbackground {
+    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384977/splash_wmsyld.webp) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -684,8 +619,14 @@ width: 300px;
     z-index: 99999;
     height: 100%;
     color: white;
-
 }
+
+
+
+
+
+
+
 
 .scaleBG {
       background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509392783/pantry_ga0cgx.jpg) no-repeat center center fixed;

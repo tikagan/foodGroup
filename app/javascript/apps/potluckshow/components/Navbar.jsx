@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import myImage from '../../images/foodgroup.png';
 import Modal from 'react-modal'
-import Search from '../../search/search.jsx'
+import Search from '../../search/PotluckSearch.jsx'
 
 const customStyles = {
 

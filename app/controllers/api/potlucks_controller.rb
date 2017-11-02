@@ -45,10 +45,9 @@ class Api::PotlucksController < Api::ApplicationController
   # DELETE /potlucks/1
   # DELETE /potlucks/1.json
   def destroy
+    @allPotlucks = Potluck.all
     @potluck.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+      render json: {result: @potluck, all: @allPotlucks}
   end
 
   private

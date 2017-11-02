@@ -281,12 +281,6 @@ openModal() {
       })
     }
    }
-   // <div className="form-group"> 
-            // <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
-            // </div>
-            //  <div className="form-group">
-            // <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
-            // </div>
 
 		render() {
 		return (
