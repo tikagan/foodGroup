@@ -162,12 +162,12 @@ body {
 
     width:300px;
     margin-top:2em;
-    
+    border-radius: 10px;
     margin-right:auto;
     margin-bottom:auto;
     height:200px;
-    background-color:black;
-    opacity:.7;
+    background-color:none;
+    
 
 }
 
@@ -451,6 +451,8 @@ width: 300px;
 .potluckname {
   margin-top:1.5em;
   margin-left:3.5em;
+  color:white;
+  font-weight:bold;
 }
 
 .btcomment{
@@ -599,6 +601,15 @@ width: 300px;
     color: white;
 }
 
+.overviewtitle {
+  margin-top: 2.7em;
+  margin-left: 2em;
+}
+
+.listofbuttons {
+  height:200px;
+}
+
 
 
 /*----------------end of overview------------*/
@@ -608,7 +619,7 @@ width: 300px;
 
 
 .splashbackground {
-    background: url(https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509384977/splash_wmsyld.webp) no-repeat center center fixed;
+    background: url(https://media.giphy.com/media/HO8vkgFtXj7G/giphy.gif) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

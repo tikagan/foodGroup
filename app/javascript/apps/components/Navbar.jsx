@@ -20,7 +20,7 @@ class  Navbar extends Component {
               <div className="container-fluid">
               <div className="navbar-header">
               <a className="navbar-brand" href="#" />
-              <img className="Brand" src={myImage} />
+              <img className="Brand" src="https://res.cloudinary.com/hyrcxwhtw/image/upload/v1509637697/foodgroup_h6jhez.png" />
               </div>
              </div>
             </nav>

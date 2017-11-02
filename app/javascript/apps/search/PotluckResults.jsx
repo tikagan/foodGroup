@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import pluralize from 'pluralize'
 import lunr from 'lunr'
-import ResultItem from './ResultItem'
+import PotluckResultItem from './PotluckResultItem'
 
 class PotluckResults extends Component {
   constructor(props) {
@@ -70,12 +70,13 @@ class PotluckResults extends Component {
       this.setState({sortedResults: results })
     };
     setSortedState(results)
+    // console.log('results: ', results)
   }
 
 
   render(){
       var resultItems = this.state.sortedResults.map(function(result) {
-      return <ResultItem key={result.id} img={result.smallImageUrls} link={result.id} name={result.recipeName} rating={result.rating} />
+      return <PotluckResultItem key={result.id} img={result.smallImageUrls} link={result.id} name={result.recipeName} rating={result.rating} potluck_id={result.potluck_id}/>
       });
       return(
           <ol>

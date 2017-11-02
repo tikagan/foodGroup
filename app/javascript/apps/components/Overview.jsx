@@ -27,9 +27,13 @@ class  Overview extends Component {
 			<div className="cutbackground">
 		    <Navbar />
 		    <div className="container">
+		    
 		      <div className="row">
-            <div className="col-sm-3">
+            <div className="col-sm-3 listofbuttons">
+        
+         
               <div className="menu">
+
               <Menu />
 		        </div>
 		      </div>

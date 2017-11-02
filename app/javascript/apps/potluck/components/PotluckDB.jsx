@@ -74,6 +74,7 @@ class  PotluckDB extends Component {
         pathname: '/PotluckShow',
         state: { id: item.id }
       }} className="btn btn-sm deletegrocerylistbutton">View</Link>
+      
       <button className="btn btn-sm deletegrocerylistbutton" onClick={this.deleteButton.bind(this, item)}>Delete</button>
     </div>)}</div>
      

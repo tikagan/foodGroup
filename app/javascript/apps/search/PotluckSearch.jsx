@@ -51,6 +51,7 @@ class Search extends Component {
         res.forEach((res) => {
           var id = res.data.user.id
           guestData[id].name = res.data.user.firstname
+          guestData[id].potluck_id = this.state.potluck_id
           ingredients = []
           res.data.result.forEach((i) => {
             name = pluralize.singular(i.name);
@@ -77,6 +78,7 @@ class Search extends Component {
         ingredients.push(name);
       })
       this.guestData[id].ingredients = ingredients.join(" ")
+      this.guestdata[id].potluck_id = this.state.potluck_id
       return this.guestData
     })
     .then((guestData) => {
@@ -150,7 +152,7 @@ class Search extends Component {
       return (
           <div>
               <SearchBox search={this.search.bind(this)} />
-              <PotluckResults searchResults={this.state.searchResults} guestData={this.state.guestData} />
+              <PotluckResults searchResults={this.state.searchResults} guestData={this.state.guestData} potluck_id={this.state.potluck_id}/>
           </div>
       );
   };

@@ -105,7 +105,7 @@ class  PotluckCreate extends Component {
          </div>
       
          
-         <Link to="/PotluckShow"  className="book2" >Potluck created</Link> 
+         
 			</div>
 	 
 		)

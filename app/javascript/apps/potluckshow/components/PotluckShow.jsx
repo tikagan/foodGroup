@@ -46,8 +46,8 @@ class  PotluckCreated extends Component {
 		        <div className="row">
 
 		          <div className="col-sm-3">
-		             <div className="jumbotron listed3">
-		             <img src={this.state.img} style={{width: '7em', height: '7em'}} ></img>
+		             <div className=" listed3">
+		             <img src={this.state.img} style={{width: '100%', height: '100%'}} ></img>
 		             </div>
 		             <div className="jumbotron listed4">
 		             <p>{this.state.description}</p>
@@ -60,21 +60,20 @@ class  PotluckCreated extends Component {
                    <input type="text" class="form-control" placeholder="users" aria-label="Users" />
                   </div>    
 
-                 <div className="input-group rep ">
-                  <span className="input-group-btn">
-                   <button class="btn btn-secondary" type="button">Add</button>
-                  </span>
-                   <input type="text" class="form-control" placeholder="Recipe" aria-label="Recipe" />
-                 </div>    
+                
              
 		          </div>
 		         <div className="col-sm">
 		         <div className="jumbotron listed5">
-		         <p className="rectext">recipie</p>
+		         <p className="rectext">recipe</p>
+		        
+		         <a href="https://www.yummly.com/recipe/Rodeo-Burger-1598092">Rodeo Burger</a>
 		         </div>
 		        
 		          <div className="jumbotron listed6">
 		         <p className="rectext">comments</p>
+		         <p>Ali: I love burgers Guys I am there</p>
+		         <p>Kritika: I'll bring extra Avocados</p>
 		         </div>
 		           
 

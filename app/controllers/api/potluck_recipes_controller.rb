@@ -1,4 +1,4 @@
-class PotluckRecipesController < ApplicationController
+class Api::PotluckRecipesController < Api::ApplicationController
   before_action :set_potluck_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /potluck_recipes
@@ -25,16 +25,11 @@ class PotluckRecipesController < ApplicationController
   # POST /potluck_recipes.json
   def create
     @potluck_recipe = PotluckRecipe.new(potluck_recipe_params)
-
-    respond_to do |format|
       if @potluck_recipe.save
-        format.html { redirect_to @potluck_recipe, notice: 'Potluck recipe was successfully created.' }
-        format.json { render :show, status: :created, location: @potluck_recipe }
+        render json: {result: @potluck_recipe}
       else
-        format.html { render :new }
-        format.json { render json: @potluck_recipe.errors, status: :unprocessable_entity }
+        render json: { result: @potluck_recipe.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PATCH/PUT /potluck_recipes/1
@@ -69,6 +64,6 @@ class PotluckRecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def potluck_recipe_params
-      params.require(:potluck_recipe).permit(:references, :references)
+      params.require(:potluck_recipe, :potluck_id, :recipe_id)
     end
 end
