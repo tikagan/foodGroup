@@ -11,7 +11,8 @@ class  PotluckCreated extends Component {
 	    this.state = {
 	    	name: '',
         description: '',
-        img: ''
+        img: '',
+        comment: ''
 	    };
 	   
 	}
