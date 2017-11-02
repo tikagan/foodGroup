@@ -150,7 +150,7 @@ class Search extends Component {
       return (
           <div>
               <SearchBox search={this.search.bind(this)} />
-              <PotluckResults searchResults={this.state.searchResults} guestData={this.state.guestData} />
+              <PotluckResults searchResults={this.state.searchResults} guestData={this.state.guestData} potluck_id={this.state.potluck_id}/>
           </div>
       );
   };
