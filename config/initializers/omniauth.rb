@@ -4,6 +4,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     scope: 'public_profile,email',
     info_fields: 'first_name,last_name,email',
     client_options: {
-      callback_path: 'auth/facebook/callback',
+      redirect_uri: 'auth/facebook/callback',
     }
 end
