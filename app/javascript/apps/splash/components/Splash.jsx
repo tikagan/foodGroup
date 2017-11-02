@@ -12,7 +12,7 @@ class  Splash extends Component {
 	    };
 	   
 	}
-
+ // <button type="button" className="btn btn-default frank"> "What's for dinner?"</button>
 
 render() {
 		return (
@@ -20,7 +20,7 @@ render() {
 			<a href="/auth/google_oauth2" className="goog">Sign in with Google</a>
 			<a href="/auth/facebook" className="book">Sign in with Facebook</a>
 			  <img className="logo" src={myImage} />
-			   <button type="button" className="btn btn-default frank"> "What's for dinner?"</button>
+			  
 		    </div>
 		)
 	} 
