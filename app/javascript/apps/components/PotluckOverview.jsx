@@ -25,8 +25,10 @@ class  Potluck extends Component {
 
         <div className="jumbotron listedpotluck ">
           <h3 className="potlucktitle"> Current Potlucks </h3>
+          <div className="potluckcreate">
 
           <PotluckDB />
+          </div>
         </div>
 		    </div>
 		)
