@@ -162,7 +162,7 @@ body {
 
     width:300px;
     margin-top:2em;
-    
+    border-radius: 10px;
     margin-right:auto;
     margin-bottom:auto;
     height:200px;
@@ -451,6 +451,8 @@ width: 300px;
 .potluckname {
   margin-top:1.5em;
   margin-left:3.5em;
+  color:white;
+  font-weight:bold;
 }
 
 .btcomment{

@@ -413,8 +413,8 @@ GroceryIngredient.create!({
 extravaganza = Potluck.create!({
   name: "Luke's Post-DemoDay Extravaganza!",
   creator_id: luke.id,
-  description: " You're All Invited",
-  image: 'https://i1.wp.com/veggiecreative.com/wp-content/uploads/2017/09/dinner-601576_640.jpg?resize=300%2C200'
+  description: "",
+  image: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2815526/300/200/m1/fpc/wm0/1-6027-.jpg?1496845201&s=c955b6441a629ac9db9ad4e909e14091'
 })
 
 PotluckGuest.create!({
