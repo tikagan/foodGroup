@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import GrocerylistCreated from '../../grocerylistcreated/components/GroceryListCreated.jsx'
+import GrocerylistCreated from '../../grocerylistcreated/components/GrocerylistCreated.jsx'
 
 class DatabaseLists extends Component {
 
