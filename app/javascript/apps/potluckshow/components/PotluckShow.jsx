@@ -19,7 +19,6 @@ class  PotluckCreated extends Component {
 	componentDidMount() {
     console.log("props log", this.props.location.state.id)
     let param = this.props.location.state.id
-    let altParam = ''
     axios.get('api/potlucks/' + param)
     .then( (response) => {
       console.log(response)
@@ -47,7 +46,7 @@ class  PotluckCreated extends Component {
 
 		          <div className="col-sm-3">
 		             <div className="jumbotron listed3">
-		             <p>image</p>
+		             <p>{this.state.img}</p>
 		             </div>
 		             <div className="jumbotron listed4">
 		             <p>{this.state.description}</p>
