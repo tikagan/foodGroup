@@ -233,8 +233,8 @@ onSubmit = (e) => {
 		render() {
 		return (
 		    <div>
-		    <p className="grocerylisttitle">Grocery List Name</p>
-
+        <br/>
+        <hr/>
 		    <div>
           {this.renderFood(this.state.food)}
 		    </div>
@@ -245,13 +245,7 @@ onSubmit = (e) => {
             <div className="form-group">
               <input className= "form-control" type="text" placeholder="Item Name" name="newIng" onChange={this.onChange} />
             </div>
-            <div className="form-group">
-              <input className= "form-control" type="text" placeholder="Item Quantity" name="newAmount" onChange={this.onChange} />
-            </div>
-            <div className="form-group">
-              <input className= "form-control" type="text" placeholder="Unit of Measure" name="newUnit" onChange={this.onChange} />
-            </div>
-              <button className="book4" type="submit">Submit</button>
+            <button className="book4" type="submit">Submit</button>
             </form>
         </div>
 			</div>
@@ -261,13 +255,5 @@ onSubmit = (e) => {
 		)
 	}
 }
-
-
-
-
-
-
-
-
 
 export default GrocerylistCreated
