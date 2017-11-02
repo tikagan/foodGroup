@@ -66,10 +66,14 @@ class  PotluckCreated extends Component {
 		         <div className="col-sm">
 		         <div className="jumbotron listed5">
 		         <p className="rectext">recipe</p>
+		        
+		         <a href="https://www.yummly.com/recipe/Rodeo-Burger-1598092">Rodeo Burger</a>
 		         </div>
 		        
 		          <div className="jumbotron listed6">
 		         <p className="rectext">comments</p>
+		         <p>Ali: I love burgers Guys I am there</p>
+		         <p>Kritika: I'll bring extra Avocados</p>
 		         </div>
 		           
 
