@@ -41,7 +41,12 @@ class  PotluckDB extends Component {
 	
 
   renderPotluck () {
-    return <div>{this.state.list.map((item, index) => <div key={index}>{item.name}, {item.description}</div>)}</div>
+    return <div>{this.state.list.map((item, index) => <div key={index}>{item.name}, {item.description} 
+      <Link to={{
+        pathname: '/PotluckShow',
+        state: { id: item.id }
+      }} className="book2">View Potluck</Link>
+    </div>)}</div>
   }
 
 	render() {

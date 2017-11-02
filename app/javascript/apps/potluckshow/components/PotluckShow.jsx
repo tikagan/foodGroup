@@ -19,6 +19,7 @@ class  PotluckCreated extends Component {
 	componentDidMount() {
     console.log("props log", this.props.location.state.id)
     let param = this.props.location.state.id
+    let altParam = ''
     axios.get('api/potlucks/' + param)
     .then( (response) => {
       console.log(response)
