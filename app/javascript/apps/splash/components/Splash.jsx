@@ -21,6 +21,7 @@ render() {
 			<a href="/auth/facebook" className="book">Sign in with Facebook</a>
 			  <img className="logo" src={myImage} />
 			  
+			  
 		    </div>
 		)
 	} 

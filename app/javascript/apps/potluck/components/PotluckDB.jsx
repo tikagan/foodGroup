@@ -47,14 +47,15 @@ class  PotluckDB extends Component {
         state: { id: item.id }
       }} className="btn btn-sm deletegrocerylistbutton">View Potluck</Link>
     </div>)}</div>
+     
+
   }
 
 	render() {
 	  return (
 		  <div>
         {this.renderPotluck(this.state.list)}
-
-        <Link to="/PotluckCreate"  className="book2" >Create A New Potluck</Link> 
+            <Link to="/PotluckCreate"  className="book2" >Create A New Potluck</Link> 
 			</div>
   
 		)
