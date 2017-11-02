@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Menu from './Menu.jsx'
+import Menu from './menu.jsx'
 import Navbar from './Navbar.jsx'
 
 import { Route, BrowserRouter,Link } from 'react-router-dom'
