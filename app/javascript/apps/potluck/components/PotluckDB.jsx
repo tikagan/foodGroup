@@ -49,6 +49,18 @@ class  PotluckDB extends Component {
     )
     .then((response) => {
       console.log(response)
+      let temp = []
+      for (let i = 0; i < response.data.all.length; i++) {
+        temp.push({
+          id: response.data.all[i].id,
+          name: response.data.all[i].name,
+          description: response.data.all[i].description,
+          image: response.data.all[i].image
+        })
+      }
+      this.setState({
+        list: temp
+      })
     })
     .catch(function(error) {
       console.log(error)

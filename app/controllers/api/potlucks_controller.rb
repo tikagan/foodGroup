@@ -45,8 +45,9 @@ class Api::PotlucksController < Api::ApplicationController
   # DELETE /potlucks/1
   # DELETE /potlucks/1.json
   def destroy
+    @allPotlucks = Potluck.all
     @potluck.destroy
-      render json: {result: @potluck}
+      render json: {result: @potluck, all: @allPotlucks}
   end
 
   private
