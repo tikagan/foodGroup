@@ -13,6 +13,9 @@ class Api::PotlucksController < Api::ApplicationController
   # GET /potlucks/1
   # GET /potlucks/1.json
   def show
+    @potluck = Potluck.find(params[:id])
+
+    render json: {response: @potluck}
   end
 
   # POST /potlucks

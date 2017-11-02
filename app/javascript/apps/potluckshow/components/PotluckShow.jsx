@@ -9,13 +9,29 @@ class  PotluckCreated extends Component {
 	    super(props)
 	    
 	    this.state = {
-	    	
+	    	name: '',
+        description: '',
+        img: ''
 	    };
 	   
 	}
 
 	componentDidMount() {
-    console.log("props log", this.props.location.state)
+    console.log("props log", this.props.location.state.id)
+    let param = this.props.location.state.id
+    axios.get('api/potlucks/' + param)
+    .then( (response) => {
+      console.log(response)
+
+      this.setState({
+        name: response.data.response.name,
+        description: response.data.response.description,
+        img: response.data.response.image
+      })
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
   }
             
 
@@ -23,7 +39,7 @@ class  PotluckCreated extends Component {
 		  return (
 			  <div className="potluckcreatedBG">
 		      <Navbar />
-		       <h3 className="potluckname"> Potluck Name</h3>
+		       <h3 className="potluckname"> {this.state.name}</h3>
 		       
 		        <div className="container">
 		        <div className="row">
@@ -33,7 +49,7 @@ class  PotluckCreated extends Component {
 		             <p>image</p>
 		             </div>
 		             <div className="jumbotron listed4">
-		             <p>description</p>
+		             <p>{this.state.description}</p>
 		             </div>
 		          </div>
 		         <div className="col-sm">
