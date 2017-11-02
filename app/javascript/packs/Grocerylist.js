@@ -1,1 +1,1 @@
-import '../apps/components/grocerylist'
+import '../apps/components/Grocerylist'
