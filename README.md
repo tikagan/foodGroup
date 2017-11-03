@@ -1,6 +1,6 @@
 # README
 
-A home food management app that allows you to keep track of your grocery inventory, search recipes based on your inventory, and plan potlucks (full potlucks functionality coming soon).
+A home food management app built with a React/Rails/Postgres stack, that allows you to keep track of your grocery inventory, search recipes based on your inventory, and plan potlucks (full potlucks functionality coming soon).
 
 # stuff you gotta have:
 * npm install -g yarn
@@ -16,13 +16,12 @@ to start the server:
 
 
 # ScreenShot
-!["Sreenshot"]()
-!["Sreenshot"]()
-!["Sreenshot"]()
-!["Sreenshot"]()
-!["Sreenshot"]()
-!["Sreenshot"]()
-!["Sreenshot"]()
+!["Sreenshot"](https://github.com/tikagan/foodGroup/blob/master/Docs/foodgroup1.jpg?raw=true)
+!["Sreenshot"](https://github.com/tikagan/foodGroup/blob/master/Docs/foodgroup2.jpg?raw=true)
+!["Sreenshot"](https://github.com/tikagan/foodGroup/blob/master/Docs/foodgroup3.jpg?raw=true)
+!["Sreenshot"](https://github.com/tikagan/foodGroup/blob/master/Docs/foodgroup4.jpg?raw=true)
+!["Sreenshot"](https://github.com/tikagan/foodGroup/blob/master/Docs/foodgroup7.jpg?raw=true)
+
 
 #Stuff to fill out for later
 * Ruby version
