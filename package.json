@@ -2,7 +2,7 @@
   "name": "foodGroup",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.0.2",
+    "@rails/webpacker": "^5.4.3",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "1.12.7",
     "lunr": "^2.1.4",
@@ -15,7 +15,7 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "webpack": "^3.8.1",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^2.9.2"
   }
 }
